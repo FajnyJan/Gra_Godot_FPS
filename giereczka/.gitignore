@@ -1,3 +1,17 @@
 # Godot 4+ specific ignores
+.import/
+export.cfg
+export_presets.cfg
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Editor cache
 .godot/
-/android/
