@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://bovrgop8l5u7q"]
+
+[ext_resource type="Script" uid="uid://waemvxhc2pf6" path="res://main.gd" id="1_3ps45"]
+[ext_resource type="Script" uid="uid://bhl2cd1n4iygb" path="res://enemy.gd" id="2_msjai"]
+[ext_resource type="Script" uid="uid://toud7yjvhh4f" path="res://player.gd" id="3_apo6w"]
+
+[sub_resource type="Environment" id="Environment_iifgy"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_4gyqm"]
+vertices = PackedVector3Array(-4.5, 1, -4.5, -4.5, 1, 4.5, 4.5, 1, 4.5, 4.5, 1, -4.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qi2p4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qi2p4"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_iifgy"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_epg4t"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_3ps45")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_iifgy")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 15.365364, 0)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 0)
+navigation_mesh = SubResource("NavigationMesh_4gyqm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/StaticBody3D"]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("BoxMesh_qi2p4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StaticBody3D"]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
+shape = SubResource("BoxShape3D_qi2p4")
+
+[node name="enemy" type="CharacterBody3D" parent="." groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.298552, 1.5198368, 0)
+script = ExtResource("2_msjai")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="enemy"]
+mesh = SubResource("CapsuleMesh_iifgy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="enemy"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0014371872, 0, 0)
+shape = SubResource("CapsuleShape3D_epg4t")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="enemy"]
+
+[node name="player" type="CharacterBody3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.040330887, 4.2335296, 0)
+script = ExtResource("3_apo6w")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.051158905, 0, -0.109199524)
+mesh = SubResource("CapsuleMesh_iifgy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0014371872, 0, 0)
+shape = SubResource("CapsuleShape3D_epg4t")
+
+[node name="Camera3D" type="Camera3D" parent="player"]
