@@ -3,6 +3,8 @@ extends CharacterBody3D
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
+var rotation_dir := 0
+var rotation_speed := 2.0
 
 
 func _physics_process(delta: float) -> void:
@@ -24,5 +26,13 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+	
+	rotation_dir = 0
+	if Input.is_action_pressed("left_rotation"):
+		rotation_dir = -1
+	elif Input.is_action_pressed("right_rotation"):
+		rotation_dir = 1
+	rotate_y(rotation_dir * rotation_speed * delta)
+	
 
 	move_and_slide()
