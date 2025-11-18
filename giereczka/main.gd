@@ -2,13 +2,13 @@ extends Node3D
 
 
 @onready var target = $player
-
 var EnemyScene = preload("res://enemy1.tscn")
 
 func spawn_enemy(position: Vector3):
 	var enemy = EnemyScene.instantiate()
 	enemy.global_transform.origin = position
 	add_child(enemy)
+	enemy.add_to_group("enemy")
 
 func _ready():
 	spawn_enemy(Vector3(-10, 0, -10))
