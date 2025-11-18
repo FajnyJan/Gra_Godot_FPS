@@ -1,7 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://bovrgop8l5u7q"]
+[gd_scene load_steps=11 format=3 uid="uid://bovrgop8l5u7q"]
 
 [ext_resource type="Script" uid="uid://waemvxhc2pf6" path="res://main.gd" id="1_3ps45"]
-[ext_resource type="Script" uid="uid://bhl2cd1n4iygb" path="res://enemy.gd" id="2_msjai"]
 [ext_resource type="Script" uid="uid://toud7yjvhh4f" path="res://player.gd" id="3_apo6w"]
 
 [sub_resource type="Environment" id="Environment_iifgy"]
@@ -53,24 +52,6 @@ mesh = SubResource("BoxMesh_3ps45")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StaticBody3D2"]
 shape = SubResource("BoxShape3D_msjai")
-
-[node name="enemy" type="CharacterBody3D" parent="." groups=["enemy"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.298552, 1.5198368, 0)
-script = ExtResource("2_msjai")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="enemy"]
-mesh = SubResource("CapsuleMesh_iifgy")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="enemy"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0014371872, 0, 0)
-shape = SubResource("CapsuleShape3D_epg4t")
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="enemy"]
-
-[node name="Label3D" type="Label3D" parent="enemy"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.1857067, 0)
-pixel_size = 0.01
-billboard = 1
 
 [node name="player" type="CharacterBody3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.13704, 4.2335296, 0)
