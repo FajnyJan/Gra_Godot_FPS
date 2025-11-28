@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="giereczka"
-run/main_scene="uid://bovrgop8l5u7q"
+run/main_scene="uid://dhdsdtte3r1qb"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
