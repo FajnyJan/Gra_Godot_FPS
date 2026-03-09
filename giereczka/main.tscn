@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://dhdsdtte3r1qb"]
+[gd_scene load_steps=12 format=3 uid="uid://dhdsdtte3r1qb"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_3ps45"]
+[ext_resource type="Script" uid="uid://waemvxhc2pf6" path="res://main.gd" id="1_3ps45"]
+[ext_resource type="PackedScene" uid="uid://dkcf1qpuebuhw" path="res://world.tscn" id="2_h2yge"]
 [ext_resource type="Script" path="res://player.gd" id="3_apo6w"]
 
 [sub_resource type="Environment" id="Environment_iifgy"]
@@ -29,6 +30,9 @@ environment = SubResource("Environment_iifgy")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 15.365364, 0)
+
+[node name="world" parent="." instance=ExtResource("2_h2yge")]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, -12.883268, 0, 0)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 0)
