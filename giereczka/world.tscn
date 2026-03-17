@@ -1,9 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkcf1qpuebuhw"]
+[gd_scene load_steps=2 format=3 uid="uid://dkcf1qpuebuhw"]
 
-[ext_resource type="MeshLibrary" uid="uid://5ejisf5l1ppc" path="res://assets/tiles.tres" id="1_f3sb7"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_f3sb7"]
-size = Vector3(9.446716, 1, 9.555603)
+[ext_resource type="MeshLibrary" uid="uid://dlatqtcq7m50l" path="res://assets/tiles2.tres" id="1_f3sb7"]
 
 [node name="world" type="Node3D"]
 
@@ -11,10 +8,6 @@ size = Vector3(9.446716, 1, 9.555603)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(2.4999998, 0, 0, 0, 0.25, 0, 0, 0, 2.4999998, 4.7777395, 0, -2.3841858e-07)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.23043561, 0, -1.408783)
-shape = SubResource("BoxShape3D_f3sb7")
 
 [node name="GridMap" type="GridMap" parent="StaticBody3D"]
 transform = Transform3D(0.10000001, 0, 0, 0, 1, 0, 0, 0, 0.10000001, -1.911096, 0, 9.536744e-08)
