@@ -18,11 +18,13 @@ func _process(delta):
 func get_closest_enemy():
 	var closest = null
 	var min_dist = range
+	
 	for enemy in get_tree().get_nodes_in_group("enemy"):
 		var dist = global_transform.origin.distance_to(enemy.global_transform.origin)
 		if dist < min_dist:
 			min_dist = dist
 			closest = enemy
+	
 	return closest
 
 func shoot(enemy):

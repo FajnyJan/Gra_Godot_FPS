@@ -18,3 +18,6 @@ func _process(delta):
 
 func target_position(target):
 	nav.target_position = target
+
+func get_shoted():
+	print("Postrzelono mnie")
