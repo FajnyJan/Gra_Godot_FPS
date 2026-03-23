@@ -8,7 +8,10 @@ func _process(delta):
 	cooldown -= delta
 	var target = get_closest_enemy()
 	if target and cooldown <= 0:
-		look_at(target.global_transform.origin, Vector3.UP)
+		var target_pos = target.global_transform.origin
+		target_pos.y = global_transform.origin.y
+		
+		look_at(target_pos, Vector3.UP)
 		shoot(target)
 		cooldown = fire_rate
 
