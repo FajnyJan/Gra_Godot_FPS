@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" uid="uid://waemvxhc2pf6" path="res://main.gd" id="1_3ps45"]
 [ext_resource type="PackedScene" uid="uid://dkcf1qpuebuhw" path="res://world.tscn" id="2_h2yge"]
-[ext_resource type="Script" path="res://player.gd" id="3_apo6w"]
+[ext_resource type="Script" uid="uid://toud7yjvhh4f" path="res://player.gd" id="3_apo6w"]
 [ext_resource type="PackedScene" uid="uid://bkwwafkmn0gvh" path="res://tower_1.tscn" id="4_1bvp3"]
 
 [sub_resource type="Environment" id="Environment_iifgy"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_4gyqm"]
-vertices = PackedVector3Array(-1.2499995, 1, -1.4999995, -0.49999952, 1, -1.7499995, -0.49999952, 1, -4.4999995, -4.4999995, 1, -4.4999995, -0.49999952, 1, 4.5000005, -0.49999952, 1, 1.5000005, -1.2499995, 1, 1.2500005, -4.4999995, 1, 4.5000005, 0.25000048, 1, -1.4999995, 4.5000005, 1, -4.4999995, 0.25000048, 1, 1.2500005, 4.5000005, 1, 4.5000005)
-polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(0, 6, 3), PackedInt32Array(3, 6, 7), PackedInt32Array(1, 2, 8), PackedInt32Array(8, 2, 9), PackedInt32Array(5, 10, 4), PackedInt32Array(4, 10, 11), PackedInt32Array(8, 9, 10), PackedInt32Array(10, 9, 11)]
+vertices = PackedVector3Array(-10.149417, 0.75, -0.072761536, -1.1494169, 1, -0.072761536, -1.1494169, 1, -1.3227615, -0.39941692, 1, -1.5727615, -0.39941692, 0.75, -16.072762, -10.149417, 0.75, -16.072762, 0.35058308, 1, -1.3227615, 0.35058308, 1, 0.17723846, 13.600583, 0.75, -0.072761536, 13.600583, 0.75, -16.072762, -0.39941692, 0.75, 7.6772385, -0.39941692, 1, 1.6772385, -1.1494169, 1, 1.4272385, -10.149417, 0.75, 7.6772385, 0.35058308, 1, 1.4272385, 13.600583, 0.75, 7.6772385)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 0, 4), PackedInt32Array(4, 0, 5), PackedInt32Array(8, 7, 6), PackedInt32Array(6, 3, 8), PackedInt32Array(8, 3, 4), PackedInt32Array(8, 4, 9), PackedInt32Array(11, 10, 12), PackedInt32Array(12, 10, 13), PackedInt32Array(12, 13, 0), PackedInt32Array(0, 1, 12), PackedInt32Array(11, 14, 10), PackedInt32Array(10, 14, 15), PackedInt32Array(15, 14, 8), PackedInt32Array(14, 7, 8)]
 
 [sub_resource type="BoxMesh" id="BoxMesh_qi2p4"]
 
@@ -31,9 +31,6 @@ environment = SubResource("Environment_iifgy")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 15.365364, 0)
-
-[node name="world" parent="." instance=ExtResource("2_h2yge")]
-transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, -12.883268, 0, 0)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 0)
@@ -57,6 +54,9 @@ mesh = SubResource("BoxMesh_3ps45")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StaticBody3D2"]
 shape = SubResource("BoxShape3D_msjai")
+
+[node name="world" parent="NavigationRegion3D" instance=ExtResource("2_h2yge")]
+transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999998, -2.5766532, 0.8554077, 0)
 
 [node name="player" type="CharacterBody3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.13704, 4.2335296, 0)
