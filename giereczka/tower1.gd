@@ -2,6 +2,7 @@ extends Node3D
 
 @export var range = 15
 @export var fire_rate = 1.0
+@export var damage: int = 3
 var cooldown = 0
 
 func _process(delta):
@@ -28,4 +29,21 @@ func get_closest_enemy():
 	return closest
 
 func shoot(enemy):
-	print("cel: ", enemy.name)#strzelanko
+	var tower_pos = global_transform.origin
+	var enemy_pos = enemy.global_transform.origin
+	var direction = (enemy_pos - tower_pos).normalized()
+	
+	# raycast z wieży do wroga
+	var space_state = get_world_3d().direct_space_state
+	var query = PhysicsRayQueryParameters3D.create(tower_pos, enemy_pos)
+	query.exclude = [self]
+	
+	var result = space_state.intersect_ray(query)
+	
+	if result:
+		var collider = result.collider
+		# jeśli trafiliśmy w wroga
+		if collider == enemy:
+			if collider.has_method("apply_damage"):
+				collider.apply_damage(damage)
+			print("Wieża trafiła: ", enemy.name)
