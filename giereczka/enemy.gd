@@ -4,6 +4,10 @@ extends CharacterBody3D
 var speed = 3.5
 var gravity = 9.8
 var health = 20.0
+
+func _ready():
+	add_to_group("enemy")
+
 func _process(delta):
 	$Label3D.set_text(str(health))
 	
@@ -19,5 +23,8 @@ func _process(delta):
 func target_position(target):
 	nav.target_position = target
 
-func get_shoted():
-	print("Postrzelono mnie")
+func apply_damage(amount: int):
+	health -= amount
+	if health <= 0:
+		queue_free()
+
