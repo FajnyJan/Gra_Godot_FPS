@@ -26,3 +26,4 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor() and Input.is_action_just_pressed("ui_accept"):
 		velocity.y = jump_strength
 	move_and_slide()
+#próba nr 3
