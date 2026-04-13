@@ -5,15 +5,11 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var rotation_dir := 0
 var rotation_speed := 2.0
-
-<<<<<<< HEAD
-func _ready() -> void:
-	add_to_group("player")
-=======
 @onready var camera = $Camera3D
 var mouse_sensitivity = 0.002
 
-func _ready():
+func _ready() -> void:
+	add_to_group("player")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _input(event):
@@ -21,7 +17,6 @@ func _input(event):
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		camera.rotate_x(-event.relative.y * mouse_sensitivity)
 		camera.rotation.x = clamp(camera.rotation.x, -PI/2, PI/2)
->>>>>>> 8fe7393951460f770088944741d945ddb2a24df7
 
 
 func _physics_process(delta: float) -> void:
