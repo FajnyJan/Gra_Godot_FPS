@@ -6,6 +6,9 @@ const JUMP_VELOCITY = 4.5
 var rotation_dir := 0
 var rotation_speed := 2.0
 
+func _ready() -> void:
+	add_to_group("player")
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
