@@ -7,6 +7,7 @@ var health = 20.0
 
 func _ready():
 	add_to_group("enemy")
+	$"Armature/Skeleton3D/7_m19beruto_tga_0_1_16_16/AnimationPlayer".play("chodzenie")
 
 func _process(delta):
 	$Label3D.set_text(str(health))
