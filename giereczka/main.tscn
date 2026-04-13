@@ -8,8 +8,6 @@
 [sub_resource type="Environment" id="Environment_iifgy"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_4gyqm"]
-vertices = PackedVector3Array(-10.149417, 0.75, -0.072761536, -1.1494169, 1, -0.072761536, -1.1494169, 1, -1.3227615, -0.39941692, 1, -1.5727615, -0.39941692, 0.75, -16.072762, -10.149417, 0.75, -16.072762, 0.35058308, 1, -1.3227615, 0.35058308, 1, 0.17723846, 13.600583, 0.75, -0.072761536, 13.600583, 0.75, -16.072762, -0.39941692, 0.75, 7.6772385, -0.39941692, 1, 1.6772385, -1.1494169, 1, 1.4272385, -10.149417, 0.75, 7.6772385, 0.35058308, 1, 1.4272385, 13.600583, 0.75, 7.6772385)
-polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 0, 4), PackedInt32Array(4, 0, 5), PackedInt32Array(8, 7, 6), PackedInt32Array(6, 3, 8), PackedInt32Array(8, 3, 4), PackedInt32Array(8, 4, 9), PackedInt32Array(11, 10, 12), PackedInt32Array(12, 10, 13), PackedInt32Array(12, 13, 0), PackedInt32Array(0, 1, 12), PackedInt32Array(11, 14, 10), PackedInt32Array(10, 14, 15), PackedInt32Array(15, 14, 8), PackedInt32Array(14, 7, 8)]
 
 [sub_resource type="BoxMesh" id="BoxMesh_qi2p4"]
 
