@@ -32,6 +32,7 @@ func shoot(enemy):
 	var tower_pos = global_transform.origin
 	var enemy_pos = enemy.global_transform.origin
 	var direction = (enemy_pos - tower_pos).normalized()
+	print("Gracz trafił: ", enemy.name)
 	
 	# raycast z wieży do wroga
 	var space_state = get_world_3d().direct_space_state
