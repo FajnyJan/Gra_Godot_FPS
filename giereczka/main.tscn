@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dkcf1qpuebuhw" path="res://world.tscn" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://toud7yjvhh4f" path="res://player.gd" id="3_apo6w"]
 [ext_resource type="PackedScene" uid="uid://bkwwafkmn0gvh" path="res://tower_1.tscn" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://dovolwh0vqu1k" path="res://assets/image.png" id="5_lquwl"]
 
 [sub_resource type="Environment" id="Environment_iifgy"]
 
@@ -22,6 +23,8 @@ polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(0, 4, 3), PackedInt32Arr
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_iifgy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_epg4t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lquwl"]
 
 [node name="Node3D" type="Node3D" unique_id=1583472017]
 script = ExtResource("1_3ps45")
@@ -78,3 +81,79 @@ transform = Transform3D(1, 0, 0, 0, 0.9961947, 0.08715574, 0, -0.08715574, 0.996
 
 [node name="tower2" parent="." unique_id=298785970 instance=ExtResource("4_1bvp3")]
 transform = Transform3D(-0.0154106915, 0.0048688427, -0.9998702, 7.450581e-09, 0.9999892, 0.0048694313, 0.9998816, 7.50497e-05, -0.01541052, -63.576073, 1.2515402, -10.106946)
+
+[node name="GameMenu" type="CanvasLayer" parent="." unique_id=778722109]
+process_mode = 2
+
+[node name="Image" type="Sprite2D" parent="GameMenu" unique_id=359177970]
+position = Vector2(576.12494, 324)
+scale = Vector2(0.45507503, 0.5538461)
+texture = ExtResource("5_lquwl")
+
+[node name="Panel" type="Panel" parent="GameMenu" unique_id=1769829577]
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_lquwl")
+
+[node name="Continue" type="Button" parent="GameMenu/Panel" unique_id=1463368911]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 409.0
+offset_top = -20.0
+offset_right = -409.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Kontynuuj"
+
+[node name="MainMenu" type="Button" parent="GameMenu/Panel" unique_id=1738965640]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 409.0
+offset_top = 13.0
+offset_right = -409.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Menu Główne"
+
+[node name="Options" type="Button" parent="GameMenu/Panel" unique_id=1896253567]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 409.0
+offset_top = 46.0
+offset_right = -408.0
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Opcje
+"
+
+[node name="Quit" type="Button" parent="GameMenu/Panel" unique_id=53016972]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 410.0
+offset_top = 79.0
+offset_right = -407.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Wyjdź
+"
+
+[connection signal="pressed" from="GameMenu/Panel/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="GameMenu/Panel/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="GameMenu/Panel/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="GameMenu/Panel/Quit" to="." method="_on_quit_pressed"]
