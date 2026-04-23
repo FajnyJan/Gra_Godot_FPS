@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwkdb0x6farm8"]
+
+[ext_resource type="PackedScene" uid="uid://c6xaaiko4hjg2" path="res://halo.glb" id="1_awacq"]
+
+[node name="halo" instance=ExtResource("1_awacq")]

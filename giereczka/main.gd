@@ -2,7 +2,6 @@ extends Node3D
 
 
 @onready var target = $player
-
 var EnemyScene = preload("res://enemy1.tscn")
 
 func spawn_enemy(position: Vector3):

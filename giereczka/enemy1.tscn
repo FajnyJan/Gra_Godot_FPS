@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=4 uid="uid://d0j32l3hp6gqy"]
+[gd_scene load_steps=14 format=4 uid="uid://d0j32l3hp6gqy"]
 
-[ext_resource type="Script" path="res://enemy.gd" id="1_45pq5"]
+[ext_resource type="Script" uid="uid://bhl2cd1n4iygb" path="res://enemy.gd" id="1_45pq5"]
+[ext_resource type="PackedScene" uid="uid://bx10g6os0wa4g" path="res://zombie_1.tscn" id="2_g51g3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_epg4t"]
 
@@ -656,6 +657,7 @@ billboard = 1
 transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, 0, 0, 0)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="Armature"]
+visible = false
 bones/0/name = "referenced-ez07"
 bones/0/parent = -1
 bones/0/rest = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 0, 0, 0)
@@ -876,3 +878,6 @@ root_node = NodePath("../../../..")
 libraries = {
 &"": SubResource("AnimationLibrary_x582c")
 }
+
+[node name="zombie1" parent="Armature" instance=ExtResource("2_g51g3")]
+transform = Transform3D(1, 0, 4.371139e-08, 4.371139e-08, 1.9106855e-15, -1, 0, 1, 1.9106855e-15, 0, 0, 0)
