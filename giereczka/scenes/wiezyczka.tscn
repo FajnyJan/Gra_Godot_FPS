@@ -1,11 +1,11 @@
-[gd_scene format=3 uid="uid://4wydhcr6w0s2"]
+[gd_scene format=3 uid="uid://bj5uwiibcxfxa"]
 
-[ext_resource type="PackedScene" uid="uid://p75xtxjtrmvj" path="res://assets/Untitled.glb" id="1_08ph3"]
+[ext_resource type="PackedScene" uid="uid://p75xtxjtrmvj" path="res://assets/Untitled.glb" id="1_p0lfv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uahmh"]
 height = 1.4250488
 
-[node name="tower1" unique_id=366055518 instance=ExtResource("1_08ph3")]
+[node name="Untitled" unique_id=366055518 instance=ExtResource("1_p0lfv")]
 
 [node name="Cube" parent="." index="0" unique_id=2138001702]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3111508, 0)
