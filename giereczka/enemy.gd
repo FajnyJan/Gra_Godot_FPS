@@ -9,7 +9,7 @@ var target = null
 
 func _ready():
 	add_to_group("enemy")
-	#$"Armature/Skeleton3D/7_m19beruto_tga_0_1_16_16/AnimationPlayer".play("chodzenie")
+	$"Skeleton_Mage/Rig_Medium/Skeleton3D/AnimationPlayer".play("Running_A")
 
 func _physics_process(delta):
 	$Label3D.text = str(health)
