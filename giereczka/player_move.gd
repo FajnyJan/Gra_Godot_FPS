@@ -9,6 +9,12 @@ extends CharacterBody3D
 
 var is_dead: bool = false
 
+func _ready() -> void:
+	if not bullet_scene:
+		var scene = load("res://giereczka/Bullet.tscn")
+		if scene is PackedScene:
+			bullet_scene = scene
+
 func _physics_process(delta: float) -> void:
 	if is_dead:
 		return
@@ -32,7 +38,7 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor() and Input.is_action_just_pressed("ui_accept"):
 		velocity.y = jump_strength
 
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_just_pressed("shoot") or Input.is_action_just_pressed("ui_select"):
 		_shoot()
 
 	move_and_slide()

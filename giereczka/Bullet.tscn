@@ -6,12 +6,12 @@ script = ExtResource( 1 )
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SphereShape3D {
-	radius = 0.12
+	radius = 0.18
 }
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SphereMesh {
-	radius = 0.12
+	radius = 0.18
 	radial_segments = 12
 	height_segments = 6
 }
