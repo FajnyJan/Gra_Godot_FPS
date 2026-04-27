@@ -1,23 +1,31 @@
-[gd_scene format=3 uid="uid://4wydhcr6w0s2"]
+[gd_scene load_steps=5 format=3 uid="uid://4wydhcr6w0s2"]
 
 [ext_resource type="PackedScene" uid="uid://p75xtxjtrmvj" path="res://assets/Untitled.glb" id="1_08ph3"]
+[ext_resource type="Script" uid="uid://u1bx8tgr5hkf" path="res://scripts/tower1.gd" id="2_6lr1v"]
+[ext_resource type="PackedScene" uid="uid://ctkr7t68wuflv" path="res://turret.tscn" id="2_tgan8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uahmh"]
 height = 1.4250488
 
-[node name="tower1" unique_id=366055518 instance=ExtResource("1_08ph3")]
+[node name="tower1" instance=ExtResource("1_08ph3")]
+script = ExtResource("2_6lr1v")
 
-[node name="Cube" parent="." index="0" unique_id=2138001702]
+[node name="Cube" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3111508, 0)
+visible = false
 
-[node name="Cube_001" parent="." index="1" unique_id=1795050175]
+[node name="Cube_001" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.306495, 0)
+visible = false
 
-[node name="Cube_002" parent="." index="2" unique_id=173232330]
+[node name="Cube_002" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3111508, 0)
+visible = false
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="3" unique_id=287935220]
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="3"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1471725436]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 2.686521, 0, 0, 0, 1, 0, 1.9190638, 0)
 shape = SubResource("CapsuleShape3D_uahmh")
+
+[node name="Turret" parent="." index="4" instance=ExtResource("2_tgan8")]

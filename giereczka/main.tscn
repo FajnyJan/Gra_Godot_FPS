@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dhdsdtte3r1qb"]
+[gd_scene load_steps=15 format=3 uid="uid://dhdsdtte3r1qb"]
 
 [ext_resource type="Script" uid="uid://waemvxhc2pf6" path="res://scripts/main.gd" id="1_3ps45"]
 [ext_resource type="PackedScene" uid="uid://dkcf1qpuebuhw" path="res://world.tscn" id="2_h2yge"]
@@ -26,76 +26,70 @@ polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(0, 4, 3), PackedInt32Arr
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lquwl"]
 
-[node name="Node3D" type="Node3D" unique_id=1583472017]
+[node name="Node3D" type="Node3D"]
 script = ExtResource("1_3ps45")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=93649519]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_iifgy")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=381385426]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 15.365364, 0)
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1217127115]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 125.16554)
 navigation_mesh = SubResource("NavigationMesh_4gyqm")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D" unique_id=608948639]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/StaticBody3D" unique_id=1221125891]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/StaticBody3D"]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
 mesh = SubResource("BoxMesh_qi2p4")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StaticBody3D" unique_id=103527502]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StaticBody3D"]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
 shape = SubResource("BoxShape3D_qi2p4")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="NavigationRegion3D" unique_id=550457313]
+[node name="StaticBody3D2" type="StaticBody3D" parent="NavigationRegion3D"]
 transform = Transform3D(0.2, 0, 0, 0, 4, 0, 0, 0, 2, -0.4623536, 2.870816, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/StaticBody3D2" unique_id=258646689]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/StaticBody3D2"]
 mesh = SubResource("BoxMesh_3ps45")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StaticBody3D2" unique_id=1905485735]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StaticBody3D2"]
 shape = SubResource("BoxShape3D_msjai")
 
-[node name="world" parent="NavigationRegion3D" unique_id=1910168957 instance=ExtResource("2_h2yge")]
+[node name="world" parent="NavigationRegion3D" instance=ExtResource("2_h2yge")]
 transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999976, -2.5766532, -1.9887629, 0)
 
-[node name="player" type="CharacterBody3D" parent="." unique_id=2128400075]
+[node name="player" type="CharacterBody3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.13704, 4.2335296, 0)
 script = ExtResource("3_apo6w")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="player" unique_id=421483817]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.051158905, 0, -0.109199524)
 mesh = SubResource("CapsuleMesh_iifgy")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="player" unique_id=805447192]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0014371872, 0, 0)
 shape = SubResource("CapsuleShape3D_epg4t")
 
-[node name="Camera3D" type="Camera3D" parent="player" unique_id=225852692]
+[node name="Camera3D" type="Camera3D" parent="player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44372225, 0)
 
-[node name="tower1" parent="." unique_id=353553057 instance=ExtResource("4_1bvp3")]
-transform = Transform3D(1, 0, 0, 0, 0.9997972, 0.020139731, 0, -0.020139731, 0.9997972, 0.5, 0.42823303, 0)
-
-[node name="tower2" parent="." unique_id=298785970 instance=ExtResource("4_1bvp3")]
-transform = Transform3D(-0.0154106915, 0.0048688427, -0.9998702, 7.450581e-09, 0.9999892, 0.0048694313, 0.9998816, 7.50497e-05, -0.01541052, -63.576073, 1.2515402, -10.106946)
-
-[node name="GameMenu" type="CanvasLayer" parent="." unique_id=778722109]
+[node name="GameMenu" type="CanvasLayer" parent="."]
 process_mode = 2
 
-[node name="Image" type="Sprite2D" parent="GameMenu" unique_id=359177970]
+[node name="Image" type="Sprite2D" parent="GameMenu"]
 position = Vector2(576.12494, 324)
 scale = Vector2(0.45507503, 0.5538461)
 texture = ExtResource("5_lquwl")
 
-[node name="Panel" type="Panel" parent="GameMenu" unique_id=1769829577]
+[node name="Panel" type="Panel" parent="GameMenu"]
 offset_right = 1152.0
 offset_bottom = 648.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_lquwl")
 
-[node name="Continue" type="Button" parent="GameMenu/Panel" unique_id=1463368911]
+[node name="Continue" type="Button" parent="GameMenu/Panel"]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -109,7 +103,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Kontynuuj"
 
-[node name="MainMenu" type="Button" parent="GameMenu/Panel" unique_id=1738965640]
+[node name="MainMenu" type="Button" parent="GameMenu/Panel"]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -123,7 +117,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Menu Główne"
 
-[node name="Options" type="Button" parent="GameMenu/Panel" unique_id=1896253567]
+[node name="Options" type="Button" parent="GameMenu/Panel"]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -138,7 +132,7 @@ grow_vertical = 2
 text = "Opcje
 "
 
-[node name="Quit" type="Button" parent="GameMenu/Panel" unique_id=53016972]
+[node name="Quit" type="Button" parent="GameMenu/Panel"]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -152,6 +146,12 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Wyjdź
 "
+
+[node name="tower1" parent="." instance=ExtResource("4_1bvp3")]
+transform = Transform3D(-0.057110973, 0, 0.99836785, 0, 1, 0, -0.99836785, 0, -0.057110973, -62.210674, 0.3548825, -10.348766)
+
+[node name="tower2" parent="." instance=ExtResource("4_1bvp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5621442, 0.3548825, -4.3963776)
 
 [connection signal="pressed" from="GameMenu/Panel/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="GameMenu/Panel/MainMenu" to="." method="_on_main_menu_pressed"]
