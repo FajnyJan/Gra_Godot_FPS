@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b77mxykifjrgl"]
+[gd_scene load_steps=14 format=3 uid="uid://b77mxykifjrgl"]
 
 [ext_resource type="PackedScene" uid="uid://bvok75rh3ebu5" path="res://KayKit_Skeletons_1.1_FREE/characters/gltf/Skeleton_Mage.glb" id="1_xxnij"]
 
@@ -1987,9 +1987,9 @@ _data = {
 &"Walking_C": SubResource("Animation_l3axp")
 }
 
-[node name="Skeleton_Mage" unique_id=1973696957 instance=ExtResource("1_xxnij")]
+[node name="Skeleton_Mage" instance=ExtResource("1_xxnij")]
 
-[node name="Skeleton3D" parent="Rig_Medium" parent_id_path=PackedInt32Array(1337512647) index="0" unique_id=392822610]
+[node name="Skeleton3D" parent="Rig_Medium" index="0"]
 bones/1/position = Vector3(0, 0.4371587, 0)
 bones/1/rotation = Quaternion(0.095845774, -1.1866046e-07, 1.1425705e-08, 0.9953962)
 bones/2/position = Vector3(-0.17094506, 0.11358735, -0.099999994)
@@ -2016,9 +2016,11 @@ bones/20/rotation = Quaternion(0.0019691067, 6.904271e-08, -1.3675258e-09, 0.999
 bones/21/rotation = Quaternion(-0.49649605, 1.7175507e-08, -9.875719e-08, 0.868039)
 bones/22/rotation = Quaternion(2.3543484e-08, 0.918349, -0.3957716, 6.4317e-08)
 
-[node name="head" parent="Rig_Medium/Skeleton3D" index="0" unique_id=1334922014]
+[node name="head" parent="Rig_Medium/Skeleton3D" index="0"]
 transform = Transform3D(0.9997451, -0.021961601, 0.005238045, 0.022035161, 0.99965304, -0.014425173, -0.004919428, 0.0145368725, 0.9998822, -0.0059032026, 1.2522435, 0.181502)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Rig_Medium/Skeleton3D" index="9" unique_id=50450799]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Rig_Medium/Skeleton3D" index="9"]
 root_node = NodePath("../../..")
-libraries/ = SubResource("AnimationLibrary_1cajk")
+libraries = {
+&"": SubResource("AnimationLibrary_1cajk")
+}

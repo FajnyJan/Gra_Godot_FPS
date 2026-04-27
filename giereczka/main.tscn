@@ -1,12 +1,21 @@
-[gd_scene load_steps=15 format=3 uid="uid://dhdsdtte3r1qb"]
+[gd_scene load_steps=18 format=3 uid="uid://dhdsdtte3r1qb"]
 
 [ext_resource type="Script" uid="uid://waemvxhc2pf6" path="res://scripts/main.gd" id="1_3ps45"]
+[ext_resource type="Texture2D" uid="uid://dgpkvgi0yn6if" path="res://Fantasy Skybox FREE/Fantasy Skybox FREE/Materials/FS002/FS002_Day.png" id="2_7mycd"]
 [ext_resource type="PackedScene" uid="uid://dkcf1qpuebuhw" path="res://world.tscn" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://toud7yjvhh4f" path="res://scripts/player.gd" id="3_apo6w"]
 [ext_resource type="PackedScene" uid="uid://bkwwafkmn0gvh" path="res://scenes/tower_1.tscn" id="4_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://dovolwh0vqu1k" path="res://assets/image.png" id="5_lquwl"]
 
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_272bh"]
+panorama = ExtResource("2_7mycd")
+
+[sub_resource type="Sky" id="Sky_5vw27"]
+sky_material = SubResource("PanoramaSkyMaterial_272bh")
+
 [sub_resource type="Environment" id="Environment_iifgy"]
+background_mode = 2
+sky = SubResource("Sky_5vw27")
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_4gyqm"]
 vertices = PackedVector3Array(-3.4803095, 0.76123714, -31.153633, 0.019690514, 0.76123714, -31.153633, 0.2696905, 0.76123714, -37.403633, -12.7303095, 0.76123714, -28.903633, -3.7303095, 0.76123714, -28.903633, -12.7303095, 0.76123714, -37.403633, 1.5196905, 0.76123714, -31.153633, 1.7696905, 0.76123714, -29.653633, 3.0196905, 0.76123714, -29.403633, 3.7696905, 0.76123714, -27.903633, 11.5196905, 0.76123714, -27.903633, 11.5196905, 0.76123714, -37.403633, -0.9803095, 4.011237, -29.403633, -1.7303095, 4.011237, -29.153633, -1.7303095, 3.7612371, -28.403633, 0.7696905, 3.7612371, -30.153633, -0.9803095, 3.7612371, -30.153633, 0.7696905, 3.7612371, -28.403633, 3.5196905, 0.76123714, -27.403633, -12.7303095, 0.76123714, -27.153633, -2.9803095, 0.76123714, -26.653633, -3.2303095, 0.76123714, -25.153633, -5.2303095, 0.76123714, -12.653633, 11.5196905, 0.76123714, -12.653633, -5.2303095, 0.76123714, -25.153633, -12.7303095, 0.76123714, -25.153633, -12.7303095, 0.76123714, -12.653633, -0.4803095, 0.76123714, 4.596367, -0.4803095, 0.76123714, 1.5963669, -1.2303095, 0.76123714, 1.3463669, -4.7303095, 0.76123714, 4.596367, -1.2303095, 0.76123714, -1.4036331, -0.4803095, 0.76123714, -1.6536331, -0.4803095, 0.76123714, -4.653633, -4.7303095, 0.76123714, -4.653633, 0.2696905, 0.76123714, 1.3463669, 4.5196905, 0.76123714, 4.596367, 0.2696905, 0.76123714, -1.4036331, 4.5196905, 0.76123714, -4.653633)
@@ -31,9 +40,6 @@ script = ExtResource("1_3ps45")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_iifgy")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 15.365364, 0)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 125.16554)
@@ -152,6 +158,16 @@ transform = Transform3D(-0.057110973, 0, 0.99836785, 0, 1, 0, -0.99836785, 0, -0
 
 [node name="tower2" parent="." instance=ExtResource("4_1bvp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5621442, 0.3548825, -4.3963776)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.970014, 0)
+light_color = Color(1, 1, 0.7294118, 1)
+light_energy = 6.579
+shadow_enabled = true
+shadow_bias = 1.028
+shadow_normal_bias = 3.887
+omni_range = 559.593
+omni_attenuation = 4.093
 
 [connection signal="pressed" from="GameMenu/Panel/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="GameMenu/Panel/MainMenu" to="." method="_on_main_menu_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ctkr7t68wuflv"]
+[gd_scene load_steps=0 format=3 uid="uid://ctkr7t68wuflv"]
 
 [ext_resource type="PackedScene" uid="uid://bw26ckbf6l6mq" path="res://Turret.glb" id="1_3oylf"]
 
