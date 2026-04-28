@@ -69,19 +69,17 @@ shape = SubResource("BoxShape3D_msjai")
 transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999976, -2.5766532, -1.9887629, 0)
 
 [node name="player" type="CharacterBody3D" parent="."]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.13704, 4.2335296, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.8908787, 5, -19.091005)
 script = ExtResource("3_apo6w")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8455, 0, -12.361242)
 mesh = SubResource("CapsuleMesh_iifgy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0014371872, 0, 0)
 shape = SubResource("CapsuleShape3D_epg4t")
 
 [node name="Camera3D" type="Camera3D" parent="player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44372225, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.444, 0)
 
 [node name="hud" parent="player" instance=ExtResource("5_272bh")]
 
