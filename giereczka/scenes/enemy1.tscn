@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://d0j32l3hp6gqy"]
+[gd_scene load_steps=6 format=3 uid="uid://d0j32l3hp6gqy"]
 
 [ext_resource type="Script" uid="uid://bhl2cd1n4iygb" path="res://scripts/enemy.gd" id="1_lowyn"]
 [ext_resource type="PackedScene" uid="uid://bx10g6os0wa4g" path="res://scenes/zombie_1.tscn" id="2_iolyx"]
@@ -7,27 +7,27 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_epg4t"]
 
-[node name="enemy" type="CharacterBody3D" unique_id=1600591359 groups=["enemy"]]
+[node name="enemy" type="CharacterBody3D" groups=["enemy"]]
 script = ExtResource("1_lowyn")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=242757093]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0014371872, 0.98303473, 0)
 shape = SubResource("CapsuleShape3D_epg4t")
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1431855078]
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
-[node name="Label3D" type="Label3D" parent="." unique_id=2088657365]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.1857067, 0)
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 3.1627002, 0)
 pixel_size = 0.01
 billboard = 1
 
-[node name="zombie1" parent="." unique_id=358665534 instance=ExtResource("2_iolyx")]
+[node name="zombie1" parent="." instance=ExtResource("2_iolyx")]
 transform = Transform3D(-8.742278e-08, -4.3711392e-08, 1, -1.9106855e-15, 1, 4.3711392e-08, -1, 1.9106855e-15, -8.742278e-08, 0, 0, 0)
 visible = false
 
-[node name="halo" parent="." unique_id=752367825 instance=ExtResource("3_ncnv8")]
+[node name="halo" parent="." instance=ExtResource("3_ncnv8")]
 transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0, 0)
 visible = false
 
-[node name="Skeleton_Mage" parent="." unique_id=1973696957 instance=ExtResource("4_ye30t")]
+[node name="Skeleton_Mage" parent="." instance=ExtResource("4_ye30t")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
