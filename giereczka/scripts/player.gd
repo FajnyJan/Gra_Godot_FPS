@@ -21,11 +21,15 @@ func _input(event):
 		camera.rotation.x = clamp(camera.rotation.x, -PI/2, PI/2)
 
 var last_bullets = -1
+var last_health = -1
 
 func _process(delta):
 	if bullet_count != last_bullets:
 		$hud/bullets_l.text = str(bullet_count)
 		last_bullets = bullet_count
+	if health != last_health:
+		$hud/health_l.text = str(health)
+		last_health = health
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
