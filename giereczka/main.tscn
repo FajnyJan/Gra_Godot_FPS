@@ -159,15 +159,11 @@ transform = Transform3D(-0.057110973, 0, 0.99836785, 0, 1, 0, -0.99836785, 0, -0
 [node name="tower2" parent="." instance=ExtResource("4_1bvp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5621442, 0.3548825, -4.3963776)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.970014, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.94539344, 0.32593116, 0, -0.32593116, 0.94539344, 0, 28.25724, 0)
 light_color = Color(1, 1, 0.7294118, 1)
-light_energy = 6.579
+light_indirect_energy = 2.0
 shadow_enabled = true
-shadow_bias = 1.028
-shadow_normal_bias = 3.887
-omni_range = 559.593
-omni_attenuation = 4.093
 
 [connection signal="pressed" from="GameMenu/Panel/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="GameMenu/Panel/MainMenu" to="." method="_on_main_menu_pressed"]
