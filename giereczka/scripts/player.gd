@@ -7,6 +7,8 @@ var rotation_dir := 0
 var rotation_speed := 2.0
 @onready var camera = $Camera3D
 var mouse_sensitivity = 0.002
+var bullet_count = 30
+var health = 100
 
 func _ready() -> void:
 	add_to_group("player")
@@ -18,6 +20,12 @@ func _input(event):
 		camera.rotate_x(-event.relative.y * mouse_sensitivity)
 		camera.rotation.x = clamp(camera.rotation.x, -PI/2, PI/2)
 
+var last_bullets = -1
+
+func _process(delta):
+	if bullet_count != last_bullets:
+		$hud/bullets_l.text = str(bullet_count)
+		last_bullets = bullet_count
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -47,7 +55,9 @@ func _physics_process(delta: float) -> void:
 	rotate_y(rotation_dir * rotation_speed * delta)
 	
 	if Input.is_action_just_pressed("shoot"):
-		shoot()
+		if bullet_count > 0:
+			bullet_count = bullet_count -1
+			shoot()
 	
 
 	move_and_slide()
