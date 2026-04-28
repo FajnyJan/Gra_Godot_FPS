@@ -6,8 +6,8 @@ var EnemyScene = preload("res://scenes/enemy1.tscn")
 
 func spawn_enemy(position: Vector3):
 	var enemy = EnemyScene.instantiate()
-	enemy.global_transform.origin = position
 	add_child(enemy)
+	enemy.global_transform = Transform3D(enemy.global_transform.basis, position)
 
 func _ready():
 	$GameMenu/Panel.visible = false
@@ -20,7 +20,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	get_tree().call_group("enemy", "target_position", target.global_transform.origin)
-	if Input.is_action_just_pressed("go_to_menu"):
+	if Input.is_action_just_pressed("get_to_menu"):
 		toggle_pause()
 		
 func _input(event):

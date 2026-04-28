@@ -53,12 +53,9 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func shoot():
-	var space_state = get_world_3d().direct_space_state
-	var origin = camera.global_transform.origin
-	var end = origin - camera.global_transform.basis.z * 1000
-	var query = PhysicsRayQueryParameters3D.create(origin, end)
-	query.exclude = [self]
-	var result = space_state.intersect_ray(query)
-	if result:
-		if result.collider.is_in_group("enemy"):
-			result.collider.apply_damage(25)
+	var bullet_scene = preload("res://scenes/Bullet.tscn")
+	var bullet = bullet_scene.instantiate()
+	var muzzle_offset = camera.global_transform.origin + -camera.global_transform.basis.z * 0.5  # przesuń do przodu
+	get_parent().add_child(bullet)
+	bullet.global_transform = Transform3D(bullet.global_transform.basis, muzzle_offset)
+	bullet.direction = -camera.global_transform.basis.z
