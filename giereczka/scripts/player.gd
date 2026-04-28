@@ -75,4 +75,4 @@ func shoot():
 	var result = space_state.intersect_ray(query)
 	if result:
 		if result.collider.is_in_group("enemy"):
-			result.collider.apply_damage(25)
+			result.collider.apply_damage(4)
