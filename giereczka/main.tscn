@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://dhdsdtte3r1qb"]
+[gd_scene load_steps=19 format=3 uid="uid://dhdsdtte3r1qb"]
 
 [ext_resource type="Script" uid="uid://waemvxhc2pf6" path="res://scripts/main.gd" id="1_3ps45"]
 [ext_resource type="Texture2D" uid="uid://dgpkvgi0yn6if" path="res://Fantasy Skybox FREE/Fantasy Skybox FREE/Materials/FS002/FS002_Day.png" id="2_7mycd"]
 [ext_resource type="PackedScene" uid="uid://dkcf1qpuebuhw" path="res://world.tscn" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://toud7yjvhh4f" path="res://scripts/player.gd" id="3_apo6w"]
 [ext_resource type="PackedScene" uid="uid://bkwwafkmn0gvh" path="res://scenes/tower_1.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://tgqrr1tknff3" path="res://hud.tscn" id="5_272bh"]
 [ext_resource type="Texture2D" uid="uid://dovolwh0vqu1k" path="res://assets/image.png" id="5_lquwl"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_272bh"]
@@ -81,6 +82,8 @@ shape = SubResource("CapsuleShape3D_epg4t")
 
 [node name="Camera3D" type="Camera3D" parent="player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44372225, 0)
+
+[node name="hud" parent="player" instance=ExtResource("5_272bh")]
 
 [node name="GameMenu" type="CanvasLayer" parent="."]
 process_mode = 2
