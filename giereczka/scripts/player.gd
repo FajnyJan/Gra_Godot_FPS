@@ -14,13 +14,14 @@ var health = 100
 func _ready() -> void:
 	add_to_group("player")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	#main.spawn_tower1()
 
 func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		camera.rotate_x(-event.relative.y * mouse_sensitivity)
 		camera.rotation.x = clamp(camera.rotation.x, -PI/2, PI/2)
+	if Input.is_action_just_pressed("build_mode"):
+		main.spawn_tower1(global_transform.origin+Vector3(3,0,3).normalized())
 
 var last_bullets = -1
 var last_health = -1
