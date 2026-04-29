@@ -21,7 +21,27 @@ func _input(event):
 		camera.rotate_x(-event.relative.y * mouse_sensitivity)
 		camera.rotation.x = clamp(camera.rotation.x, -PI/2, PI/2)
 	if Input.is_action_just_pressed("build_mode"):
-		main.spawn_tower1(global_transform.origin+Vector3(3,0,3).normalized())
+		var space_state = get_world_3d().direct_space_state
+		var origin = camera.global_transform.origin
+		var end = origin - camera.global_transform.basis.z * 1000
+		var query = PhysicsRayQueryParameters3D.create(origin, end)
+		query.exclude = [self]
+		var result = space_state.intersect_ray(query)
+		if result:
+			var collider = result.collider
+			# upewniamy się, że trafiliśmy GridMap
+			if collider is GridMap:
+				var normal = result.normal
+				# tylko poziome powierzchnie
+				if normal.y > 0.7:
+					var gridmap = collider
+					# konwersja world position → cell
+					var cell = gridmap.local_to_map(result.position)
+					# opcjonalnie: sprawdź czy pole jest puste
+					if gridmap.get_cell_item(cell) == -1:
+						# cell → world position (środek komórki)
+						var spawn_pos = gridmap.map_to_local(cell)
+						main.spawn_tower1(spawn_pos)
 
 var last_bullets = -1
 var last_health = -1
