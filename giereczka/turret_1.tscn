@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bg8rox5xnauij"]
+
+[ext_resource type="PackedScene" uid="uid://ckyq286b0bsmr" path="res://models/turret1.glb" id="1_bor8a"]
+
+[node name="turret1" instance=ExtResource("1_bor8a")]
+
+[node name="podstawka" parent="." index="0"]
+transform = Transform3D(0.5, 0, 0, 0, -2.1855694e-08, -0.5, 0, 0.5, -2.1855694e-08, 0, 0, 0)
+
+[node name="minipodstawka" parent="." index="1"]
+transform = Transform3D(0.5, 0, 0, 0, -2.1855694e-08, -0.5, 0, 0.5, -2.1855694e-08, 0, 0, 0)
+
+[node name="stojak" parent="." index="2"]
+transform = Transform3D(-0.00030537642, -0.4999999, 2.185569e-08, 0, -2.1855694e-08, -0.5, 0.4999999, -0.00030537642, 1.3348427e-11, 0, 0, 0)

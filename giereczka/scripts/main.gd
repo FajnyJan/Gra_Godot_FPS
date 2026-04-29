@@ -3,11 +3,17 @@ extends Node3D
 
 @onready var target = $player
 var EnemyScene = preload("res://scenes/enemy1.tscn")
+var Tower1Scene = preload("res://scenes/tower_1.tscn")
 
 func spawn_enemy(position: Vector3):
 	var enemy = EnemyScene.instantiate()
 	add_child(enemy)
 	enemy.global_transform = Transform3D(enemy.global_transform.basis, position)
+
+func spawn_tower1(position: Vector3):
+	var tower1 = Tower1Scene.instantiate()
+	tower1.global_transform.origin = position
+	add_child(tower1)
 
 func _ready():
 	$GameMenu/Panel.visible = false
