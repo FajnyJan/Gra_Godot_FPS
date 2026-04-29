@@ -5,7 +5,7 @@ extends CharacterBody3D
 
 var speed = 3.5
 var gravity = 9.8
-var jump_velocity = 2.0 # NOWE: Siła skoku (możesz dostosować tę wartość)
+var jump_velocity = 3.0 
 var health = 20.0
 var target = null
 var is_dead = false
@@ -28,10 +28,9 @@ func _physics_process(delta):
 			queue_free()
 			return
 	else:
-		# NOWE: Obsługa grawitacji oraz skoku
 		if not is_on_floor():
 			velocity.y -= gravity * delta
-		elif is_on_wall(): # Wykrywa, czy obiekt uderzył w ścianę (i jest na ziemi)
+		elif is_on_wall(): 
 			velocity.y = jump_velocity
 
 		target = get_closest_target()
