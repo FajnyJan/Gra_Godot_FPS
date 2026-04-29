@@ -1,4 +1,5 @@
 extends CharacterBody3D
+@onready var main = $".."
 
 
 const SPEED = 5.0
@@ -13,6 +14,7 @@ var health = 100
 func _ready() -> void:
 	add_to_group("player")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	#main.spawn_tower1()
 
 func _input(event):
 	if event is InputEventMouseMotion:
