@@ -7,6 +7,12 @@ var rotation_dir := 0
 var rotation_speed := 2.0
 @onready var camera = $Camera3D
 var mouse_sensitivity = 0.002
+var bullet_count = 30
+var health = 100
+@export var bullet_scene: PackedScene
+@export var bullet_offset: float = 1.5
+@export var bullet_speed: float = 80.0
+@export var bullet_damage: int = 4
 
 func _ready() -> void:
 	add_to_group("player")
@@ -18,6 +24,16 @@ func _input(event):
 		camera.rotate_x(-event.relative.y * mouse_sensitivity)
 		camera.rotation.x = clamp(camera.rotation.x, -PI/2, PI/2)
 
+var last_bullets = -1
+var last_health = -1
+
+func _process(delta):
+	if bullet_count != last_bullets:
+		$hud/bullets_l.text = str(bullet_count)
+		last_bullets = bullet_count
+	if health != last_health:
+		$hud/health_l.text = str(health)
+		last_health = health
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -47,15 +63,39 @@ func _physics_process(delta: float) -> void:
 	rotate_y(rotation_dir * rotation_speed * delta)
 	
 	if Input.is_action_just_pressed("shoot"):
-		shoot()
+		if bullet_count > 0:
+			bullet_count = bullet_count -1
+			shoot()
 	
 
 	move_and_slide()
 
 func shoot():
-	var bullet_scene = preload("res://scenes/Bullet.tscn")
+	var origin = camera.global_transform.origin
+	var direction = -camera.global_transform.basis.z
+	var spawn_position = origin + direction * bullet_offset
+
+	if bullet_scene != null:
+		_spawn_projectile(spawn_position, direction)
+		return
+
+	# Fallback do raycast, jeśli nie ustawiono sceny pocisku
+	var space_state = get_world_3d().direct_space_state
+	var end = origin + direction * 1000
+	var query = PhysicsRayQueryParameters3D.create(origin, end)
+	query.exclude = [self]
+	var result = space_state.intersect_ray(query)
+	if result and result.collider and result.collider.is_in_group("enemy"):
+		result.collider.apply_damage(bullet_damage)
+
+func _spawn_projectile(origin: Vector3, direction: Vector3) -> void:
 	var bullet = bullet_scene.instantiate()
-	var muzzle_offset = camera.global_transform.origin + -camera.global_transform.basis.z * 0.5  # przesuń do przodu
-	get_parent().add_child(bullet)
-	bullet.global_transform = Transform3D(bullet.global_transform.basis, muzzle_offset)
-	bullet.direction = -camera.global_transform.basis.z
+	if bullet is Node3D:
+		bullet.global_transform = Transform3D(Basis(), origin)
+		if bullet.has_method("set_direction"):
+			bullet.set_direction(direction)
+		if bullet.has_property("speed"):
+			bullet.speed = bullet_speed
+		if bullet.has_property("damage"):
+			bullet.damage = bullet_damage
+		get_tree().current_scene.add_child(bullet)
