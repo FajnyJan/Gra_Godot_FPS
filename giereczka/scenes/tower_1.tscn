@@ -1,20 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkwwafkmn0gvh"]
+[gd_scene load_steps=5 format=3 uid="uid://bkwwafkmn0gvh"]
 
 [ext_resource type="Script" uid="uid://u1bx8tgr5hkf" path="res://scripts/tower1.gd" id="1_6w48a"]
 [ext_resource type="PackedScene" uid="uid://bw26ckbf6l6mq" path="res://Turret.glb" id="2_74ksm"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bujc5"]
-height = 1.4250488
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_74ksm"]
+friction = 0.0
+rough = true
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_74ksm"]
+height = 1.3347168
 
 [node name="tower1" type="Node3D"]
 script = ExtResource("1_6w48a")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(-0.99999726, 0, 0.0023387966, 0, 1, 0, -0.0023387966, 0, -0.99999726, 0, -0.029324412, 0)
+physics_material_override = SubResource("PhysicsMaterial_74ksm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(0.47, 0, 1.7462298e-10, 0, 1, 0, -2.3283064e-10, 0, 0.325, 0, 0.69389427, 0)
-shape = SubResource("CapsuleShape3D_bujc5")
+transform = Transform3D(0.7899551, 0, 1.1641532e-10, 0, 1.1480395, 0, -1.1641532e-10, 0, 0.7899551, -0.00020622635, 0.6505127, -0.08817603)
+shape = SubResource("CylinderShape3D_74ksm")
 
 [node name="Turret" parent="." instance=ExtResource("2_74ksm")]
 transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 0, 0, 0)

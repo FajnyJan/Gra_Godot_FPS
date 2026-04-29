@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dkcf1qpuebuhw" path="res://world.tscn" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://toud7yjvhh4f" path="res://scripts/player.gd" id="3_apo6w"]
 [ext_resource type="PackedScene" uid="uid://bkwwafkmn0gvh" path="res://scenes/tower_1.tscn" id="4_1bvp3"]
-[ext_resource type="PackedScene" path="res://hud.tscn" id="5_272bh"]
+[ext_resource type="PackedScene" uid="uid://tgqrr1tknff3" path="res://hud.tscn" id="5_272bh"]
 [ext_resource type="Texture2D" uid="uid://dovolwh0vqu1k" path="res://assets/image.png" id="5_lquwl"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_272bh"]
