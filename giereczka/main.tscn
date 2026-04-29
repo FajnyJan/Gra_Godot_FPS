@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dkcf1qpuebuhw" path="res://world.tscn" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://toud7yjvhh4f" path="res://scripts/player.gd" id="3_apo6w"]
 [ext_resource type="PackedScene" uid="uid://bkwwafkmn0gvh" path="res://scenes/tower_1.tscn" id="4_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://tgqrr1tknff3" path="res://scenes/hud.tscn" id="5_272bh"]
+[ext_resource type="PackedScene" path="res://scenes/hud.tscn" id="5_272bh"]
 [ext_resource type="Texture2D" uid="uid://dovolwh0vqu1k" path="res://assets/image.png" id="5_lquwl"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_272bh"]
@@ -72,6 +72,8 @@ transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999976, -2.5766532,
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.8908787, 5, -19.091005)
 script = ExtResource("3_apo6w")
 
+[node name="hud" parent="player" instance=ExtResource("5_272bh")]
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="player"]
 mesh = SubResource("CapsuleMesh_iifgy")
 
@@ -80,8 +82,6 @@ shape = SubResource("CapsuleShape3D_epg4t")
 
 [node name="Camera3D" type="Camera3D" parent="player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.444, 0)
-
-[node name="hud" parent="player" instance=ExtResource("5_272bh")]
 
 [node name="GameMenu" type="CanvasLayer" parent="."]
 process_mode = 2
