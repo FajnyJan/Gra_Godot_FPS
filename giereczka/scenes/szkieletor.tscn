@@ -1,6 +1,25 @@
-[gd_scene load_steps=14 format=3 uid="uid://b77mxykifjrgl"]
+[gd_scene load_steps=16 format=3 uid="uid://b77mxykifjrgl"]
 
 [ext_resource type="PackedScene" uid="uid://bvok75rh3ebu5" path="res://KayKit_Skeletons_1.1_FREE/characters/gltf/Skeleton_Mage.glb" id="1_xxnij"]
+
+[sub_resource type="Animation" id="Animation_2uuvb"]
+resource_name = "Attack"
+length = 1.0000033
+loop_mode = 1
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rig_Medium/Skeleton3D:upperarm.l")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.123, -0.696, -0.696, 0.123, 0.5, 1, -0.073, -0.893, -0.416, 0.157, 1, 1, -0.123, -0.696, -0.696, 0.123)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Rig_Medium/Skeleton3D:upperarm.r")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.12305597, 0.69631684, 0.6963169, 0.123055965, 0.5, 1, -0.073, 0.893, 0.416, 0.157, 1, 1, -0.123, 0.696, 0.696, 0.123)
 
 [sub_resource type="Animation" id="Animation_scgah"]
 resource_name = "Jump_Full_Long"
@@ -896,6 +915,23 @@ tracks/24/path = NodePath("Rig_Medium/Skeleton3D:upperleg.l")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = PackedFloat32Array(0, 1, 0.99589103, -1.2840721e-07, -1.6118024e-08, 0.09056075, 0.033333335, 1, 0.99420035, 0.00095992826, 0.00046942773, 0.10753922, 0.06666667, 1, 0.9896372, 0.0035758768, 0.0018179822, 0.14353497, 0.1, 1, 0.98317623, 0.0075624683, 0.003936919, 0.18246064, 0.13333334, 1, 0.9759893, 0.012696158, 0.0066216886, 0.21734747, 0.16666667, 1, 0.9692165, 0.01863389, 0.009559236, 0.24531773, 0.2, 1, 0.9637897, 0.024673628, 0.012322, 0.2652335, 0.23333333, 1, 0.9602779, 0.029552177, 0.014386453, 0.27710307, 0.26666668, 1, 0.9590326, 0.031548798, 0.015188139, 0.2811239, 0.3, 1, 0.95886815, 0.03041248, 0.017005783, 0.28170505, 0.33333334, 1, 0.9541219, 0.027629146, 0.021150438, 0.2973899, 0.36666667, 1, 0.9494712, 0.024772601, 0.024748728, 0.3118947, 0.4, 1, 0.95066243, 0.02371168, 0.02592388, 0.3082317, 0.6, 1, 0.95066243, 0.02371168, 0.02592388, 0.3082317)
+
+[sub_resource type="Animation" id="Animation_i86n2"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rig_Medium/Skeleton3D:upperarm.r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.51412165, 0.48546773, 0.48546776, 0.5141218)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Rig_Medium/Skeleton3D:upperarm.l")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.123, -0.696, -0.696, 0.123)
 
 [sub_resource type="Animation" id="Animation_jpowt"]
 resource_name = "Running_A"
@@ -1974,11 +2010,13 @@ tracks/24/keys = PackedFloat32Array(0, 1, 0.9456311, -1.5636915e-07, -2.0594808e
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1cajk"]
 _data = {
+&"Attack": SubResource("Animation_2uuvb"),
 &"Jump_Full_Long": SubResource("Animation_scgah"),
 &"Jump_Full_Short": SubResource("Animation_iwrf5"),
 &"Jump_Idle": SubResource("Animation_5hhhn"),
 &"Jump_Land": SubResource("Animation_jnkfq"),
 &"Jump_Start": SubResource("Animation_t303j"),
+&"RESET": SubResource("Animation_i86n2"),
 &"Running_A": SubResource("Animation_jpowt"),
 &"Running_B": SubResource("Animation_lcho6"),
 &"T-Pose": SubResource("Animation_7wjpt"),
@@ -1990,34 +2028,28 @@ _data = {
 [node name="Skeleton_Mage" instance=ExtResource("1_xxnij")]
 
 [node name="Skeleton3D" parent="Rig_Medium" index="0"]
-bones/1/position = Vector3(0, 0.4371587, 0)
-bones/1/rotation = Quaternion(0.095845774, -1.1866046e-07, 1.1425705e-08, 0.9953962)
-bones/2/position = Vector3(-0.17094506, 0.11358735, -0.099999994)
-bones/2/rotation = Quaternion(0.9538545, 2.2173066e-07, 3.3896477e-09, -0.3002692)
-bones/3/rotation = Quaternion(0.3915314, -6.35308e-08, 2.719049e-07, 0.9201648)
-bones/4/rotation = Quaternion(-0.44524628, 2.920535e-07, -1.02233074e-07, 0.89540815)
-bones/5/rotation = Quaternion(8.168461e-09, 0.9203663, -0.39105743, 5.8903904e-08)
-bones/6/rotation = Quaternion(7.5231634e-37, 7.105427e-15, 1.0587911e-22, 1)
-bones/7/rotation = Quaternion(0.04213311, 0.0021541486, 0.011082109, 0.99904823)
-bones/8/rotation = Quaternion(-0.13049294, 0.002866565, -0.0006837016, 0.9914449)
-bones/9/position = Vector3(0.21200736, 0.124591716, -0.04908126)
-bones/9/rotation = Quaternion(-0.59904945, 0.081652515, -0.5373604, 0.5879765)
-bones/10/rotation = Quaternion(-1.7756745e-08, -6.282385e-08, -0.42743266, 0.90404725)
-bones/12/rotation = Quaternion(-0.126534, -0.3519782, -0.49310666, 0.7854592)
-bones/13/rotation = Quaternion(-0.054505434, 0.054505393, -0.5391622, 0.838667)
-bones/14/position = Vector3(-0.18637733, 0.11175979, -0.04215817)
-bones/14/rotation = Quaternion(-0.5838075, 0.34844056, 0.67395025, 0.28904858)
-bones/15/rotation = Quaternion(3.320162e-08, 6.1119046e-08, 0.56677157, 0.82387507)
-bones/17/rotation = Quaternion(0.008697546, 0.3960501, -0.17517336, 0.9013229)
-bones/18/rotation = Quaternion(-0.054505423, -0.054505408, 0.5391622, 0.838667)
-bones/19/position = Vector3(0.17094506, 0.11358723, 0.100000046)
-bones/19/rotation = Quaternion(0.9190819, -1.639744e-08, 1.254484e-08, 0.39406648)
-bones/20/rotation = Quaternion(0.0019691067, 6.904271e-08, -1.3675258e-09, 0.99999815)
-bones/21/rotation = Quaternion(-0.49649605, 1.7175507e-08, -9.875719e-08, 0.868039)
-bones/22/rotation = Quaternion(2.3543484e-08, 0.918349, -0.3957716, 6.4317e-08)
+bones/2/rotation = Quaternion(0.9998491, 7.426558e-08, -3.1726263e-08, 0.017373193)
+bones/3/rotation = Quaternion(0.10622513, -6.865223e-08, 7.3769655e-08, 0.99434215)
+bones/4/rotation = Quaternion(-0.45523903, 1.6598169e-07, 2.2507105e-09, 0.8903693)
+bones/5/rotation = Quaternion(2.1219837e-08, 0.92035496, -0.3910841, 6.450607e-08)
+bones/9/rotation = Quaternion(-0.12305599, -0.696317, -0.6963169, 0.12305598)
+bones/10/rotation = Quaternion(1.4942605e-09, -6.228117e-08, -0.055285532, 0.99847066)
+bones/12/rotation = Quaternion(1.2001637e-09, 1.3589292e-07, -5.4551956e-06, 1)
+bones/13/rotation = Quaternion(1.6806122e-09, 1.680612e-09, -0.7071068, 0.7071067)
+bones/14/rotation = Quaternion(-0.51412165, 0.4854677, 0.48546773, 0.5141218)
+bones/15/rotation = Quaternion(1.49426e-09, 6.228117e-08, 0.055285532, 0.99847066)
+bones/17/rotation = Quaternion(1.1999162e-09, -9.210969e-08, 5.4551956e-06, 1)
+bones/18/rotation = Quaternion(1.6805921e-09, -1.6805919e-09, 0.7071068, 0.7071067)
+bones/19/rotation = Quaternion(0.9998491, -7.13275e-08, -1.20427455e-08, 0.017373193)
+bones/20/rotation = Quaternion(0.10622513, 6.8652206e-08, -7.376966e-08, 0.99434215)
+bones/21/rotation = Quaternion(-0.45523903, 1.619773e-08, -3.4356738e-08, 0.8903693)
+bones/22/rotation = Quaternion(4.7759812e-08, 0.92035496, -0.3910841, 5.8015768e-08)
 
-[node name="head" parent="Rig_Medium/Skeleton3D" index="0"]
-transform = Transform3D(0.9997451, -0.021961601, 0.005238045, 0.022035161, 0.99965304, -0.014425173, -0.004919428, 0.0145368725, 0.9998822, -0.0059032026, 1.2522435, 0.181502)
+[node name="Skeleton_Mage_ArmLeft" parent="Rig_Medium/Skeleton3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="Skeleton_Mage_ArmRight" parent="Rig_Medium/Skeleton3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Rig_Medium/Skeleton3D" index="9"]
 root_node = NodePath("../../..")

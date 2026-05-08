@@ -21,6 +21,7 @@ var placable_selected = 1
 
 func _ready() -> void:
 	add_to_group("player")
+	add_to_group("destroyable")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _input(event):

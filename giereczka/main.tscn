@@ -73,9 +73,6 @@ transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999976, -2.5766532,
 [node name="player" type="CharacterBody3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.8908787, 5, -19.091005)
 script = ExtResource("3_apo6w")
-bullet_offset = null
-bullet_speed = null
-bullet_damage = null
 
 [node name="hud" parent="player" instance=ExtResource("5_272bh")]
 
