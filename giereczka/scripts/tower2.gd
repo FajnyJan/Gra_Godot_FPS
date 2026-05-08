@@ -6,8 +6,8 @@ extends Node3D
 @export var damage: int = 3
 var cooldown = 0.0
 
-@onready var gun = $turret2/stojak
-@onready var muzzle = $turret2/stojak/Marker3D
+@onready var gun = $turret1/stojak
+@onready var muzzle = $turret1/stojak/Marker3D
 
 var Bullet2Scene = preload("res://scenes/pociski/bullet2.tscn")
 
