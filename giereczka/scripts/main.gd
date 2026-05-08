@@ -24,9 +24,9 @@ func show_tower1():
 func _ready():
 	$GameMenu/Panel.visible = false
 	$GameMenu/Image.visible = false
-	spawn_enemy(Vector3(-10, 0, -10))
-	spawn_enemy(Vector3(-10, 0, 0))
-	spawn_enemy(Vector3(-10, 0, 10))
+	spawn_enemy(Vector3(20, 0, -10))
+	spawn_enemy(Vector3(20, 0, 0))
+	spawn_enemy(Vector3(20, 0, -20))
    
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

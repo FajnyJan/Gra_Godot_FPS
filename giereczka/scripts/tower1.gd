@@ -8,6 +8,8 @@ var cooldown = 0.0
 
 @onready var gun = $turret1/stojak
 
+var BulletScene = preload("res://scenes/Bullet.tscn")
+
 func _process(delta):
 	cooldown -= delta
 	
@@ -42,18 +44,20 @@ func get_closest_enemy():
 	return closest
 
 func shoot(enemy):
-	var tower_pos = gun.global_position 
-	var enemy_pos = enemy.global_position
-	
-	var space_state = get_world_3d().direct_space_state
-	var query = PhysicsRayQueryParameters3D.create(tower_pos, enemy_pos)
-	query.exclude = [self] 
-	
-	var result = space_state.intersect_ray(query)
-	
-	if result:
-		var collider = result.collider
-		if collider == enemy:
-			if collider.has_method("apply_damage"):
-				collider.apply_damage(damage)
-			print("Wieża trafiła: ", enemy.name)
+	if enemy == null:
+		return
+
+	var bullet = BulletScene.instantiate()
+
+	# dodanie pocisku do sceny
+	get_tree().current_scene.add_child(bullet)
+
+	# miejsce spawnu pocisku
+	bullet.global_position = gun.global_position
+
+	# kierunek lotu
+	bullet.direction = (
+		enemy.global_position - gun.global_position
+	).normalized()
+
+	print("Wystrzelono pocisk")
