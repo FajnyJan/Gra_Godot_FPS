@@ -7,6 +7,7 @@ extends Node3D
 var cooldown = 0.0
 
 @onready var gun = $turret1/stojak
+@onready var muzzle = $turret1/stojak/Marker3D
 
 var BulletScene = preload("res://scenes/Bullet.tscn")
 
@@ -19,8 +20,6 @@ func _process(delta):
 	var target = get_closest_enemy()
 	if target and cooldown <= 0:
 		var target_pos = target.global_position
-		
-		# Wyrównuje wysokość celu do wysokości działa
 		target_pos.y = gun.global_position.y
 		
 		# Obraca stojak
@@ -44,20 +43,8 @@ func get_closest_enemy():
 	return closest
 
 func shoot(enemy):
-	if enemy == null:
-		return
-
 	var bullet = BulletScene.instantiate()
-
-	# dodanie pocisku do sceny
 	get_tree().current_scene.add_child(bullet)
-
-	# miejsce spawnu pocisku
-	bullet.global_position = gun.global_position
-
-	# kierunek lotu
-	bullet.direction = (
-		enemy.global_position - gun.global_position
-	).normalized()
-
-	print("Wystrzelono pocisk")
+	bullet.global_position = muzzle.global_position
+	var dir = gun.global_transform.basis.y
+	bullet.direction = dir.normalized()
