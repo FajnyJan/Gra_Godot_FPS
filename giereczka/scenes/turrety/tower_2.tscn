@@ -590,3 +590,8 @@ skeleton = NodePath("")
 
 [node name="Marker3D" type="Marker3D" parent="turret1/stojak"]
 transform = Transform3D(1, 0, -5.2041704e-18, 0, 1, 1.4583908e-15, -6.938894e-18, -1.27524656e-14, 1, 0.0021804224, 3.5700562, -2.229056)
+
+[node name="lufa2" type="MeshInstance3D" parent="turret1/stojak"]
+transform = Transform3D(0.4042947, -0.99487907, 1.7395016e-07, 3.9795163, 0.101073675, 1.571733e-07, -1.7395018e-07, 3.9293305e-08, 4, 0.10286851, -0.42669082, -1.5856342)
+mesh = SubResource("ArrayMesh_5msos")
+skeleton = NodePath("")

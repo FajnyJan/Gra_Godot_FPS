@@ -11,6 +11,10 @@ var cooldown = 0.0
 
 var Bullet2Scene = preload("res://scenes/pociski/bullet2.tscn")
 
+func _ready() -> void:
+	add_to_group("tower")
+	add_to_group("destroyable")
+
 func _process(delta):
 	cooldown -= delta
 	

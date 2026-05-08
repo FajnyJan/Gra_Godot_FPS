@@ -34,8 +34,8 @@ func show_tower2():
 	return preview
 
 func _ready():
-	$GameMenu/Panel.visible = false
-	$GameMenu/Image.visible = false
+	$player/GameMenu/Panel.visible = false
+	$player/GameMenu/Image.visible = false
 	spawn_enemy(Vector3(20, 0, -10))
 	spawn_enemy(Vector3(20, 0, 0))
 	spawn_enemy(Vector3(20, 0, -20))
