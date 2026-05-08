@@ -6,10 +6,10 @@ extends Node3D
 @export var damage: int = 3
 var cooldown = 0.0
 
-@onready var gun = $turret1/stojak
-@onready var muzzle = $turret1/stojak/Marker3D
+@onready var gun = $turret2/stojak
+@onready var muzzle = $turret2/stojak/Marker3D
 
-var Bullet1Scene = preload("res://scenes/pociski/bullet1.tscn")
+var Bullet2Scene = preload("res://scenes/pociski/bullet2.tscn")
 
 func _process(delta):
 	cooldown -= delta
@@ -43,7 +43,7 @@ func get_closest_enemy():
 	return closest
 
 func shoot(enemy):
-	var bullet = Bullet1Scene.instantiate()
+	var bullet = Bullet2Scene.instantiate()
 	get_tree().current_scene.add_child(bullet)
 	bullet.global_position = muzzle.global_position
 	var dir = gun.global_transform.basis.y

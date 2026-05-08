@@ -17,6 +17,7 @@ var health = 100
 var tower_placing_last_pos = null
 var build_mode = false
 var tower_preview = null
+var placable_selected = 1
 
 func _ready() -> void:
 	add_to_group("player")
@@ -30,13 +31,32 @@ func _input(event):
 	if Input.is_action_just_pressed("build_mode"):
 		build_mode = !build_mode
 		if build_mode:
-			tower_preview = main.show_tower1()
+			if tower_preview:
+				tower_preview.queue_free()
+			tower_preview = main.show_tower1() if placable_selected == 1 else main.show_tower2()
 		else:
 			if tower_preview:
 				tower_preview.queue_free()
 				tower_preview = null
 	if Input.is_action_just_pressed("place_tower") and build_mode == true:
-		main.spawn_tower1(tower_placing_last_pos)
+		if placable_selected == 1:
+			main.spawn_tower1(tower_placing_last_pos)
+		if placable_selected == 2:
+			main.spawn_tower2(tower_placing_last_pos)
+	if Input.is_action_just_pressed("switch_placables"):
+		if placable_selected == 1:
+			placable_selected = 2
+		else:
+			placable_selected = 1
+
+		if build_mode:
+			if tower_preview:
+				tower_preview.queue_free()
+
+			if placable_selected == 1:
+				tower_preview = main.show_tower1()
+			else:
+				tower_preview = main.show_tower2()
 
 var last_bullets = -1
 var last_health = -1

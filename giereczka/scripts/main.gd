@@ -3,8 +3,10 @@ extends Node3D
 
 @onready var target = $player
 var EnemyScene = preload("res://scenes/enemy1.tscn")
-var Tower1Scene = preload("res://scenes/tower_1.tscn")
-var Tower1PreviewScene = preload("res://scenes/turret_1-preview.tscn")
+var Tower1Scene = preload("res://scenes/turrety/tower_1.tscn")
+var Tower1PreviewScene = preload("res://scenes/turrety/turret_1-preview.tscn")
+var Tower2Scene = preload("res://scenes/turrety/tower_2.tscn")
+var Tower2PreviewScene = preload("res://scenes/turrety/turret_2-preview.tscn")
 
 func spawn_enemy(position: Vector3):
 	var enemy = EnemyScene.instantiate()
@@ -12,12 +14,22 @@ func spawn_enemy(position: Vector3):
 	enemy.global_transform = Transform3D(enemy.global_transform.basis, position)
 
 func spawn_tower1(position: Vector3):
-	var tower1 = Tower1Scene.instantiate()
-	tower1.global_transform.origin = position
-	add_child(tower1)
+	var tower = Tower1Scene.instantiate()
+	tower.global_transform.origin = position
+	add_child(tower)
 
 func show_tower1():
 	var preview = Tower1PreviewScene.instantiate()
+	add_child(preview)
+	return preview
+
+func spawn_tower2(position: Vector3):
+	var tower = Tower2Scene.instantiate()
+	tower.global_transform.origin = position
+	add_child(tower)
+
+func show_tower2():
+	var preview = Tower2PreviewScene.instantiate()
 	add_child(preview)
 	return preview
 
