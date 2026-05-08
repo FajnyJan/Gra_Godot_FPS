@@ -4,6 +4,7 @@ extends Node3D
 @onready var target = $player
 var EnemyScene = preload("res://scenes/enemy1.tscn")
 var Tower1Scene = preload("res://scenes/tower_1.tscn")
+var Tower1PreviewScene = preload("res://scenes/turret_1-preview.tscn")
 
 func spawn_enemy(position: Vector3):
 	var enemy = EnemyScene.instantiate()
@@ -14,6 +15,11 @@ func spawn_tower1(position: Vector3):
 	var tower1 = Tower1Scene.instantiate()
 	tower1.global_transform.origin = position
 	add_child(tower1)
+
+func show_tower1():
+	var preview = Tower1PreviewScene.instantiate()
+	add_child(preview)
+	return preview
 
 func _ready():
 	$GameMenu/Panel.visible = false

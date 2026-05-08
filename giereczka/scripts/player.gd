@@ -14,6 +14,9 @@ var health = 100
 @export var bullet_offset: float = 1.5
 @export var bullet_speed: float = 80.0
 @export var bullet_damage: int = 4
+var tower_placing_last_pos = null
+var build_mode = false
+var tower_preview = null
 
 func _ready() -> void:
 	add_to_group("player")
@@ -25,6 +28,27 @@ func _input(event):
 		camera.rotate_x(-event.relative.y * mouse_sensitivity)
 		camera.rotation.x = clamp(camera.rotation.x, -PI/2, PI/2)
 	if Input.is_action_just_pressed("build_mode"):
+		build_mode = !build_mode
+		if build_mode:
+			tower_preview = main.show_tower1()
+		else:
+			if tower_preview:
+				tower_preview.queue_free()
+				tower_preview = null
+	if Input.is_action_just_pressed("place_tower") and build_mode == true:
+		main.spawn_tower1(tower_placing_last_pos)
+
+var last_bullets = -1
+var last_health = -1
+
+func _process(delta):
+	if bullet_count != last_bullets:
+		$hud/bullets_l.text = str(bullet_count)
+		last_bullets = bullet_count
+	if health != last_health:
+		$hud/health_l.text = str(health)
+		last_health = health
+	if build_mode:
 		var space_state = get_world_3d().direct_space_state
 		var origin = camera.global_transform.origin
 		var end = origin - camera.global_transform.basis.z * 1000
@@ -44,19 +68,9 @@ func _input(event):
 					# opcjonalnie: sprawdź czy pole jest puste
 					if gridmap.get_cell_item(cell) == -1:
 						# cell → world position (środek komórki)
-						var spawn_pos = gridmap.map_to_local(cell)
-						main.spawn_tower1(spawn_pos)
-
-var last_bullets = -1
-var last_health = -1
-
-func _process(delta):
-	if bullet_count != last_bullets:
-		$hud/bullets_l.text = str(bullet_count)
-		last_bullets = bullet_count
-	if health != last_health:
-		$hud/health_l.text = str(health)
-		last_health = health
+						tower_placing_last_pos = gridmap.map_to_local(cell)
+						if tower_preview:
+							tower_preview.global_transform.origin = tower_placing_last_pos
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
