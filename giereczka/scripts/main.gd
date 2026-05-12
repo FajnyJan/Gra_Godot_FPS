@@ -53,8 +53,8 @@ func _input(event):
 			toggle_pause() #pauzuje grę
 
 func toggle_pause():
-	var menu = $GameMenu/Panel
-	var image = $GameMenu/Image
+	var menu = $player/GameMenu/Panel
+	var image = $player/GameMenu/Image
 
 	menu.visible = !menu.visible
 	image.visible = menu.visible
