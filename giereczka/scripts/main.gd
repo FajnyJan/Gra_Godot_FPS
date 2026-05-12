@@ -83,3 +83,22 @@ func _on_quit_pressed() -> void:
 func _on_main_menu_pressed() -> void:
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://menu.tscn")
+
+
+
+func _on_save_pressed():
+	var packed_scene = PackedScene.new()
+	packed_scene.pack($".")
+	ResourceSaver.save(packed_scene, "res://SavedWorld.tscn")
+	print("saved")
+
+func load_game():
+	if FileAccess.file_exists("res://SavedWorld.tscn"):
+		var loaded_scene = load("res://SavedWorld.tscn")
+		if loaded_scene:
+			get_tree().change_scene_to_file("res://main.tscn")
+			$".".queue_free()
+			var new_world = loaded_scene.instantiate()
+			add_child(new_world)
+			new_world.name = "Node3D"
+			print("loaded")

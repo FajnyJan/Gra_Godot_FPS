@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="giereczka"
-run/main_scene="uid://dhdsdtte3r1qb"
+run/main_scene="uid://cvbnwnr8k8tba"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
