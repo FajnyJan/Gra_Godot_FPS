@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bx10g6os0wa4g"]
+[gd_scene load_steps=0 format=3 uid="uid://bx10g6os0wa4g"]
 
 [ext_resource type="PackedScene" uid="uid://ckxwf2ufpcoj6" path="res://assets/zombie1.fbx" id="1_41akp"]
 

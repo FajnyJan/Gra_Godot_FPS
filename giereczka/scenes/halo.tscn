@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bwkdb0x6farm8"]
+[gd_scene load_steps=0 format=3 uid="uid://bwkdb0x6farm8"]
 
 [ext_resource type="PackedScene" uid="uid://c6xaaiko4hjg2" path="res://assets/halo.glb" id="1_awacq"]
 

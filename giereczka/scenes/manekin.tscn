@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b6krapf32r7ix"]
+[gd_scene load_steps=0 format=3 uid="uid://b6krapf32r7ix"]
 
 [ext_resource type="PackedScene" uid="uid://di2omfimuj03" path="res://KayKit_Skeletons_1.1_FREE/Animations/gltf/Rig_Medium/Rig_Medium_MovementBasic.glb" id="1_3vgww"]
 

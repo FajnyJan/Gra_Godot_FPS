@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgpkvgi0yn6if"
-path.s3tc="res://.godot/imported/FS002_Day.png-48d14a23f52497f03e4856be1e8930d3.s3tc.ctex"
+path.s3tc="res://.godot/imported/FS002_Day.png-ca70627882b13c578e22bfd1db5f706a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Fantasy Skybox FREE/Fantasy Skybox FREE/Materials/FS002/FS002_Day.png"
-dest_files=["res://.godot/imported/FS002_Day.png-48d14a23f52497f03e4856be1e8930d3.s3tc.ctex"]
+source_file="res://assets/FS002_Day.png"
+dest_files=["res://.godot/imported/FS002_Day.png-ca70627882b13c578e22bfd1db5f706a.s3tc.ctex"]
 
 [params]
 

@@ -1,13 +1,13 @@
 [gd_scene load_steps=20 format=3]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_hfq38"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="2_up0jb"]
-[ext_resource type="PackedScene" path="res://scenes/hud.tscn" id="3_insmb"]
-[ext_resource type="Texture2D" path="res://assets/image.png" id="4_2rffu"]
-[ext_resource type="Texture2D" path="res://Fantasy Skybox FREE/Fantasy Skybox FREE/Materials/FS002/FS002_Day.png" id="5_4peai"]
-[ext_resource type="PackedScene" path="res://world.tscn" id="6_btj1h"]
-[ext_resource type="PackedScene" path="res://scenes/turrety/tower_1.tscn" id="7_ywujs"]
-[ext_resource type="Script" path="res://scripts/tower1.gd" id="8_7xir2"]
+[ext_resource type="Script" uid="uid://waemvxhc2pf6" path="res://scripts/main.gd" id="1_hfq38"]
+[ext_resource type="Script" uid="uid://toud7yjvhh4f" path="res://scripts/player.gd" id="2_up0jb"]
+[ext_resource type="PackedScene" uid="uid://tgqrr1tknff3" path="res://scenes/hud.tscn" id="3_insmb"]
+[ext_resource type="Texture2D" uid="uid://dovolwh0vqu1k" path="res://assets/image.png" id="4_2rffu"]
+[ext_resource type="Texture2D" uid="uid://dgpkvgi0yn6if" path="res://assets/FS002_Day.png" id="5_4peai"]
+[ext_resource type="PackedScene" uid="uid://dkcf1qpuebuhw" path="res://world.tscn" id="6_btj1h"]
+[ext_resource type="PackedScene" uid="uid://bkwwafkmn0gvh" path="res://scenes/turrety/tower_1.tscn" id="7_ywujs"]
+[ext_resource type="Script" uid="uid://u1bx8tgr5hkf" path="res://scripts/tower1.gd" id="8_7xir2"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_iifgy"]
 

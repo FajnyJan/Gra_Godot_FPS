@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://g45jxqu0blli"]
+[gd_scene load_steps=0 format=3 uid="uid://g45jxqu0blli"]
 
 [ext_resource type="Script" uid="uid://u1bx8tgr5hkf" path="res://scripts/tower1.gd" id="1_qusov"]
 
