@@ -160,3 +160,18 @@ func _spawn_projectile(origin: Vector3, direction: Vector3) -> void:
 		if bullet.has_property("damage"):
 			bullet.damage = bullet_damage
 		get_tree().current_scene.add_child(bullet)
+
+func continuee()->void:
+	main._on_continue_pressed()
+
+func optionss()->void:
+	main._on_options_pressed()
+	
+func quitt()->void:
+	main._on_quit_pressed()
+
+func main_menuu()->void:
+	main._on_main_menu_pressed()
+
+func savee()->void:
+	main._on_save_pressed()

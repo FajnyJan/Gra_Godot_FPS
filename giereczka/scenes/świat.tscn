@@ -1,12 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dhdsdtte3r1qb"]
+[gd_scene load_steps=7 format=3 uid="uid://dq3embdxd5ncn"]
 
-[ext_resource type="Script" uid="uid://waemvxhc2pf6" path="res://scripts/main.gd" id="1_3ps45"]
-[ext_resource type="PackedScene" uid="uid://dkcf1qpuebuhw" path="res://world.tscn" id="2_h2yge"]
-[ext_resource type="PackedScene" uid="uid://bm11723dtf0qi" path="res://scenes/player.tscn" id="2_lquwl"]
-[ext_resource type="Texture2D" uid="uid://dgpkvgi0yn6if" path="res://assets/FS002_Day.png" id="7_272bh"]
+[ext_resource type="Texture2D" uid="uid://dgpkvgi0yn6if" path="res://assets/FS002_Day.png" id="1_hgcio"]
+[ext_resource type="PackedScene" uid="uid://dkcf1qpuebuhw" path="res://world.tscn" id="1_juli0"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_272bh"]
-panorama = ExtResource("7_272bh")
+panorama = ExtResource("1_hgcio")
 
 [sub_resource type="Sky" id="Sky_5vw27"]
 sky_material = SubResource("PanoramaSkyMaterial_272bh")
@@ -21,26 +19,20 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Arr
 agent_radius = 0.0
 agent_max_climb = 0.5
 
-[node name="Node3D" type="Node3D" groups=["Persist"]]
-script = ExtResource("1_3ps45")
+[node name="świat" type="Node3D"]
 
-[node name="player" parent="." instance=ExtResource("2_lquwl")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.8908787, 5, -19.091005)
-
-[node name="świat" type="Node3D" parent="."]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="świat"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_iifgy")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="świat"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.9453935, 0.3259312, 0, -0.3259312, 0.9453935, 0, 28.25724, 0)
 light_color = Color(1, 1, 0.7294118, 1)
 light_indirect_energy = 2.0
 shadow_enabled = true
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="świat"]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 125.16554)
 navigation_mesh = SubResource("NavigationMesh_4gyqm")
 
-[node name="world" parent="świat/NavigationRegion3D" instance=ExtResource("2_h2yge")]
+[node name="world" parent="NavigationRegion3D" instance=ExtResource("1_juli0")]
 transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999976, -2.5766532, -1.9887629, 0)
