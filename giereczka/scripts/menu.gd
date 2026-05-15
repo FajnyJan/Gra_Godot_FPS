@@ -1,5 +1,7 @@
 extends Control
 
+@onready var main = "res://main.tscn"
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$VBoxContainer/Start.grab_focus()
@@ -9,6 +11,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_start_pressed() -> void:
+	Global.load_game = false
 	get_tree().change_scene_to_file("res://main.tscn")
 
 
@@ -23,6 +26,5 @@ func _on_options_pressed() -> void:
 
 
 func _on_load_pressed() -> void:
-	pass
-	#var scene_b = get_node("/root/Main/SceneB")
-	#scene_b.moja_funkcja()
+	Global.load_game = true
+	get_tree().change_scene_to_file("res://main.tscn")

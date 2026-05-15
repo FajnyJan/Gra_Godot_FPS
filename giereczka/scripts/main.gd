@@ -34,13 +34,11 @@ func show_tower2():
 	return preview
 
 func _ready():
-	$player/GameMenu/Panel.visible = false
-	$player/GameMenu/Image.visible = false
-	spawn_enemy(Vector3(20, 0, -10))
-	spawn_enemy(Vector3(20, 0, 0))
-	spawn_enemy(Vector3(20, 0, -20))
+	if Global.load_game:
+		load_game()
+	else:
+		start_new_game()
    
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	get_tree().call_group("enemy", "target_position", target.global_transform.origin)
@@ -88,17 +86,54 @@ func _on_main_menu_pressed() -> void:
 
 func _on_save_pressed():
 	var packed_scene = PackedScene.new()
-	packed_scene.pack($".")
-	ResourceSaver.save(packed_scene, "res://SavedWorld.tscn")
-	print("saved")
+	packed_scene.pack($"świat")
+	var data = {
+		"player_position": {
+			"x": $player.global_position.x,
+			"y": $player.global_position.y,
+			"z": $player.global_position.z
+		}
+	}
+
+	var json_string = JSON.stringify(data, "\t")
+	var file = FileAccess.open("res://saved/save.json", FileAccess.WRITE)
+	ResourceSaver.save(packed_scene, "res://saved/SavedWorld.tscn")
+	if file:
+		file.store_string(json_string)
+		file.close()
+		print("saved")
+	else:
+		print("save error")
 
 func load_game():
-	if FileAccess.file_exists("res://SavedWorld.tscn"):
-		var loaded_scene = load("res://SavedWorld.tscn")
+	if FileAccess.file_exists("res://saved/SavedWorld.tscn") and FileAccess.file_exists("res://saved/save.json"):
+		var loaded_scene = load("res://saved/SavedWorld.tscn")
+		var file = FileAccess.open("res://saved/save.json", FileAccess.READ)
+		var content = file.get_as_text()
+		file.close()
+		var json = JSON.new()
+		var error = json.parse(content)
+		if error != OK:
+			print("json error")
+			return
+		var data = json.data
+		var pos = Vector3(
+			data["player_position"]["x"],
+			data["player_position"]["y"],
+			data["player_position"]["z"]
+		)
+
+		$player.global_position = pos
 		if loaded_scene:
-			get_tree().change_scene_to_file("res://main.tscn")
-			$".".queue_free()
+			$"świat".queue_free()
 			var new_world = loaded_scene.instantiate()
 			add_child(new_world)
 			new_world.name = "Node3D"
 			print("loaded")
+
+func start_new_game():
+	$player/GameMenu/Panel.visible = false
+	$player/GameMenu/Image.visible = false
+	spawn_enemy(Vector3(20, 0, -10))
+	spawn_enemy(Vector3(20, 0, 0))
+	spawn_enemy(Vector3(20, 0, -20))
