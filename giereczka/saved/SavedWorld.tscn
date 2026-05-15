@@ -1,14 +1,15 @@
-[gd_scene load_steps=11 format=3]
+[gd_scene load_steps=12 format=3]
 
-[ext_resource type="Texture2D" path="res://assets/FS002_Day.png" id="1_bnchv"]
-[ext_resource type="PackedScene" path="res://world.tscn" id="2_52jfb"]
-[ext_resource type="PackedScene" path="res://scenes/turrety/tower_1.tscn" id="3_wk1fm"]
-[ext_resource type="Script" path="res://scripts/tower1.gd" id="4_4rc14"]
-[ext_resource type="PackedScene" path="res://scenes/turrety/tower_2.tscn" id="5_ynnym"]
-[ext_resource type="Script" path="res://scripts/tower2.gd" id="6_m0nmp"]
+[ext_resource type="Texture2D" path="res://assets/FS002_Day.png" id="1_52jfb"]
+[ext_resource type="PackedScene" path="res://world.tscn" id="2_wk1fm"]
+[ext_resource type="PackedScene" path="res://scenes/turrety/tower_1.tscn" id="3_4rc14"]
+[ext_resource type="Script" path="res://scripts/tower1.gd" id="4_ynnym"]
+[ext_resource type="PackedScene" path="res://scenes/turrety/tower_2.tscn" id="5_m0nmp"]
+[ext_resource type="Script" path="res://scripts/tower2.gd" id="6_d1wni"]
+[ext_resource type="PackedScene" path="res://scenes/spawnarea_enemy.tscn" id="7_hbm6j"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_272bh"]
-panorama = ExtResource("1_bnchv")
+panorama = ExtResource("1_52jfb")
 
 [sub_resource type="Sky" id="Sky_5vw27"]
 sky_material = SubResource("PanoramaSkyMaterial_272bh")
@@ -38,19 +39,27 @@ shadow_enabled = true
 transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 125.16554)
 navigation_mesh = SubResource("NavigationMesh_4gyqm")
 
-[node name="world" type="Node3D" parent="NavigationRegion3D" instance=ExtResource("2_52jfb")]
+[node name="world" type="Node3D" parent="NavigationRegion3D" instance=ExtResource("2_wk1fm")]
 transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999976, -2.5766532, -1.9887629, 0)
 rotation_order = 0
 top_level = true
 
-[node name="tower1" type="Node3D" parent="." instance=ExtResource("3_wk1fm")]
+[node name="tower1" type="Node3D" parent="." instance=ExtResource("3_4rc14")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22942781, -2.335812)
-script = ExtResource("4_4rc14")
+script = ExtResource("4_ynnym")
 
-[node name="tower2" type="Node3D" parent="." instance=ExtResource("3_wk1fm")]
+[node name="tower2" type="Node3D" parent="." instance=ExtResource("3_4rc14")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.366972, 0.28371024, -9.216457)
-script = ExtResource("4_4rc14")
+script = ExtResource("4_ynnym")
 
-[node name="tower3" type="Node3D" parent="." instance=ExtResource("5_ynnym")]
+[node name="tower3" type="Node3D" parent="." instance=ExtResource("5_m0nmp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1188197, 0.2789464, -2.8599977)
-script = ExtResource("6_m0nmp")
+script = ExtResource("6_d1wni")
+
+[node name="spawnareas" type="Node3D" parent="."]
+
+[node name="spawnarea-enemy" type="Node3D" parent="spawnareas" instance=ExtResource("7_hbm6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.63997, 0.59374666, -44.29691)
+
+[node name="spawnarea-enemy2" type="Node3D" parent="spawnareas" instance=ExtResource("7_hbm6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.45, 0.594, -6.957)

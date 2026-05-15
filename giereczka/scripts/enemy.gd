@@ -5,10 +5,11 @@ extends CharacterBody3D
 @onready var animations = $Skeleton_Mage/Rig_Medium/Skeleton3D/AnimationPlayer
 @onready var attack_range = $AttackRange
 
+var health: int
+
 var speed = 3.5
 var gravity = 9.8
-var jump_velocity = 3.0 
-var health = 20.0
+var jump_velocity = 3.0
 var target = null
 var is_dead = false
 var destroy_in_range = false
@@ -95,3 +96,10 @@ func _on_attack_range_body_exited(body):
 	if body.is_in_group("destroyable"):
 		destroy_in_range = false
 		animations.play("Running_A")
+
+func save_state():
+	return {
+		"type": "enemy1",
+		"transform": global_transform,
+		"health": health
+	}

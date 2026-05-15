@@ -7,10 +7,12 @@ var Tower1Scene = preload("res://scenes/turrety/tower_1.tscn")
 var Tower1PreviewScene = preload("res://scenes/turrety/turret_1-preview.tscn")
 var Tower2Scene = preload("res://scenes/turrety/tower_2.tscn")
 var Tower2PreviewScene = preload("res://scenes/turrety/turret_2-preview.tscn")
+@export var enemy_scene: PackedScene
 
-func spawn_enemy(position: Vector3):
+func spawn_enemy(position: Vector3, health: int = 20):
 	var enemy = EnemyScene.instantiate()
 	add_child(enemy)
+	enemy.health = health
 	enemy.global_transform = Transform3D(enemy.global_transform.basis, position)
 
 func spawn_tower1(position: Vector3):
@@ -89,20 +91,9 @@ func _on_main_menu_pressed() -> void:
 func _on_save_pressed():
 	var packed_scene = PackedScene.new()
 	packed_scene.pack($"świat")
-	var t: Transform3D = $player.global_transform
 	var data = {
-		"player_transform": {
-			"origin": {
-				"x": t.origin.x,
-				"y": t.origin.y,
-				"z": t.origin.z
-			},
-			"basis": [
-				[t.basis.x.x, t.basis.x.y, t.basis.x.z],
-				[t.basis.y.x, t.basis.y.y, t.basis.y.z],
-				[t.basis.z.x, t.basis.z.y, t.basis.z.z]
-			]
-		}
+		"player": save_player(),
+		"enemies": save_group("enemy")
 	}
 
 	var json_string = JSON.stringify(data, "\t")
@@ -121,14 +112,19 @@ func load_game():
 		var file = FileAccess.open("res://saved/save.json", FileAccess.READ)
 		var content = file.get_as_text()
 		file.close()
+		if loaded_scene:
+			$"świat".queue_free()
+			var new_world = loaded_scene.instantiate()
+			add_child(new_world)
+			new_world.name = "Node3D"
 		var json = JSON.new()
 		var error = json.parse(content)
 		if error != OK:
 			print("json error")
 			return
 		var data = json.data
-		var o = data["player_transform"]["origin"]
-		var b = data["player_transform"]["basis"]
+		var o = data["player"]["origin"]
+		var b = data["player"]["basis"]
 		var basis = Basis(
 			Vector3(b[0][0], b[0][1], b[0][2]),
 			Vector3(b[1][0], b[1][1], b[1][2]),
@@ -136,14 +132,63 @@ func load_game():
 		)
 		var transform = Transform3D(basis, Vector3(o["x"], o["y"], o["z"]))
 		$player.global_transform = transform
-		if loaded_scene:
-			$"świat".queue_free()
-			var new_world = loaded_scene.instantiate()
-			add_child(new_world)
-			new_world.name = "Node3D"
-			print("loaded")
+		load_enemies(data["enemies"])
+		print("loaded")
 
 func start_new_game():
-	spawn_enemy(Vector3(20, 0, -10))
-	spawn_enemy(Vector3(20, 0, 0))
-	spawn_enemy(Vector3(20, 0, -20))
+	randomize()
+	var spawn_areas = get_tree().get_nodes_in_group("enemy_spawners")
+	for area in spawn_areas:
+		for i in range(area.enemy_count):
+			spawn_enemy(area.get_random_position())
+
+func save_player():
+	var t: Transform3D = $player.global_transform
+	var data = {
+			"origin": {
+				"x": t.origin.x,
+				"y": t.origin.y,
+				"z": t.origin.z
+			},
+			"basis": [
+				[t.basis.x.x, t.basis.x.y, t.basis.x.z],
+				[t.basis.y.x, t.basis.y.y, t.basis.y.z],
+				[t.basis.z.x, t.basis.z.y, t.basis.z.z]
+			]
+		}
+	return data
+
+func save_group(group_name: String):
+	var arr = []
+
+	for node in get_tree().get_nodes_in_group(group_name):
+		if node.has_method("save_state"):
+			arr.append(node.save_state())
+
+	return arr
+
+func dict_to_transform(d: Dictionary) -> Transform3D:
+	var o = d["origin"]
+	var b = d["basis"]
+
+	var basis = Basis(
+		Vector3(b[0][0], b[0][1], b[0][2]),
+		Vector3(b[1][0], b[1][1], b[1][2]),
+		Vector3(b[2][0], b[2][1], b[2][2])
+	)
+
+	return Transform3D(
+		basis,
+		Vector3(o["x"], o["y"], o["z"])
+	)
+
+func load_enemies(data: Array):
+	for enemy_data in data:
+
+		var transform_dict = enemy_data["transform"]
+		print(transform_dict)
+		var transform = dict_to_transform(transform_dict)
+		var pos = transform.origin
+		var hp = enemy_data.get("health", 20)
+
+		spawn_enemy(pos, hp)
