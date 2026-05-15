@@ -89,11 +89,19 @@ func _on_main_menu_pressed() -> void:
 func _on_save_pressed():
 	var packed_scene = PackedScene.new()
 	packed_scene.pack($"świat")
+	var t: Transform3D = $player.global_transform
 	var data = {
-		"player_position": {
-			"x": $player.global_position.x,
-			"y": $player.global_position.y,
-			"z": $player.global_position.z
+		"player_transform": {
+			"origin": {
+				"x": t.origin.x,
+				"y": t.origin.y,
+				"z": t.origin.z
+			},
+			"basis": [
+				[t.basis.x.x, t.basis.x.y, t.basis.x.z],
+				[t.basis.y.x, t.basis.y.y, t.basis.y.z],
+				[t.basis.z.x, t.basis.z.y, t.basis.z.z]
+			]
 		}
 	}
 
@@ -119,13 +127,15 @@ func load_game():
 			print("json error")
 			return
 		var data = json.data
-		var pos = Vector3(
-			data["player_position"]["x"],
-			data["player_position"]["y"],
-			data["player_position"]["z"]
+		var o = data["player_transform"]["origin"]
+		var b = data["player_transform"]["basis"]
+		var basis = Basis(
+			Vector3(b[0][0], b[0][1], b[0][2]),
+			Vector3(b[1][0], b[1][1], b[1][2]),
+			Vector3(b[2][0], b[2][1], b[2][2])
 		)
-
-		$player.global_position = pos
+		var transform = Transform3D(basis, Vector3(o["x"], o["y"], o["z"]))
+		$player.global_transform = transform
 		if loaded_scene:
 			$"świat".queue_free()
 			var new_world = loaded_scene.instantiate()
