@@ -34,6 +34,8 @@ func show_tower2():
 	return preview
 
 func _ready():
+	$player/GameMenu/Panel.visible = false
+	$player/GameMenu/Image.visible = false
 	if Global.load_game:
 		load_game()
 	else:
@@ -132,8 +134,6 @@ func load_game():
 			print("loaded")
 
 func start_new_game():
-	$player/GameMenu/Panel.visible = false
-	$player/GameMenu/Image.visible = false
 	spawn_enemy(Vector3(20, 0, -10))
 	spawn_enemy(Vector3(20, 0, 0))
 	spawn_enemy(Vector3(20, 0, -20))
