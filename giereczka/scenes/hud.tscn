@@ -1,6 +1,9 @@
-[gd_scene load_steps=0 format=3 uid="uid://tgqrr1tknff3"]
+[gd_scene format=3 uid="uid://tgqrr1tknff3"]
 
-[node name="hud" type="Control"]
+[ext_resource type="Texture2D" uid="uid://cayetunq0u5s0" path="res://assets/serce.png" id="1_oo0fn"]
+[ext_resource type="Texture2D" uid="uid://o1ec1clcr2wx" path="res://assets/pobrane.png" id="2_5ysmq"]
+
+[node name="hud" type="Control" unique_id=2121480229]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -8,22 +11,39 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="health_l" type="Label" parent="."]
+[node name="health_l" type="Label" parent="." unique_id=1821329031]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.342
 anchor_bottom = 0.165
-offset_right = 21.015991
-offset_bottom = 31.079994
-text = "życie"
+offset_left = 47.0
+offset_top = 5.0
+offset_right = -237.98401
+offset_bottom = -46.920006
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Życie:"
 
-[node name="bullets_l" type="Label" parent="."]
+[node name="bullets_l" type="Label" parent="." unique_id=2100432264]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.342
 anchor_bottom = 0.165
-offset_left = 1.0
-offset_top = 140.0
-offset_right = 22.015991
-offset_bottom = 171.07999
-text = "pociski:"
+offset_left = 44.0
+offset_top = 137.0
+offset_right = 65.01599
+offset_bottom = 168.07999
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Pociski:"
+
+[node name="Serce" type="Sprite2D" parent="." unique_id=705211287]
+position = Vector2(23.125002, 33.612045)
+scale = Vector2(0.048475612, 0.048475612)
+texture = ExtResource("1_oo0fn")
+
+[node name="Pobrane" type="Sprite2D" parent="." unique_id=1655728127]
+position = Vector2(23.580547, 166.99998)
+scale = Vector2(0.039726563, 0.10138893)
+texture = ExtResource("2_5ysmq")
