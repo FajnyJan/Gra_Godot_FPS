@@ -66,6 +66,16 @@ text = "Załaduj scene"
 layout_mode = 2
 text = "Opcje"
 
+[node name="Label" type="Label" parent="VBoxContainer/Options" unique_id=919893698]
+layout_mode = 0
+offset_left = -32.0
+offset_top = -165.0
+offset_right = 278.0
+offset_bottom = -110.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "PROJECT CYGAN"
+
 [node name="Quit" type="Button" parent="VBoxContainer" unique_id=2006511894]
 layout_mode = 2
 size_flags_vertical = 4
