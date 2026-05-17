@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d1nk3u0xxphr3" path="res://scripts/menu.gd" id="1_lti8b"]
 [ext_resource type="Texture2D" uid="uid://c0kkwb11qa00m" path="res://assets/4ce14cb7b0fdc73eaa54a87466e7ef3c.jpg" id="2_ouk20"]
 [ext_resource type="Texture2D" uid="uid://de1e5r2huqx7c" path="res://assets/tlo.png" id="3_mae5d"]
+[ext_resource type="AudioStream" uid="uid://byy1u1fhcvh1j" path="res://assets/Land of Immortals.mp3" id="4_4hy44"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_mae5d"]
 
@@ -69,6 +70,11 @@ text = "Opcje"
 layout_mode = 2
 size_flags_vertical = 4
 text = "Wyjdź"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=84508346]
+stream = ExtResource("4_4hy44")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Load" to="." method="_on_load_pressed"]

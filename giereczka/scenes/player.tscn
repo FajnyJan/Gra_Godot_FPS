@@ -31,8 +31,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.444, 0)
 process_mode = 2
 
 [node name="PoleBitwyMenu" type="Sprite2D" parent="GameMenu" unique_id=678300133]
-position = Vector2(576.50006, 323.50003)
-scale = Vector2(0.60156244, 0.600926)
+position = Vector2(575, 324.50006)
+scale = Vector2(0.5999999, 0.59907407)
 texture = ExtResource("3_dqkch")
 
 [node name="Image" type="Sprite2D" parent="GameMenu" unique_id=1671841331]

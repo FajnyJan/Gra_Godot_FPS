@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://lvqb0sfevem1"
+path="res://.godot/imported/THE ENTERTAINER - SCOTT JOPLIN - Joplin - Aubrey Fink_trimmed.mp3-0c873f4e0128e4eb9fd10a8b770505a7.mp3str"
+
+[deps]
+
+source_file="res://assets/THE ENTERTAINER - SCOTT JOPLIN - Joplin - Aubrey Fink_trimmed.mp3"
+dest_files=["res://.godot/imported/THE ENTERTAINER - SCOTT JOPLIN - Joplin - Aubrey Fink_trimmed.mp3-0c873f4e0128e4eb9fd10a8b770505a7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

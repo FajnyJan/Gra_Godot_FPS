@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bllaqcqwhaxed"]
+
+[ext_resource type="Texture2D" uid="uid://c0kkwb11qa00m" path="res://assets/4ce14cb7b0fdc73eaa54a87466e7ef3c.jpg" id="1_5v8ap"]
+[ext_resource type="Script" uid="uid://dwypitmf8jrmf" path="res://options.gd" id="2_se8ut"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_se8ut"]
+
+[node name="Options" type="Control" unique_id=1930300052]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=242185502]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 327.0
+offset_bottom = 327.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ImageTexture_se8ut")
+
+[node name="4Ce14Cb7b0Fdc73Eaa54a87466e7Ef3c" type="Sprite2D" parent="TextureRect" unique_id=946697604]
+position = Vector2(575.99994, -1.3749905)
+scale = Vector2(0.96000004, 0.40394163)
+texture = ExtResource("1_5v8ap")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1143196234]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -64.0
+offset_right = 104.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=1337511346]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../GoBack")
+text = "Lag : Zero
+"
+
+[node name="Load" type="Button" parent="VBoxContainer" unique_id=1843809756]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Grafika: Epicka"
+
+[node name="Options" type="Button" parent="VBoxContainer" unique_id=1325009483]
+layout_mode = 2
+text = "Muzyka: Dobra"
+
+[node name="GoBack" type="Button" parent="VBoxContainer" unique_id=1496307211]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Wróć do menu"
+script = ExtResource("2_se8ut")
+
+[connection signal="pressed" from="VBoxContainer/GoBack" to="VBoxContainer/GoBack" method="_on_pressed"]

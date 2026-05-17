@@ -22,7 +22,8 @@ func _on_continue_pressed() -> void:
 	pass # zamienic z funkcją która będzie wczytywać zapisny plik
 
 func _on_options_pressed() -> void:
-	pass # Replace with function body.
+	Global.load_game = false
+	get_tree().change_scene_to_file("res://options.tscn")
 
 
 func _on_load_pressed() -> void:
