@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://toud7yjvhh4f" path="res://scripts/player.gd" id="1_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://tgqrr1tknff3" path="res://scenes/hud.tscn" id="2_dqkch"]
+[ext_resource type="Texture2D" uid="uid://diuissyh43maq" path="res://assets/pole_bitwy_menu.jpg" id="3_dqkch"]
 [ext_resource type="Texture2D" uid="uid://dovolwh0vqu1k" path="res://assets/image.png" id="3_qlg0r"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_iifgy"]
@@ -29,7 +30,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.444, 0)
 [node name="GameMenu" type="CanvasLayer" parent="." unique_id=2054884349]
 process_mode = 2
 
+[node name="PoleBitwyMenu" type="Sprite2D" parent="GameMenu" unique_id=678300133]
+position = Vector2(576.50006, 323.50003)
+scale = Vector2(0.60156244, 0.600926)
+texture = ExtResource("3_dqkch")
+
 [node name="Image" type="Sprite2D" parent="GameMenu" unique_id=1671841331]
+visible = false
 position = Vector2(576.12494, 324)
 scale = Vector2(0.45507503, 0.5538461)
 texture = ExtResource("3_qlg0r")
@@ -45,10 +52,10 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 409.0
-offset_top = -20.0
-offset_right = -409.0
-offset_bottom = 11.0
+offset_left = 424.0
+offset_top = -75.0
+offset_right = -394.0
+offset_bottom = -44.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Kontynuuj"
@@ -59,10 +66,10 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 410.0
-offset_top = 48.0
-offset_right = -408.0
-offset_bottom = 79.0
+offset_left = 425.0
+offset_top = -7.0
+offset_right = -393.0
+offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Menu Główne"
@@ -73,10 +80,10 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 410.0
-offset_top = 81.0
-offset_right = -407.0
-offset_bottom = 112.0
+offset_left = 425.0
+offset_top = 26.0
+offset_right = -392.0
+offset_bottom = 57.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Opcje
@@ -88,10 +95,10 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 411.0
-offset_top = 114.0
-offset_right = -406.0
-offset_bottom = 145.0
+offset_left = 426.0
+offset_top = 59.0
+offset_right = -391.0
+offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Wyjdź
@@ -103,10 +110,10 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 409.0
-offset_top = 14.0
-offset_right = -408.0
-offset_bottom = 45.0
+offset_left = 424.0
+offset_top = -41.0
+offset_right = -393.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Zapisz

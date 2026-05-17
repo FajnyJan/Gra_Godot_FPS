@@ -37,7 +37,7 @@ func show_tower2():
 
 func _ready():
 	$player/GameMenu/Panel.visible = false
-	$player/GameMenu/Image.visible = false
+	$player/GameMenu/PoleBitwyMenu.visible = false
 	if Global.load_game:
 		load_game()
 	else:
@@ -56,7 +56,7 @@ func _input(event):
 
 func toggle_pause():
 	var menu = $player/GameMenu/Panel
-	var image = $player/GameMenu/Image
+	var image = $player/GameMenu/PoleBitwyMenu
 
 	menu.visible = !menu.visible
 	image.visible = menu.visible
