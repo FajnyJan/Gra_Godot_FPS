@@ -186,7 +186,6 @@ func load_enemies(data: Array):
 	for enemy_data in data:
 
 		var transform_dict = enemy_data["transform"]
-		print(transform_dict)
 		var transform = dict_to_transform(transform_dict)
 		var pos = transform.origin
 		var hp = enemy_data.get("health", 20)

@@ -98,8 +98,21 @@ func _on_attack_range_body_exited(body):
 		animations.play("Running_A")
 
 func save_state():
+	var t: Transform3D = global_transform
+
 	return {
 		"type": "enemy1",
-		"transform": global_transform,
-		"health": health
+		"health": health,
+		"transform": {
+			"origin": {
+				"x": t.origin.x,
+				"y": t.origin.y,
+				"z": t.origin.z
+			},
+			"basis": [
+				[t.basis.x.x, t.basis.x.y, t.basis.x.z],
+				[t.basis.y.x, t.basis.y.y, t.basis.y.z],
+				[t.basis.z.x, t.basis.z.y, t.basis.z.z]
+			]
+		}
 	}
