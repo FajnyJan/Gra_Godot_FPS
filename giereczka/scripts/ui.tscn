@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvt53dqpuadmr"]
+
+[ext_resource type="Script" path="res://scripts/equ.gd" id="1_fyqef"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vw27"]
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0.7019608)
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="InventoryPanel" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5vw27")
+
+[node name="GridContainer" type="GridContainer" parent="InventoryPanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 20.0
+offset_bottom = 20.0
+columns = 7
+script = ExtResource("1_fyqef")

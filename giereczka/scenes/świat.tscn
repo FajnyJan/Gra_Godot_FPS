@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dq3embdxd5ncn"]
+[gd_scene load_steps=10 format=3 uid="uid://dq3embdxd5ncn"]
 
 [ext_resource type="Texture2D" uid="uid://dgpkvgi0yn6if" path="res://assets/FS002_Day.png" id="1_hgcio"]
 [ext_resource type="PackedScene" uid="uid://dkcf1qpuebuhw" path="res://world.tscn" id="1_juli0"]
@@ -22,37 +22,37 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Arr
 agent_radius = 0.0
 agent_max_climb = 0.5
 
-[node name="świat" type="Node3D" unique_id=1924298787]
+[node name="świat" type="Node3D"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2096860487]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_iifgy")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2025504892]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.9453935, 0.3259312, 0, -0.3259312, 0.9453935, 0, 28.25724, 0)
 light_color = Color(1, 1, 0.7294118, 1)
 light_indirect_energy = 2.0
 shadow_enabled = true
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1948232363]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, -0.6051941)
 navigation_mesh = SubResource("NavigationMesh_4gyqm")
 
-[node name="world" parent="NavigationRegion3D" unique_id=2140632620 instance=ExtResource("1_juli0")]
+[node name="world" parent="NavigationRegion3D" instance=ExtResource("1_juli0")]
 transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999976, -2.5766532, -1.9887629, 0)
 
-[node name="tower1" parent="." unique_id=687776254 instance=ExtResource("3_viqlm")]
+[node name="tower1" parent="." instance=ExtResource("3_viqlm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22942781, -2.335812)
 
-[node name="tower2" parent="." unique_id=1208396214 instance=ExtResource("3_viqlm")]
+[node name="tower2" parent="." instance=ExtResource("3_viqlm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.366972, 0.28371024, -9.216457)
 
-[node name="tower3" parent="." unique_id=14565660 instance=ExtResource("4_hgxd7")]
+[node name="tower3" parent="." instance=ExtResource("4_hgxd7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1188197, 0.2789464, -2.8599977)
 
-[node name="spawnareas" type="Node3D" parent="." unique_id=1913140397]
+[node name="spawnareas" type="Node3D" parent="."]
 
-[node name="spawnarea-enemy" parent="spawnareas" unique_id=2058585511 instance=ExtResource("5_hgxd7")]
+[node name="spawnarea-enemy" parent="spawnareas" instance=ExtResource("5_hgxd7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.63997, 0.59374666, -44.29691)
 
-[node name="spawnarea-enemy2" parent="spawnareas" unique_id=2088881656 instance=ExtResource("5_hgxd7")]
+[node name="spawnarea-enemy2" parent="spawnareas" instance=ExtResource("5_hgxd7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.45, 0.594, -6.957)
