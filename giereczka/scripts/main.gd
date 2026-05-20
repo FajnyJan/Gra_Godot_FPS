@@ -10,9 +10,9 @@ var Tower2PreviewScene = preload("res://scenes/turrety/turret_2-preview.tscn")
 @export var enemy_scene: PackedScene
 var waves = {
 	1:3,
-	#2:5,
-	#3:8,
-	#4:10
+	2:5,
+	3:8,
+	4:10
 }
 var current_wave = 1
 

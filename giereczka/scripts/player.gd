@@ -13,7 +13,7 @@ var health = 100
 @export var bullet_scene: PackedScene
 @export var bullet_offset: float = 1.5
 @export var bullet_speed: float = 80.0
-@export var bullet_damage: int = 10
+@export var bullet_damage: int = 3
 var tower_placing_last_pos = null
 var build_mode = false
 var tower_preview = null
