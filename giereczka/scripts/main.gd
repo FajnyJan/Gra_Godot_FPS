@@ -10,9 +10,9 @@ var Tower2PreviewScene = preload("res://scenes/turrety/turret_2-preview.tscn")
 @export var enemy_scene: PackedScene
 var waves = {
 	1:3,
-	2:5,
-	3:8,
-	4:10
+	#2:5,
+	#3:8,
+	#4:10
 }
 var current_wave = 1
 
@@ -45,6 +45,9 @@ func show_tower2():
 func _ready():
 	$player/GameMenu/Panel.visible = false
 	$player/GameMenu/PoleBitwyMenu.visible = false
+	$player/EndGame/Panel.visible = false
+	$player/EndGame/win.visible = false
+	$player/EndGame/lose.visible = false
 	if Global.load_game:
 		load_game()
 	else:
@@ -56,8 +59,11 @@ func _process(delta):
 	if Input.is_action_just_pressed("get_to_menu"):
 		toggle_pause()
 	if Global.how_many_enemy == 0:
-		current_wave+=1
-		start_wave()
+		current_wave += 1
+		if current_wave > waves.size():
+			end_game(1)
+		else:
+			start_wave()
 		
 func _input(event):
 	if event is InputEventKey and event.pressed:
@@ -205,3 +211,19 @@ func load_enemies(data: Array):
 		var hp = enemy_data.get("health", 20)
 
 		spawn_enemy(pos, hp)
+
+func end_game(do_win:int):
+	var menu = $player/EndGame/Panel
+	menu.visible = !menu.visible
+	get_tree().paused = menu.visible
+	
+	if menu.visible:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	if do_win:
+		var image = $player/EndGame/win
+		image.visible = menu.visible
+	else:
+		var image = $player/EndGame/lose
+		image.visible = menu.visible

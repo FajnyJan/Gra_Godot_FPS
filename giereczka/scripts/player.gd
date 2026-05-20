@@ -13,11 +13,12 @@ var health = 100
 @export var bullet_scene: PackedScene
 @export var bullet_offset: float = 1.5
 @export var bullet_speed: float = 80.0
-@export var bullet_damage: int = 4
+@export var bullet_damage: int = 10
 var tower_placing_last_pos = null
 var build_mode = false
 var tower_preview = null
 var placable_selected = 1
+@onready var menu = "res://menu.tscn"
 
 func _ready() -> void:
 	add_to_group("player")
@@ -175,3 +176,10 @@ func main_menuu()->void:
 
 func savee()->void:
 	main._on_save_pressed()
+
+func startt()->void:
+	print("abrakkadad")
+	main._on_start_pressed()
+
+func _on_exit_pressed() -> void:
+	quitt()

@@ -1,9 +1,8 @@
-[gd_scene format=3 uid="uid://bm11723dtf0qi"]
+[gd_scene load_steps=7 format=3 uid="uid://bm11723dtf0qi"]
 
 [ext_resource type="Script" uid="uid://toud7yjvhh4f" path="res://scripts/player.gd" id="1_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://tgqrr1tknff3" path="res://scenes/hud.tscn" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://diuissyh43maq" path="res://assets/pole_bitwy_menu.jpg" id="3_dqkch"]
-[ext_resource type="Texture2D" uid="uid://dovolwh0vqu1k" path="res://assets/image.png" id="3_qlg0r"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_iifgy"]
 
@@ -11,42 +10,36 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lquwl"]
 
-[node name="player" type="CharacterBody3D" unique_id=1846331842]
+[node name="player" type="CharacterBody3D"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("1_qhqgy")
 
-[node name="hud" parent="." unique_id=1401849851 instance=ExtResource("2_dqkch")]
+[node name="hud" parent="." instance=ExtResource("2_dqkch")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=684484207]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 visible = false
 mesh = SubResource("CapsuleMesh_iifgy")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=535786741]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_epg4t")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1753640797]
+[node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.444, 0)
 
-[node name="GameMenu" type="CanvasLayer" parent="." unique_id=2054884349]
+[node name="GameMenu" type="CanvasLayer" parent="."]
 process_mode = 2
 
-[node name="PoleBitwyMenu" type="Sprite2D" parent="GameMenu" unique_id=678300133]
+[node name="PoleBitwyMenu" type="Sprite2D" parent="GameMenu"]
 position = Vector2(575, 324.50006)
 scale = Vector2(0.5999999, 0.59907407)
 texture = ExtResource("3_dqkch")
 
-[node name="Image" type="Sprite2D" parent="GameMenu" unique_id=1671841331]
-visible = false
-position = Vector2(576.12494, 324)
-scale = Vector2(0.45507503, 0.5538461)
-texture = ExtResource("3_qlg0r")
-
-[node name="Panel" type="Panel" parent="GameMenu" unique_id=1405302696]
+[node name="Panel" type="Panel" parent="GameMenu"]
 offset_right = 1152.0
 offset_bottom = 648.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_lquwl")
 
-[node name="Continue" type="Button" parent="GameMenu/Panel" unique_id=312161176]
+[node name="Continue" type="Button" parent="GameMenu/Panel"]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -60,7 +53,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Kontynuuj"
 
-[node name="MainMenu" type="Button" parent="GameMenu/Panel" unique_id=565687033]
+[node name="MainMenu" type="Button" parent="GameMenu/Panel"]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -74,7 +67,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Menu Główne"
 
-[node name="Options" type="Button" parent="GameMenu/Panel" unique_id=598444598]
+[node name="Options" type="Button" parent="GameMenu/Panel"]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -89,7 +82,7 @@ grow_vertical = 2
 text = "Opcje
 "
 
-[node name="Quit" type="Button" parent="GameMenu/Panel" unique_id=1984282897]
+[node name="Quit" type="Button" parent="GameMenu/Panel"]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -104,7 +97,7 @@ grow_vertical = 2
 text = "Wyjdź
 "
 
-[node name="Save" type="Button" parent="GameMenu/Panel" unique_id=1574156649]
+[node name="Save" type="Button" parent="GameMenu/Panel"]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -119,8 +112,37 @@ grow_vertical = 2
 text = "Zapisz
 "
 
+[node name="EndGame" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="EndGame"]
+offset_right = 1152.0
+offset_bottom = 649.0
+
+[node name="NewGame" type="Button" parent="EndGame/Panel"]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 190.0
+offset_right = 695.0
+offset_bottom = 241.0
+text = "Nowa gra"
+
+[node name="Exit" type="Button" parent="EndGame/Panel"]
+layout_mode = 0
+offset_left = 374.0
+offset_top = 343.0
+offset_right = 664.0
+offset_bottom = 470.0
+text = "Wyjdź"
+
+[node name="win" type="Sprite2D" parent="EndGame"]
+
+[node name="lose" type="Sprite2D" parent="EndGame"]
+
 [connection signal="pressed" from="GameMenu/Panel/Continue" to="." method="continuee"]
 [connection signal="pressed" from="GameMenu/Panel/MainMenu" to="." method="main_menuu"]
 [connection signal="pressed" from="GameMenu/Panel/Options" to="." method="optionss"]
 [connection signal="pressed" from="GameMenu/Panel/Quit" to="." method="quitt"]
 [connection signal="pressed" from="GameMenu/Panel/Save" to="." method="savee"]
+[connection signal="pressed" from="EndGame/Panel/NewGame" to="." method="startt"]
+[connection signal="pressed" from="EndGame/Panel/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="EndGame/Panel/Exit" to="." method="quitt"]
