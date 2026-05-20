@@ -8,6 +8,13 @@ var Tower1PreviewScene = preload("res://scenes/turrety/turret_1-preview.tscn")
 var Tower2Scene = preload("res://scenes/turrety/tower_2.tscn")
 var Tower2PreviewScene = preload("res://scenes/turrety/turret_2-preview.tscn")
 @export var enemy_scene: PackedScene
+var waves = {
+	1:3,
+	2:5,
+	3:8,
+	4:10
+}
+var current_wave = 1
 
 func spawn_enemy(position: Vector3, health: int = 20):
 	var enemy = EnemyScene.instantiate()
@@ -42,13 +49,16 @@ func _ready():
 	if Global.load_game:
 		load_game()
 	else:
-		start_new_game()
+		start_wave()
    
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	get_tree().call_group("enemy", "target_position", target.global_transform.origin)
 	if Input.is_action_just_pressed("get_to_menu"):
 		toggle_pause()
+	if Global.how_many_enemy == 0:
+		current_wave+=1
+		start_wave()
 		
 func _input(event):
 	if event is InputEventKey and event.pressed:
@@ -136,12 +146,16 @@ func load_game():
 		load_enemies(data["enemies"])
 		print("loaded")
 
-func start_new_game():
+func start_wave():
 	randomize()
 	var spawn_areas = get_tree().get_nodes_in_group("enemy_spawners")
 	for area in spawn_areas:
-		for i in range(area.enemy_count):
+		for i in range(waves[current_wave]):
 			spawn_enemy(area.get_random_position())
+			if Global.how_many_enemy == null:
+				Global.how_many_enemy = 1
+			else:
+				Global.how_many_enemy+=1
 
 func save_player():
 	var t: Transform3D = $player.global_transform

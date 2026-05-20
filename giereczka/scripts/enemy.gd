@@ -71,6 +71,7 @@ func target_position(pos: Vector3):
 func apply_damage(amount: int):
 	health -= amount
 	if health <= 0 and not is_dead:
+		Global.how_many_enemy -=1
 		remove_from_group("enemy")
 		is_dead = true
 
