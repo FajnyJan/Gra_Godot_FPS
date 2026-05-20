@@ -29,17 +29,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.444, 0)
 [node name="GameMenu" type="CanvasLayer" parent="."]
 process_mode = 2
 
-[node name="PoleBitwyMenu" type="Sprite2D" parent="GameMenu"]
+[node name="stop" type="Control" parent="GameMenu"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PoleBitwyMenu" type="Sprite2D" parent="GameMenu/stop"]
 position = Vector2(575, 324.50006)
 scale = Vector2(0.5999999, 0.59907407)
 texture = ExtResource("3_dqkch")
 
-[node name="Panel" type="Panel" parent="GameMenu"]
+[node name="Panel" type="Panel" parent="GameMenu/stop"]
+layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_lquwl")
 
-[node name="Continue" type="Button" parent="GameMenu/Panel"]
+[node name="Continue" type="Button" parent="GameMenu/stop/Panel"]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -53,7 +60,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Kontynuuj"
 
-[node name="MainMenu" type="Button" parent="GameMenu/Panel"]
+[node name="MainMenu" type="Button" parent="GameMenu/stop/Panel"]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -67,7 +74,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Menu Główne"
 
-[node name="Options" type="Button" parent="GameMenu/Panel"]
+[node name="Options" type="Button" parent="GameMenu/stop/Panel"]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -82,7 +89,7 @@ grow_vertical = 2
 text = "Opcje
 "
 
-[node name="Quit" type="Button" parent="GameMenu/Panel"]
+[node name="Quit" type="Button" parent="GameMenu/stop/Panel"]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -97,7 +104,7 @@ grow_vertical = 2
 text = "Wyjdź
 "
 
-[node name="Save" type="Button" parent="GameMenu/Panel"]
+[node name="Save" type="Button" parent="GameMenu/stop/Panel"]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -112,13 +119,18 @@ grow_vertical = 2
 text = "Zapisz
 "
 
-[node name="EndGame" type="CanvasLayer" parent="."]
+[node name="endgame" type="Control" parent="GameMenu"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Panel" type="Panel" parent="EndGame"]
+[node name="Panel" type="Panel" parent="GameMenu/endgame"]
+layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 649.0
 
-[node name="NewGame" type="Button" parent="EndGame/Panel"]
+[node name="NewGame" type="Button" parent="GameMenu/endgame/Panel"]
 layout_mode = 0
 offset_left = 395.0
 offset_top = 190.0
@@ -126,7 +138,7 @@ offset_right = 695.0
 offset_bottom = 241.0
 text = "Nowa gra"
 
-[node name="Exit" type="Button" parent="EndGame/Panel"]
+[node name="Exit" type="Button" parent="GameMenu/endgame/Panel"]
 layout_mode = 0
 offset_left = 374.0
 offset_top = 343.0
@@ -134,15 +146,15 @@ offset_right = 664.0
 offset_bottom = 470.0
 text = "Wyjdź"
 
-[node name="win" type="Sprite2D" parent="EndGame"]
+[node name="win" type="Sprite2D" parent="GameMenu/endgame"]
 
-[node name="lose" type="Sprite2D" parent="EndGame"]
+[node name="lose" type="Sprite2D" parent="GameMenu/endgame"]
 
-[connection signal="pressed" from="GameMenu/Panel/Continue" to="." method="continuee"]
-[connection signal="pressed" from="GameMenu/Panel/MainMenu" to="." method="main_menuu"]
-[connection signal="pressed" from="GameMenu/Panel/Options" to="." method="optionss"]
-[connection signal="pressed" from="GameMenu/Panel/Quit" to="." method="quitt"]
-[connection signal="pressed" from="GameMenu/Panel/Save" to="." method="savee"]
-[connection signal="pressed" from="EndGame/Panel/NewGame" to="." method="startt"]
-[connection signal="pressed" from="EndGame/Panel/Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="EndGame/Panel/Exit" to="." method="quitt"]
+[connection signal="pressed" from="GameMenu/stop/Panel/Continue" to="." method="continuee"]
+[connection signal="pressed" from="GameMenu/stop/Panel/MainMenu" to="." method="main_menuu"]
+[connection signal="pressed" from="GameMenu/stop/Panel/Options" to="." method="optionss"]
+[connection signal="pressed" from="GameMenu/stop/Panel/Quit" to="." method="quitt"]
+[connection signal="pressed" from="GameMenu/stop/Panel/Save" to="." method="savee"]
+[connection signal="pressed" from="GameMenu/endgame/Panel/NewGame" to="." method="startt"]
+[connection signal="pressed" from="GameMenu/endgame/Panel/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="GameMenu/endgame/Panel/Exit" to="." method="quitt"]

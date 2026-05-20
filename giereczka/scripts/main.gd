@@ -44,11 +44,12 @@ func show_tower2():
 	return preview
 
 func _ready():
-	$player/GameMenu/Panel.visible = false
-	$player/GameMenu/PoleBitwyMenu.visible = false
-	$player/EndGame/Panel.visible = false
-	$player/EndGame/win.visible = false
-	$player/EndGame/lose.visible = false
+	get_tree().paused = false
+	$player/GameMenu/stop/Panel.visible = false
+	$player/GameMenu/stop/PoleBitwyMenu.visible = false
+	$player/GameMenu/endgame/Panel.visible = false
+	$player/GameMenu/endgame/win.visible = false
+	$player/GameMenu/endgame/lose.visible = false
 	if Global.load_game:
 		load_game()
 	else:
@@ -72,8 +73,8 @@ func _input(event):
 			toggle_pause() #pauzuje grę
 
 func toggle_pause():
-	var menu = $player/GameMenu/Panel
-	var image = $player/GameMenu/PoleBitwyMenu
+	var menu = $player/GameMenu/stop/Panel
+	var image = $player/GameMenu/stop/PoleBitwyMenu
 
 	menu.visible = !menu.visible
 	image.visible = menu.visible
@@ -214,7 +215,7 @@ func load_enemies(data: Array):
 		spawn_enemy(pos, hp)
 
 func end_game(do_win:int):
-	var menu = $player/EndGame/Panel
+	var menu = $player/GameMenu/endgame/Panel
 	menu.visible = !menu.visible
 	get_tree().paused = menu.visible
 	
@@ -223,8 +224,8 @@ func end_game(do_win:int):
 	else:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	if do_win:
-		var image = $player/EndGame/win
+		var image = $player/GameMenu/endgame/win
 		image.visible = menu.visible
 	else:
-		var image = $player/EndGame/lose
+		var image = $player/GameMenu/endgame/lose
 		image.visible = menu.visible

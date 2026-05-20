@@ -18,7 +18,6 @@ var tower_placing_last_pos = null
 var build_mode = false
 var tower_preview = null
 var placable_selected = 1
-@onready var menu = "res://menu.tscn"
 var is_dead = false
 
 func _ready() -> void:
@@ -176,8 +175,8 @@ func savee()->void:
 	main._on_save_pressed()
 
 func startt()->void:
-	print("abrakkadad")
-	main._on_start_pressed()
+	Global.load_game = false
+	get_tree().change_scene_to_file("res://main.tscn")
 
 func _on_exit_pressed() -> void:
 	quitt()
