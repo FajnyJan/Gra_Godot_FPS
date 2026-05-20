@@ -34,8 +34,9 @@ func show_tower1():
 
 func spawn_tower2(position: Vector3):
 	var tower = Tower2Scene.instantiate()
-	tower.global_transform.origin = position
 	add_child(tower)
+	tower.global_transform.origin = position
+	
 
 func show_tower2():
 	var preview = Tower2PreviewScene.instantiate()

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=7 format=3 uid="uid://bm11723dtf0qi"]
+=======
+[gd_scene load_steps=8 format=3 uid="uid://bm11723dtf0qi"]
+>>>>>>> f2a0af0da5b5331f5c31b86fe52978ace031f072
 
 [ext_resource type="Script" uid="uid://toud7yjvhh4f" path="res://scripts/player.gd" id="1_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://tgqrr1tknff3" path="res://scenes/hud.tscn" id="2_dqkch"]
@@ -34,6 +38,15 @@ position = Vector2(575, 324.50006)
 scale = Vector2(0.5999999, 0.59907407)
 texture = ExtResource("3_dqkch")
 
+<<<<<<< HEAD
+=======
+[node name="Image" type="Sprite2D" parent="GameMenu"]
+visible = false
+position = Vector2(576.12494, 324)
+scale = Vector2(0.45507503, 0.5538461)
+texture = ExtResource("3_qlg0r")
+
+>>>>>>> f2a0af0da5b5331f5c31b86fe52978ace031f072
 [node name="Panel" type="Panel" parent="GameMenu"]
 offset_right = 1152.0
 offset_bottom = 648.0
