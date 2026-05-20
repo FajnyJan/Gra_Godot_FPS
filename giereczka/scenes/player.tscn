@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bm11723dtf0qi"]
+[gd_scene load_steps=7 format=3 uid="uid://ctf6pvjr2spgl"]
 
 [ext_resource type="Script" uid="uid://toud7yjvhh4f" path="res://scripts/player.gd" id="1_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://tgqrr1tknff3" path="res://scenes/hud.tscn" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://diuissyh43maq" path="res://assets/pole_bitwy_menu.jpg" id="3_dqkch"]
-[ext_resource type="Texture2D" uid="uid://dovolwh0vqu1k" path="res://assets/image.png" id="3_qlg0r"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_iifgy"]
 
@@ -34,12 +33,6 @@ process_mode = 2
 position = Vector2(575, 324.50006)
 scale = Vector2(0.5999999, 0.59907407)
 texture = ExtResource("3_dqkch")
-
-[node name="Image" type="Sprite2D" parent="GameMenu"]
-visible = false
-position = Vector2(576.12494, 324)
-scale = Vector2(0.45507503, 0.5538461)
-texture = ExtResource("3_qlg0r")
 
 [node name="Panel" type="Panel" parent="GameMenu"]
 offset_right = 1152.0
@@ -119,8 +112,37 @@ grow_vertical = 2
 text = "Zapisz
 "
 
+[node name="EndGame" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="EndGame"]
+offset_right = 1152.0
+offset_bottom = 649.0
+
+[node name="NewGame" type="Button" parent="EndGame/Panel"]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 190.0
+offset_right = 695.0
+offset_bottom = 241.0
+text = "Nowa gra"
+
+[node name="Exit" type="Button" parent="EndGame/Panel"]
+layout_mode = 0
+offset_left = 374.0
+offset_top = 343.0
+offset_right = 664.0
+offset_bottom = 470.0
+text = "Wyjdź"
+
+[node name="win" type="Sprite2D" parent="EndGame"]
+
+[node name="lose" type="Sprite2D" parent="EndGame"]
+
 [connection signal="pressed" from="GameMenu/Panel/Continue" to="." method="continuee"]
 [connection signal="pressed" from="GameMenu/Panel/MainMenu" to="." method="main_menuu"]
 [connection signal="pressed" from="GameMenu/Panel/Options" to="." method="optionss"]
 [connection signal="pressed" from="GameMenu/Panel/Quit" to="." method="quitt"]
 [connection signal="pressed" from="GameMenu/Panel/Save" to="." method="savee"]
+[connection signal="pressed" from="EndGame/Panel/NewGame" to="." method="startt"]
+[connection signal="pressed" from="EndGame/Panel/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="EndGame/Panel/Exit" to="." method="quitt"]

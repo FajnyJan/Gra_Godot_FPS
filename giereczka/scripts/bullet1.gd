@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 var speed = 30.0
 var direction = Vector3.ZERO
-var damage = 1
+var damage = 2
 var lifetime = 5.0
 
 func _ready():

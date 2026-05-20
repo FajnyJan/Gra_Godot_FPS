@@ -1,9 +1,10 @@
-[gd_scene format=3 uid="uid://tgqrr1tknff3"]
+[gd_scene load_steps=4 format=3 uid="uid://tgqrr1tknff3"]
 
 [ext_resource type="Texture2D" uid="uid://cayetunq0u5s0" path="res://assets/serce.png" id="1_oo0fn"]
 [ext_resource type="Texture2D" uid="uid://o1ec1clcr2wx" path="res://assets/pobrane.png" id="2_5ysmq"]
+[ext_resource type="Script" uid="uid://blhoxy2sahvex" path="res://scripts/equ.gd" id="3_5ysmq"]
 
-[node name="hud" type="Control" unique_id=2121480229]
+[node name="hud" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="health_l" type="Label" parent="." unique_id=1821329031]
+[node name="health_l" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.342
@@ -24,7 +25,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "Życie:"
 
-[node name="bullets_l" type="Label" parent="." unique_id=2100432264]
+[node name="bullets_l" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.342
@@ -38,12 +39,24 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "Pociski:"
 
-[node name="Serce" type="Sprite2D" parent="." unique_id=705211287]
+[node name="Serce" type="Sprite2D" parent="."]
 position = Vector2(23.125002, 33.612045)
 scale = Vector2(0.048475612, 0.048475612)
 texture = ExtResource("1_oo0fn")
 
-[node name="Pobrane" type="Sprite2D" parent="." unique_id=1655728127]
+[node name="Pobrane" type="Sprite2D" parent="."]
 position = Vector2(23.580547, 166.99998)
 scale = Vector2(0.039726563, 0.10138893)
 texture = ExtResource("2_5ysmq")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("3_5ysmq")
+
+[node name="InventoryPanel" type="Panel" parent="HUD"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GridContainer" type="GridContainer" parent="HUD/InventoryPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
