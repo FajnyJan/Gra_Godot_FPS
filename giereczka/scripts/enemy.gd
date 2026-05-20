@@ -13,6 +13,11 @@ var jump_velocity = 3.0
 var target = null
 var is_dead = false
 var destroy_in_range = false
+var damage = 4
+var attack_cooldown = 0.0
+var attack_rate = 1.0
+
+var attack_target = null
 
 func _ready():
 	add_to_group("enemy")
@@ -22,6 +27,7 @@ func _ready():
 	attack_range.body_exited.connect(_on_attack_range_body_exited)
 
 func _physics_process(delta):
+	attack_cooldown -= delta
 	$Label3D.text = str(health)
 	
 	if is_dead:
@@ -64,6 +70,11 @@ func _physics_process(delta):
 			target_pos.y = global_position.y
 			look_at(target_pos, Vector3.UP)
 			rotate_y(deg_to_rad(90))
+		if destroy_in_range and attack_target != null:
+			if attack_cooldown <= 0.0:
+				if attack_target.has_method("apply_damage_player"):
+					attack_target.apply_damage_player(damage)
+				attack_cooldown = attack_rate
 
 func target_position(pos: Vector3):
 	nav.target_position = pos
@@ -92,11 +103,13 @@ func _on_attack_range_body_entered(body):
 	if body.is_in_group("destroyable"):
 		destroy_in_range = true
 		animations.play("Attack")
+		attack_target = body
 
 func _on_attack_range_body_exited(body):
 	if body.is_in_group("destroyable"):
 		destroy_in_range = false
 		animations.play("Running_A")
+		attack_target = null
 
 func save_state():
 	var t: Transform3D = global_transform

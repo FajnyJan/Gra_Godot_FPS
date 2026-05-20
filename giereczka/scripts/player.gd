@@ -19,6 +19,7 @@ var build_mode = false
 var tower_preview = null
 var placable_selected = 1
 @onready var menu = "res://menu.tscn"
+var is_dead = false
 
 func _ready() -> void:
 	add_to_group("player")
@@ -180,3 +181,9 @@ func startt()->void:
 
 func _on_exit_pressed() -> void:
 	quitt()
+
+func apply_damage_player(amount: int):
+	health -= amount
+	if health <= 0 and not is_dead:
+		is_dead = true
+		main.end_game(0)
