@@ -40,6 +40,8 @@ func _input(event):
 				tower_preview.queue_free()
 				tower_preview = null
 	if Input.is_action_just_pressed("place_tower") and build_mode == true:
+		if tower_placing_last_pos == null:  # ✅ guard against nil
+			return
 		if placable_selected == 1:
 			main.spawn_tower1(tower_placing_last_pos)
 		if placable_selected == 2:
@@ -78,20 +80,15 @@ func _process(delta):
 		var result = space_state.intersect_ray(query)
 		if result:
 			var collider = result.collider
-			# upewniamy się, że trafiliśmy GridMap
 			if collider is GridMap:
 				var normal = result.normal
-				# tylko poziome powierzchnie
 				if normal.y > 0.7:
 					var gridmap = collider
-					# konwersja world position → cell
 					var cell = gridmap.local_to_map(result.position)
-					# opcjonalnie: sprawdź czy pole jest puste
-					if gridmap.get_cell_item(cell) == -1:
-						# cell → world position (środek komórki)
-						tower_placing_last_pos = gridmap.map_to_local(cell)
-						if tower_preview:
-							tower_preview.global_transform.origin = tower_placing_last_pos
+					tower_placing_last_pos = gridmap.map_to_local(cell)  
+					if tower_preview:
+						tower_preview.global_transform.origin = tower_placing_last_pos
+						
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
