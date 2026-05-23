@@ -47,9 +47,6 @@ func _ready():
 	get_tree().paused = false
 	$player/GameMenu/stop/Panel.visible = false
 	$player/GameMenu/stop/PoleBitwyMenu.visible = false
-	$player/GameMenu/endgame/Panel.visible = false
-	$player/GameMenu/endgame/win.visible = false
-	$player/GameMenu/endgame/lose.visible = false
 	if Global.load_game:
 		load_game()
 	else:
@@ -63,7 +60,8 @@ func _process(delta):
 	if Global.how_many_enemy == 0:
 		current_wave += 1
 		if current_wave > waves.size():
-			end_game(1)
+			Global.do_win = 1
+			get_tree().change_scene_to_file("res://scenes/endgame.tscn")
 		else:
 			start_wave()
 		
@@ -213,19 +211,3 @@ func load_enemies(data: Array):
 		var hp = enemy_data.get("health", 20)
 
 		spawn_enemy(pos, hp)
-
-func end_game(do_win:int):
-	var menu = $player/GameMenu/endgame/Panel
-	menu.visible = !menu.visible
-	get_tree().paused = menu.visible
-	
-	if menu.visible:
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	else:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	if do_win:
-		var image = $player/GameMenu/endgame/win
-		image.visible = menu.visible
-	else:
-		var image = $player/GameMenu/endgame/lose
-		image.visible = menu.visible

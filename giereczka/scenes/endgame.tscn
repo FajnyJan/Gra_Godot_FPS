@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://ecpkha15iugi"]
+
+[ext_resource type="Script" uid="uid://cenogjp1urro" path="res://scenes/endgame.gd" id="1_dugu8"]
+
+[node name="endgame" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_dugu8")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 649.0
+
+[node name="NewGame" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 280.0
+offset_right = 743.0
+offset_bottom = 330.0
+text = "Nowa gra"
+
+[node name="Exit" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 335.0
+offset_right = 743.0
+offset_bottom = 385.0
+text = "Wyjdź"
+
+[node name="win" type="Sprite2D" parent="."]
+
+[node name="lose" type="Sprite2D" parent="."]
+
+[connection signal="pressed" from="Panel/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Panel/Exit" to="." method="_on_exit_pressed"]

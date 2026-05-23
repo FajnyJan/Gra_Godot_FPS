@@ -14,7 +14,7 @@ var jump_velocity = 3.0
 var target = null
 var is_dead = false
 var destroy_in_range = false
-var damage = 40
+var damage = 10
 var attack_cooldown = 0.0
 var attack_rate = 1.0
 

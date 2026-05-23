@@ -13,7 +13,7 @@ var health = 100
 @export var bullet_scene: PackedScene
 @export var bullet_offset: float = 1.5
 @export var bullet_speed: float = 80.0
-@export var bullet_damage: int = 3
+@export var bullet_damage: int = 30
 var tower_placing_last_pos = null
 var build_mode = false
 var tower_preview = null
@@ -41,7 +41,7 @@ func _input(event):
 				tower_preview.queue_free()
 				tower_preview = null
 	if Input.is_action_just_pressed("place_tower") and build_mode == true:
-		if tower_placing_last_pos == null:  # ✅ guard against nil
+		if tower_placing_last_pos == null:
 			return
 		if placable_selected == 1:
 			main.spawn_tower1(tower_placing_last_pos)
@@ -174,18 +174,12 @@ func main_menuu()->void:
 func savee()->void:
 	main._on_save_pressed()
 
-func startt()->void:
-	Global.load_game = false
-	get_tree().change_scene_to_file("res://main.tscn")
-
-func _on_exit_pressed() -> void:
-	quitt()
-
 func apply_damage_player(amount: int):
 	health -= amount
 	if health <= 0 and not is_dead:
 		is_dead = true
-		main.end_game(0)
+		Global.do_win = 0
+		get_tree().change_scene_to_file("res://scenes/endgame.tscn")
 
 func pickup_item():
 	bullet_count += 7

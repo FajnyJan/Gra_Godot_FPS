@@ -119,42 +119,8 @@ grow_vertical = 2
 text = "Zapisz
 "
 
-[node name="endgame" type="Control" parent="GameMenu"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Panel" type="Panel" parent="GameMenu/endgame"]
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 649.0
-
-[node name="NewGame" type="Button" parent="GameMenu/endgame/Panel"]
-layout_mode = 0
-offset_left = 395.0
-offset_top = 190.0
-offset_right = 695.0
-offset_bottom = 241.0
-text = "Nowa gra"
-
-[node name="Exit" type="Button" parent="GameMenu/endgame/Panel"]
-layout_mode = 0
-offset_left = 374.0
-offset_top = 343.0
-offset_right = 664.0
-offset_bottom = 470.0
-text = "Wyjdź"
-
-[node name="win" type="Sprite2D" parent="GameMenu/endgame"]
-
-[node name="lose" type="Sprite2D" parent="GameMenu/endgame"]
-
 [connection signal="pressed" from="GameMenu/stop/Panel/Continue" to="." method="continuee"]
 [connection signal="pressed" from="GameMenu/stop/Panel/MainMenu" to="." method="main_menuu"]
 [connection signal="pressed" from="GameMenu/stop/Panel/Options" to="." method="optionss"]
 [connection signal="pressed" from="GameMenu/stop/Panel/Quit" to="." method="quitt"]
 [connection signal="pressed" from="GameMenu/stop/Panel/Save" to="." method="savee"]
-[connection signal="pressed" from="GameMenu/endgame/Panel/NewGame" to="." method="startt"]
-[connection signal="pressed" from="GameMenu/endgame/Panel/Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="GameMenu/endgame/Panel/Exit" to="." method="quitt"]
