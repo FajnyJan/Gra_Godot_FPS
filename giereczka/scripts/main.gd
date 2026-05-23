@@ -9,6 +9,8 @@ var Tower2Scene = preload("res://scenes/placables/tower_2.tscn")
 var Tower2PreviewScene = preload("res://scenes/placables/turret_2-preview.tscn")
 var WallScene = preload("res://scenes/placables/wall.tscn")
 var WallPreviewScene = preload("res://scenes/placables/wall-preview.tscn")
+var SlopeWallScene = preload("res://scenes/placables/slope_wall.tscn")
+var SlopeWallPreviewScene = preload("res://scenes/placables/slope_wall-preview.tscn")
 @export var enemy_scene: PackedScene
 var waves = {
 	1:3,
@@ -60,6 +62,19 @@ func spawn_wall(position: Vector3, rot_y: float = 0.0):
 
 func show_wall():
 	var preview = WallPreviewScene.instantiate()
+	add_child(preview)
+	return preview
+
+func spawn_slope_wall(position: Vector3, rot_y: float = 0.0):
+	var object = SlopeWallScene.instantiate()
+	object.global_transform.origin = position
+	object.rotation.y = rot_y
+	object.add_to_group("buildable")
+	object.set_meta("build_type", "slope_wall")
+	add_child(object)
+
+func show_slope_wall():
+	var preview = SlopeWallPreviewScene.instantiate()
 	add_child(preview)
 	return preview
 
@@ -263,3 +278,5 @@ func load_buildables(data: Array):
 				spawn_tower2(pos, rot)
 			"wall":
 				spawn_wall(pos, rot)
+			"slope_wall":
+				spawn_slope_wall(pos, rot)

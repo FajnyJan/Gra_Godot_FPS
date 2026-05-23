@@ -18,7 +18,7 @@ var placable_placing_last_pos = null
 var build_mode = false
 var placable_preview = null
 var placable_rotation_y := 0.0
-var placables := ["tower1", "tower2", "wall"]
+var placables := ["tower1", "tower2", "wall", "slope_wall"]
 var placable_selected := 0
 
 var is_dead = false
@@ -37,6 +37,8 @@ func get_preview():
 			return main.show_tower2()
 		"wall":
 			return main.show_wall()
+		"slope_wall":
+			return main.show_slope_wall()
 	return null
 
 
@@ -48,6 +50,8 @@ func place_object(pos: Vector3):
 			main.spawn_tower2(pos, placable_rotation_y)
 		"wall":
 			main.spawn_wall(pos, placable_rotation_y)
+		"slope_wall":
+			main.spawn_slope_wall(pos, placable_rotation_y)
 
 
 func _input(event):
