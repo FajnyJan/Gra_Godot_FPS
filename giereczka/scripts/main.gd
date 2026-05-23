@@ -3,10 +3,12 @@ extends Node3D
 
 @onready var target = $player
 var EnemyScene = preload("res://scenes/enemy1.tscn")
-var Tower1Scene = preload("res://scenes/turrety/tower_1.tscn")
-var Tower1PreviewScene = preload("res://scenes/turrety/turret_1-preview.tscn")
-var Tower2Scene = preload("res://scenes/turrety/tower_2.tscn")
-var Tower2PreviewScene = preload("res://scenes/turrety/turret_2-preview.tscn")
+var Tower1Scene = preload("res://scenes/placables/tower_1.tscn")
+var Tower1PreviewScene = preload("res://scenes/placables/turret_1-preview.tscn")
+var Tower2Scene = preload("res://scenes/placables/tower_2.tscn")
+var Tower2PreviewScene = preload("res://scenes/placables/turret_2-preview.tscn")
+var WallScene = preload("res://scenes/placables/wall.tscn")
+var WallPreviewScene = preload("res://scenes/placables/wall-preview.tscn")
 @export var enemy_scene: PackedScene
 var waves = {
 	1:3,
@@ -22,24 +24,42 @@ func spawn_enemy(position: Vector3, health: int = 20):
 	enemy.health = health
 	enemy.global_transform = Transform3D(enemy.global_transform.basis, position)
 
-func spawn_tower1(position: Vector3):
-	var tower = Tower1Scene.instantiate()
-	tower.global_transform.origin = position
-	add_child(tower)
+func spawn_tower1(position: Vector3, rot_y: float = 0.0):
+	var object = Tower1Scene.instantiate()
+	object.global_transform.origin = position
+	object.rotation.y = rot_y
+	object.add_to_group("buildable")
+	object.set_meta("build_type", "tower1")
+	add_child(object)
 
 func show_tower1():
 	var preview = Tower1PreviewScene.instantiate()
 	add_child(preview)
 	return preview
 
-func spawn_tower2(position: Vector3):
-	var tower = Tower2Scene.instantiate()
-	add_child(tower)
-	tower.global_transform.origin = position
-	
+func spawn_tower2(position: Vector3, rot_y: float = 0.0):
+	var object = Tower2Scene.instantiate()
+	object.global_transform.origin = position
+	object.rotation.y = rot_y
+	object.add_to_group("buildable")
+	object.set_meta("build_type", "tower2")
+	add_child(object)
 
 func show_tower2():
 	var preview = Tower2PreviewScene.instantiate()
+	add_child(preview)
+	return preview
+
+func spawn_wall(position: Vector3, rot_y: float = 0.0):
+	var object = WallScene.instantiate()
+	object.global_transform.origin = position
+	object.rotation.y = rot_y
+	object.add_to_group("buildable")
+	object.set_meta("build_type", "wall")
+	add_child(object)
+
+func show_wall():
+	var preview = WallPreviewScene.instantiate()
 	add_child(preview)
 	return preview
 
@@ -109,7 +129,8 @@ func _on_save_pressed():
 	packed_scene.pack($"świat")
 	var data = {
 		"player": save_player(),
-		"enemies": save_group("enemy")
+		"enemies": save_group("enemy"),
+		"buildables": save_buildables()
 	}
 
 	var json_string = JSON.stringify(data, "\t")
@@ -149,6 +170,7 @@ func load_game():
 		var transform = Transform3D(basis, Vector3(o["x"], o["y"], o["z"]))
 		$player.global_transform = transform
 		load_enemies(data["enemies"])
+		load_buildables(data["buildables"])
 		print("loaded")
 
 func start_wave():
@@ -211,3 +233,33 @@ func load_enemies(data: Array):
 		var hp = enemy_data.get("health", 20)
 
 		spawn_enemy(pos, hp)
+
+func save_buildables():
+	var arr = []
+
+	for node in get_tree().get_nodes_in_group("buildable"):
+		if node is Node3D:
+			arr.append({
+				"type": node.get_meta("build_type"),
+				"pos": {
+					"x": node.global_position.x,
+					"y": node.global_position.y,
+					"z": node.global_position.z
+				},
+				"rot_y": node.rotation.y
+			})
+
+	return arr
+
+func load_buildables(data: Array):
+	for b in data:
+		var pos = Vector3(b["pos"]["x"], b["pos"]["y"], b["pos"]["z"])
+		var rot = b.get("rot_y", 0.0)
+
+		match b["type"]:
+			"tower1":
+				spawn_tower1(pos, rot)
+			"tower2":
+				spawn_tower2(pos, rot)
+			"wall":
+				spawn_wall(pos, rot)

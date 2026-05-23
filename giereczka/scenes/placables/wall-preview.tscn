@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdcyokenvw1g3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_id6up"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_id6up"]
+
+[node name="Wall" type="Node3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 3, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_id6up")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+transparency = 0.6
+mesh = SubResource("BoxMesh_id6up")

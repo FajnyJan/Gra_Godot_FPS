@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dgpkvgi0yn6if" path="res://assets/FS002_Day.png" id="1_0fd1v"]
 [ext_resource type="PackedScene" uid="uid://dkcf1qpuebuhw" path="res://world.tscn" id="2_kamjv"]
-[ext_resource type="PackedScene" uid="uid://bkwwafkmn0gvh" path="res://scenes/turrety/tower_1.tscn" id="3_m5edu"]
-[ext_resource type="PackedScene" uid="uid://d1g351x220vil" path="res://scenes/turrety/tower_2.tscn" id="4_7w0ev"]
+[ext_resource type="PackedScene" uid="uid://bkwwafkmn0gvh" path="res://scenes/placables/tower_1.tscn" id="3_m5edu"]
+[ext_resource type="PackedScene" uid="uid://d1g351x220vil" path="res://scenes/placables/tower_2.tscn" id="4_7w0ev"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_272bh"]
 panorama = ExtResource("1_0fd1v")
