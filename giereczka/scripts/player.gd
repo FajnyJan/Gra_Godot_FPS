@@ -186,3 +186,9 @@ func apply_damage_player(amount: int):
 	if health <= 0 and not is_dead:
 		is_dead = true
 		main.end_game(0)
+
+func pickup_item():
+	bullet_count += 7
+	health += 30
+	if health > 100:
+		health = 100

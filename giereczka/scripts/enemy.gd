@@ -4,6 +4,7 @@ extends CharacterBody3D
 @onready var nav = $NavigationAgent3D
 @onready var animations = $Skeleton_Mage/Rig_Medium/Skeleton3D/AnimationPlayer
 @onready var attack_range = $AttackRange
+var DropScene = preload("res://scenes/drop.tscn")
 
 var health: int
 
@@ -85,6 +86,7 @@ func apply_damage(amount: int):
 		Global.how_many_enemy -=1
 		remove_from_group("enemy")
 		is_dead = true
+		drop_drop()
 
 func get_closest_target():
 	var closest = null
@@ -130,3 +132,8 @@ func save_state():
 			]
 		}
 	}
+
+func drop_drop():
+	var drop = DropScene.instantiate()
+	$"..".add_child(drop)
+	drop.global_transform = global_transform
