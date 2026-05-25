@@ -209,8 +209,10 @@ func apply_damage_player(amount: int):
 		Global.do_win = 0
 		get_tree().change_scene_to_file("res://scenes/endgame.tscn")
 
-func pickup_item():
+func pickup_ammo():
 	bullet_count += 7
+
+func pickup_health():
 	health += 30
 	if health > 100:
 		health = 100
