@@ -17,8 +17,8 @@ var destroy_in_range = false
 var damage = 10
 var attack_cooldown = 0.0
 var attack_rate = 1.0
-
 var attack_target = null
+var detection_range = 15.0
 
 func _ready():
 	add_to_group("enemy")
@@ -42,7 +42,7 @@ func _physics_process(delta):
 			queue_free()
 			return
 	else:
-		target = get_closest_target()
+		target = get_priority_target()
 		
 		if not is_on_floor():
 			velocity.y -= gravity * delta
@@ -137,3 +137,26 @@ func drop_drop():
 	var drop = DropScene.instantiate()
 	$"..".add_child(drop)
 	drop.global_transform = global_transform
+
+func get_priority_target():
+	var closest_player = null
+	var closest_chest = null
+	var player_dist = INF
+	var chest_dist = INF
+	for p in get_tree().get_nodes_in_group("player"):
+		var dist = global_position.distance_to(p.global_position)
+		if dist < player_dist:
+			player_dist = dist
+			closest_player = p
+	for c in get_tree().get_nodes_in_group("chest"):
+		var dist = global_position.distance_to(c.global_position)
+		if dist < chest_dist:
+			chest_dist = dist
+			closest_chest = c
+	if closest_player != null and player_dist <= detection_range:
+		if closest_chest != null and chest_dist < player_dist:
+			return closest_chest
+		return closest_player
+	if closest_chest != null:
+		return closest_chest
+	return closest_player
