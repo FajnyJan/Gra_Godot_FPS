@@ -995,7 +995,21 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="block-grass-large-slope-steep2/block-grass-large-slope-steep" unique_id=1164072355]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-large-slope-steep2/block-grass-large-slope-steep/StaticBody3D" unique_id=895486973]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04087165, -0.025007248)
+transform = Transform3D(1, 0, 0, 0, 1.0174727, 0, 0, 0, 1, 0, -0.04087165, -0.025007248)
+shape = SubResource("ConvexPolygonShape3D_yeqlj")
+
+[node name="block-grass-large-slope-steep3" type="Node3D" parent="." unique_id=1570188029]
+transform = Transform3D(0.5, 0, 0, 0, 0.85, 0, 0, 0, 0.5, 3.6017022, 0, 12.030879)
+
+[node name="block-grass-large-slope-steep" type="MeshInstance3D" parent="block-grass-large-slope-steep3" unique_id=1510501985]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, -0.01411043, 0)
+mesh = SubResource("ArrayMesh_wmxgp")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="block-grass-large-slope-steep3/block-grass-large-slope-steep" unique_id=655983540]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-large-slope-steep3/block-grass-large-slope-steep/StaticBody3D" unique_id=1895796900]
+transform = Transform3D(1, 0, 0, 0, 1.0187889, 0, 0, 0, 1, 0, -0.030018484, -0.025007248)
 shape = SubResource("ConvexPolygonShape3D_yeqlj")
 
 [node name="block-grass-large-slope2" type="Node3D" parent="." unique_id=232139401]
