@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cekj3schqttq1"]
+
+[ext_resource type="PackedScene" uid="uid://1h8ks30mscb1" path="res://KayKit_Skeletons_1.1_FREE/characters/gltf/Skeleton_Rogue.glb" id="1_dphco"]
+
+[node name="Skeleton_Rogue" instance=ExtResource("1_dphco")]
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." index="1"]
+root_node = NodePath("../..")
