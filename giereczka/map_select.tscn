@@ -13,26 +13,26 @@ script = ExtResource("1_gq5wf")
 
 [node name="Exit" type="Button" parent="." unique_id=1246053628]
 layout_mode = 0
-offset_left = 460.0
-offset_top = 383.0
-offset_right = 727.0
-offset_bottom = 486.0
+offset_left = 428.0
+offset_top = 384.0
+offset_right = 693.0
+offset_bottom = 487.0
 text = "Wróć do Menu"
 
 [node name="Map2" type="Button" parent="." unique_id=1008613273]
 layout_mode = 0
-offset_left = 462.0
-offset_top = 272.0
-offset_right = 725.0
-offset_bottom = 372.0
+offset_left = 428.0
+offset_top = 273.0
+offset_right = 691.0
+offset_bottom = 373.0
 text = "Mapa 2"
 
 [node name="Map1" type="Button" parent="." unique_id=912652587]
 layout_mode = 0
-offset_left = 463.0
-offset_top = 156.0
-offset_right = 730.0
-offset_bottom = 259.0
+offset_left = 429.0
+offset_top = 157.0
+offset_right = 691.0
+offset_bottom = 260.0
 text = "Mapa 1"
 
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwpekinupugu7"]
+[gd_scene format=3 uid="uid://bwpekinupugu7"]
 
-[ext_resource type="Script" path="res://scenes/endgame.gd" id="1_dugu8"]
+[ext_resource type="Script" uid="uid://cenogjp1urro" path="res://scenes/endgame.gd" id="1_dugu8"]
 [ext_resource type="AudioStream" uid="uid://bwr32epa8f31v" path="res://assets/yaaay.mp3" id="2_577wx"]
 [ext_resource type="Texture2D" uid="uid://2psyqmv0cnxi" path="res://assets/winscreen.png" id="2_m5up5"]
 [ext_resource type="Texture2D" uid="uid://cbkjywx8s0mf6" path="res://assets/Luzscreen.png" id="3_odl71"]
@@ -8,21 +8,21 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_odl71"]
 
-[node name="endgame" type="Control"]
+[node name="endgame" type="Control" unique_id=33985117]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 script = ExtResource("1_dugu8")
 
-[node name="win" type="Sprite2D" parent="."]
+[node name="win" type="Sprite2D" parent="." unique_id=2062955755]
 
-[node name="Winscreen" type="Sprite2D" parent="win"]
+[node name="Winscreen" type="Sprite2D" parent="win" unique_id=1895713234]
 position = Vector2(575.5, 325.62497)
 scale = Vector2(0.59739584, 0.59513897)
 texture = ExtResource("2_m5up5")
 
-[node name="WIN" type="Label" parent="win"]
+[node name="WIN" type="Label" parent="win" unique_id=1104554003]
 offset_left = 407.0
 offset_top = 151.0
 offset_right = 791.0
@@ -31,21 +31,21 @@ theme_override_colors/font_color = Color(0.011764706, 0.58431375, 0.011764706, 1
 theme_override_font_sizes/font_size = 70
 text = "WYGRAŁEŚ!"
 
-[node name="lose" type="Sprite2D" parent="."]
+[node name="lose" type="Sprite2D" parent="." unique_id=524777155]
 visible = false
 
-[node name="Luzscreen" type="Sprite2D" parent="lose"]
+[node name="Luzscreen" type="Sprite2D" parent="lose" unique_id=99880986]
 position = Vector2(577.5, 324.49997)
 scale = Vector2(0.706135, 0.71020854)
 texture = ExtResource("3_odl71")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=872409354]
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 649.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_odl71")
 
-[node name="NewGame" type="Button" parent="Panel"]
+[node name="NewGame" type="Button" parent="Panel" unique_id=1534349564]
 layout_mode = 0
 offset_left = 439.0
 offset_top = 270.0
@@ -53,7 +53,7 @@ offset_right = 739.0
 offset_bottom = 320.0
 text = "Nowa gra"
 
-[node name="Exit" type="Button" parent="Panel"]
+[node name="Exit" type="Button" parent="Panel" unique_id=789781478]
 layout_mode = 0
 offset_left = 439.0
 offset_top = 377.0
@@ -61,7 +61,7 @@ offset_right = 739.0
 offset_bottom = 427.0
 text = "Wyjdź"
 
-[node name="MainMenu" type="Button" parent="Panel"]
+[node name="MainMenu" type="Button" parent="Panel" unique_id=1139120512]
 layout_mode = 0
 offset_left = 438.0
 offset_top = 324.0
@@ -69,13 +69,13 @@ offset_right = 739.0
 offset_bottom = 372.0
 text = "Menu główne"
 
-[node name="WinSound" type="AudioStreamPlayer" parent="."]
+[node name="WinSound" type="AudioStreamPlayer" parent="." unique_id=1270565514]
 stream = ExtResource("2_577wx")
 
-[node name="LoseSound" type="AudioStreamPlayer" parent="."]
+[node name="LoseSound" type="AudioStreamPlayer" parent="." unique_id=381594229]
 stream = ExtResource("4_tbbo3")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1482516215]
 root_node = NodePath("../../..")
 
 [connection signal="pressed" from="Panel/NewGame" to="." method="_on_new_game_pressed"]
