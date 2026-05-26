@@ -2,7 +2,10 @@ extends Node3D
 
 
 @onready var target = $player
-var EnemyScene = preload("res://scenes/enemy1.tscn")
+var enemy_scenes = [
+	preload("res://scenes/enemy1.tscn"),
+	preload("res://scenes/enemy2.tscn")
+]
 var Tower1Scene = preload("res://scenes/placables/tower_1.tscn")
 var Tower1PreviewScene = preload("res://scenes/placables/turret_1-preview.tscn")
 var Tower2Scene = preload("res://scenes/placables/tower_2.tscn")
@@ -19,9 +22,11 @@ var waves = {
 	4:10
 }
 var current_wave = 1
+var spawn_weights = [1, 1]
 
 func spawn_enemy(position: Vector3, health: int = 20):
-	var enemy = EnemyScene.instantiate()
+	var selected_scene = get_random_enemy_scene()
+	var enemy = selected_scene.instantiate()
 	add_child(enemy)
 	enemy.health = health
 	enemy.global_transform = Transform3D(enemy.global_transform.basis, position)
@@ -280,3 +285,21 @@ func load_buildables(data: Array):
 				spawn_wall(pos, rot)
 			"slope_wall":
 				spawn_slope_wall(pos, rot)
+
+func get_random_enemy_scene() -> PackedScene:
+	var total_weight = 0
+
+	for weight in spawn_weights:
+		total_weight += weight
+
+	var random_value = randi_range(0, total_weight - 1)
+
+	var current_sum = 0
+
+	for i in range(enemy_scenes.size()):
+		current_sum += spawn_weights[i]
+
+		if random_value < current_sum:
+			return enemy_scenes[i]
+
+	return enemy_scenes[0]
