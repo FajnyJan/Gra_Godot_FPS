@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://hy1t54o7pxkf"]
+[gd_scene format=3 uid="uid://hy1t54o7pxkf"]
 
 [ext_resource type="Script" uid="uid://bkepxtl37s0i4" path="res://map_select.gd" id="1_gq5wf"]
 
-[node name="MapSelect" type="Control"]
+[node name="MapSelect" type="Control" unique_id=1928741355]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,21 +11,30 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gq5wf")
 
-[node name="Map2" type="Button" parent="."]
+[node name="Exit" type="Button" parent="." unique_id=1246053628]
 layout_mode = 0
-offset_left = 676.0
-offset_top = -4.0
-offset_right = 1005.0
-offset_bottom = 143.0
+offset_left = 460.0
+offset_top = 383.0
+offset_right = 727.0
+offset_bottom = 486.0
+text = "Wróć do Menu"
+
+[node name="Map2" type="Button" parent="." unique_id=1008613273]
+layout_mode = 0
+offset_left = 462.0
+offset_top = 272.0
+offset_right = 725.0
+offset_bottom = 372.0
 text = "Mapa 2"
 
-[node name="Map1" type="Button" parent="."]
+[node name="Map1" type="Button" parent="." unique_id=912652587]
 layout_mode = 0
-offset_left = 465.0
-offset_top = 204.0
-offset_right = 732.0
-offset_bottom = 307.0
+offset_left = 463.0
+offset_top = 156.0
+offset_right = 730.0
+offset_bottom = 259.0
 text = "Mapa 1"
 
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Map2" to="." method="_on_map_2_pressed"]
 [connection signal="pressed" from="Map1" to="." method="_on_map_1_pressed"]

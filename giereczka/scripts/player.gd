@@ -123,16 +123,16 @@ func _process(delta):
 						placable_preview.rotation.y = placable_rotation_y
 
 func _physics_process(delta):
-	var collision = move_and_collide(direction * speed * delta)
-
-	if collision:
-		var body = collision.get_collider()
-
-		if body.is_in_group("enemy"):
-			if body.has_method("apply_damage"):
-				body.apply_damage(damage)
-
-		queue_free()
+	#var collision = move_and_collide(direction * speed * delta)
+#
+	#if collision:
+		#var body = collision.get_collider()
+#
+		#if body.is_in_group("enemy"):
+			#if body.has_method("apply_damage"):
+				#body.apply_damage(damage)
+#
+		#queue_free()
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
