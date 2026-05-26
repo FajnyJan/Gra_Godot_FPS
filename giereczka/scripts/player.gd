@@ -167,21 +167,6 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-#func shoot():
-	#var projectile = Bullet1Scene.instantiate()
-#
-	#get_tree().current_scene.add_child(projectile)
-#
-	#var origin = camera.global_transform.origin
-	#var direction = -camera.global_transform.basis.z
-#
-	#projectile.global_position = origin + direction * 1.5
-	#projectile.direction = direction.normalized()
-#
-	#projectile.look_at(
-		#projectile.global_position + direction,
-		#Vector3.UP
-	#)
 func shoot():
 	var bullet = Bullet1Scene.instantiate()
 	get_tree().current_scene.add_child(bullet)
@@ -192,21 +177,7 @@ func shoot():
 	bullet.global_position = origin + direction * 1.5
 	bullet.direction = direction.normalized()
 
-	# ustawienie orientacji pocisku (Godot = -Z forward)
-	bullet.look_at(bullet.global_position + direction, Vector3.UP)
-	
-
-func _spawn_projectile(origin: Vector3, direction: Vector3) -> void:
-	var bullet = bullet_scene.instantiate()
-	if bullet is Node3D:
-		bullet.global_transform = Transform3D(Basis(), origin)
-		if bullet.has_method("set_direction"):
-			bullet.set_direction(direction)
-		if bullet.has_property("speed"):
-			bullet.speed = bullet_speed
-		if bullet.has_property("damage"):
-			bullet.damage = bullet_damage
-		get_tree().current_scene.add_child(bullet)
+	bullet.global_transform.basis = Basis.looking_at(-direction, Vector3.UP)
 
 
 func continuee()->void:
