@@ -87,6 +87,14 @@ func _ready():
 	get_tree().paused = false
 	$player/GameMenu/stop/Panel.visible = false
 	$player/GameMenu/stop/PoleBitwyMenu.visible = false
+	
+	if Global.selected_map != "res://scenes/świat.tscn" and Global.selected_map != "":
+		$"świat".queue_free()
+		await get_tree().process_frame
+		var map2 = load(Global.selected_map).instantiate()
+		map2.name = "świat"
+		add_child(map2)
+		await get_tree().process_frame
 	if Global.load_game:
 		load_game()
 	else:

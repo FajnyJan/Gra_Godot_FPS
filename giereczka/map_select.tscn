@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://hy1t54o7pxkf"]
+
+[ext_resource type="Script" uid="uid://bkepxtl37s0i4" path="res://map_select.gd" id="1_gq5wf"]
+
+[node name="MapSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gq5wf")
+
+[node name="Map2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 676.0
+offset_top = -4.0
+offset_right = 1005.0
+offset_bottom = 143.0
+text = "Mapa 2"
+
+[node name="Map1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 204.0
+offset_right = 732.0
+offset_bottom = 307.0
+text = "Mapa 1"
+
+[connection signal="pressed" from="Map2" to="." method="_on_map_2_pressed"]
+[connection signal="pressed" from="Map1" to="." method="_on_map_1_pressed"]
