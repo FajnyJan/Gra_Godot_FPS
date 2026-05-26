@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cekj3schqttq1"]
+[gd_scene load_steps=0 format=3 uid="uid://cekj3schqttq1"]
 
 [ext_resource type="PackedScene" uid="uid://1h8ks30mscb1" path="res://KayKit_Skeletons_1.1_FREE/characters/gltf/Skeleton_Rogue.glb" id="1_dphco"]
 

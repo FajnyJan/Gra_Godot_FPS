@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ecpkha15iugi"]
+[gd_scene load_steps=0 format=3 uid="uid://ecpkha15iugi"]
 
 [ext_resource type="Script" uid="uid://cenogjp1urro" path="res://scenes/endgame.gd" id="1_dugu8"]
 [ext_resource type="AudioStream" uid="uid://bwr32epa8f31v" path="res://assets/yaaay.mp3" id="2_577wx"]
