@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0j32l3hp6gqy"]
+[gd_scene load_steps=5 format=3 uid="uid://dwcsqkmrkqh7m"]
 
-[ext_resource type="Script" uid="uid://bhl2cd1n4iygb" path="res://scripts/enemy1.gd" id="1_lowyn"]
-[ext_resource type="PackedScene" uid="uid://b77mxykifjrgl" path="res://scenes/szkieletor.tscn" id="4_ye30t"]
+[ext_resource type="Script" uid="uid://cf5uwxul3cavd" path="res://scripts/enemy2.gd" id="1_3neu4"]
+[ext_resource type="PackedScene" uid="uid://cekj3schqttq1" path="res://scenes/szkieletor_rogue.tscn" id="2_3neu4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_epg4t"]
 
@@ -9,7 +9,7 @@
 size = Vector3(1, 1.0131836, 1)
 
 [node name="enemy" type="CharacterBody3D" groups=["enemy"]]
-script = ExtResource("1_lowyn")
+script = ExtResource("1_3neu4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0014371872, 0.98303473, 0)
@@ -22,9 +22,6 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 3
 pixel_size = 0.01
 billboard = 1
 
-[node name="Skeleton_Mage" parent="." instance=ExtResource("4_ye30t")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
-
 [node name="AttackRange" type="Area3D" parent="."]
 
 [node name="destroy_zone" type="CollisionShape3D" parent="AttackRange"]
@@ -33,3 +30,6 @@ shape = SubResource("BoxShape3D_nb0t0")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47687048, 0, 0)
+
+[node name="Skeleton_Rogue" parent="." instance=ExtResource("2_3neu4")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
