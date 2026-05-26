@@ -1,6 +1,10 @@
 extends CharacterBody3D
 @onready var main = $".."
+var Bullet1Scene = preload("res://scenes/pociski/bullet1.tscn")
 
+var direction = Vector3.ZERO
+var speed = 30.0
+var damage = 5
 
 var speedmult = 5.0
 const JUMP_VELOCITY = 4.5
@@ -118,8 +122,17 @@ func _process(delta):
 						placable_preview.global_transform.origin = placable_placing_last_pos
 						placable_preview.rotation.y = placable_rotation_y
 
+func _physics_process(delta):
+	var collision = move_and_collide(direction * speed * delta)
 
-func _physics_process(delta: float) -> void:
+	if collision:
+		var body = collision.get_collider()
+
+		if body.is_in_group("enemy"):
+			if body.has_method("apply_damage"):
+				body.apply_damage(damage)
+
+		queue_free()
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
@@ -154,25 +167,34 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-
+#func shoot():
+	#var projectile = Bullet1Scene.instantiate()
+#
+	#get_tree().current_scene.add_child(projectile)
+#
+	#var origin = camera.global_transform.origin
+	#var direction = -camera.global_transform.basis.z
+#
+	#projectile.global_position = origin + direction * 1.5
+	#projectile.direction = direction.normalized()
+#
+	#projectile.look_at(
+		#projectile.global_position + direction,
+		#Vector3.UP
+	#)
 func shoot():
+	var bullet = Bullet1Scene.instantiate()
+	get_tree().current_scene.add_child(bullet)
+
 	var origin = camera.global_transform.origin
 	var direction = -camera.global_transform.basis.z
-	var spawn_position = origin + direction * bullet_offset
 
-	if bullet_scene != null:
-		_spawn_projectile(spawn_position, direction)
-		return
+	bullet.global_position = origin + direction * 1.5
+	bullet.direction = direction.normalized()
 
-	var space_state = get_world_3d().direct_space_state
-	var end = origin + direction * 1000
-	var query = PhysicsRayQueryParameters3D.create(origin, end)
-	query.exclude = [self]
-	var result = space_state.intersect_ray(query)
-
-	if result and result.collider and result.collider.is_in_group("enemy"):
-		result.collider.apply_damage(bullet_damage)
-
+	# ustawienie orientacji pocisku (Godot = -Z forward)
+	bullet.look_at(bullet.global_position + direction, Vector3.UP)
+	
 
 func _spawn_projectile(origin: Vector3, direction: Vector3) -> void:
 	var bullet = bullet_scene.instantiate()

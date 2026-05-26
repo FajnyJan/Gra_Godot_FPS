@@ -10,13 +10,13 @@ func _ready():
 	queue_free()
 
 func _physics_process(delta):
-	if direction != Vector3.ZERO:
-		look_at(global_position + direction)
-		rotate_y(deg_to_rad(180))
 	var collision = move_and_collide(direction * speed * delta)
+
 	if collision:
-		var body = collision.get_collider()
-		if body.is_in_group("enemy"):
-			if body.has_method("apply_damage"):
-				body.apply_damage(damage)
+		var hit_body = collision.get_collider()
+
+		if hit_body.is_in_group("enemy"):
+			if hit_body.has_method("apply_damage"):
+				hit_body.apply_damage(damage)
+
 		queue_free()
