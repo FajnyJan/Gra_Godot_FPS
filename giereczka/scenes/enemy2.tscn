@@ -6,7 +6,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_epg4t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nb0t0"]
-size = Vector3(1, 1.0131836, 1)
+size = Vector3(17.410904, 2.7211304, 5.1484375)
 
 [node name="enemy" type="CharacterBody3D" groups=["enemy"]]
 script = ExtResource("1_3neu4")
@@ -25,7 +25,7 @@ billboard = 1
 [node name="AttackRange" type="Area3D" parent="."]
 
 [node name="destroy_zone" type="CollisionShape3D" parent="AttackRange"]
-transform = Transform3D(0.6, 0, 0, 0, 1.6, 0, 0, 0, 1.2, 0.8, 1.1, 0)
+transform = Transform3D(0.6, 0, 0, 0, 1.6, 0, 0, 0, 1.2, 5.7234974, 1.412, 0)
 shape = SubResource("BoxShape3D_nb0t0")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
@@ -33,3 +33,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47687048, 0, 0)
 
 [node name="Skeleton_Rogue" parent="." instance=ExtResource("2_3neu4")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6527293, 1.1663711, 0)

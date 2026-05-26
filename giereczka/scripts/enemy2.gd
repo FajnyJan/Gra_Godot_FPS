@@ -4,7 +4,10 @@ extends CharacterBody3D
 @onready var nav = $NavigationAgent3D
 @onready var animations = $AnimationPlayer2
 @onready var attack_range = $AttackRange
+@onready var muzzle = $Marker3D
 var DropScene = preload("res://scenes/drop.tscn")
+var Bullet1Scene = preload("res://scenes/pociski/bullet3.tscn")
+
 
 var health: int
 
@@ -73,8 +76,7 @@ func _physics_process(delta):
 			rotate_y(deg_to_rad(90))
 		if destroy_in_range and attack_target != null:
 			if attack_cooldown <= 0.0:
-				if attack_target.has_method("apply_damage_player"):
-					attack_target.apply_damage_player(damage)
+				shoot()
 				attack_cooldown = attack_rate
 
 func target_position(pos: Vector3):
@@ -160,3 +162,11 @@ func get_priority_target():
 	if closest_chest != null:
 		return closest_chest
 	return closest_player
+
+func shoot():
+	var bullet = Bullet1Scene.instantiate()
+	get_tree().current_scene.add_child(bullet)
+	bullet.global_position = muzzle.global_position
+	var dir = -global_transform.basis.z
+	dir = dir.rotated(Vector3.UP, deg_to_rad(-90))
+	bullet.direction = dir.normalized()
