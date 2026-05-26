@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cuorrnxbos8j4"]
 
-[ext_resource type="Script" uid="uid://c0d5hsalmpl43" path="res://scripts/spawnarea_enemy.gd" id="1_g3chv"]
+[ext_resource type="Script" path="res://scripts/spawnarea_enemy.gd" id="1_g3chv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iseyb"]
 

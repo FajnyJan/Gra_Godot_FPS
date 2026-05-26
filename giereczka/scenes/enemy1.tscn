@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://d0j32l3hp6gqy"]
 
-[ext_resource type="Script" uid="uid://bhl2cd1n4iygb" path="res://scripts/enemy1.gd" id="1_lowyn"]
+[ext_resource type="Script" path="res://scripts/enemy1.gd" id="1_lowyn"]
 [ext_resource type="PackedScene" uid="uid://b77mxykifjrgl" path="res://scenes/szkieletor.tscn" id="4_ye30t"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_epg4t"]

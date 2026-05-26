@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://cmntj6ow3yxo4"]
+[gd_scene load_steps=212 format=4 uid="uid://cmntj6ow3yxo4"]
 
 [ext_resource type="PackedScene" uid="uid://x1dorfglgm82" path="res://assets/GLB format/arrow.glb" id="1_moda8"]
 [ext_resource type="PackedScene" uid="uid://cbc0rmxuujxa2" path="res://assets/GLB format/arrows.glb" id="2_qfsly"]
@@ -931,537 +931,537 @@ shadow_mesh = SubResource("ArrayMesh_5spha")
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_fxixf"]
 height = 6.421707
 
-[node name="tiles" type="Node3D" unique_id=927851134]
+[node name="tiles" type="Node3D"]
 
-[node name="arrow2" parent="." unique_id=105687971 instance=ExtResource("1_moda8")]
+[node name="arrow2" parent="." instance=ExtResource("1_moda8")]
 
-[node name="arrows2" parent="." unique_id=1961890598 instance=ExtResource("2_qfsly")]
+[node name="arrows2" parent="." instance=ExtResource("2_qfsly")]
 
-[node name="barrel2" parent="." unique_id=512534012 instance=ExtResource("3_y4vfv")]
+[node name="barrel2" parent="." instance=ExtResource("3_y4vfv")]
 
-[node name="block-grass-corner-low2" parent="." unique_id=908725848 instance=ExtResource("4_y6yie")]
+[node name="block-grass-corner-low2" parent="." instance=ExtResource("4_y6yie")]
 
-[node name="block-grass-corner-overhang-low2" parent="." unique_id=1044649808 instance=ExtResource("5_g6rov")]
+[node name="block-grass-corner-overhang-low2" parent="." instance=ExtResource("5_g6rov")]
 
-[node name="block-grass-corner-overhang2" parent="." unique_id=1337275581 instance=ExtResource("6_gmbkt")]
+[node name="block-grass-corner-overhang2" parent="." instance=ExtResource("6_gmbkt")]
 
-[node name="block-grass-corner2" parent="." unique_id=731951924 instance=ExtResource("7_225dx")]
+[node name="block-grass-corner2" parent="." instance=ExtResource("7_225dx")]
 
-[node name="block-grass-curve-half2" parent="." unique_id=1941638634 instance=ExtResource("8_duuxk")]
+[node name="block-grass-curve-half2" parent="." instance=ExtResource("8_duuxk")]
 
-[node name="block-grass-curve-low2" parent="." unique_id=567674370 instance=ExtResource("9_ob8ay")]
+[node name="block-grass-curve-low2" parent="." instance=ExtResource("9_ob8ay")]
 
-[node name="block-grass-curve2" parent="." unique_id=1706982940 instance=ExtResource("10_larj5")]
+[node name="block-grass-curve2" parent="." instance=ExtResource("10_larj5")]
 
-[node name="block-grass-edge2" parent="." unique_id=1901611041 instance=ExtResource("11_hiitx")]
+[node name="block-grass-edge2" parent="." instance=ExtResource("11_hiitx")]
 
-[node name="block-grass-hexagon2" parent="." unique_id=770518416 instance=ExtResource("12_0euc6")]
+[node name="block-grass-hexagon2" parent="." instance=ExtResource("12_0euc6")]
 
-[node name="block-grass-large-slope-narrow2" type="Node3D" parent="." unique_id=1947894566]
+[node name="block-grass-large-slope-narrow2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14.438769)
 
-[node name="block-grass-large-slope-narrow" type="MeshInstance3D" parent="block-grass-large-slope-narrow2" unique_id=84172134]
+[node name="block-grass-large-slope-narrow" type="MeshInstance3D" parent="block-grass-large-slope-narrow2"]
 mesh = SubResource("ArrayMesh_umgr1")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="block-grass-large-slope-narrow2/block-grass-large-slope-narrow" unique_id=2119717242]
+[node name="StaticBody3D" type="StaticBody3D" parent="block-grass-large-slope-narrow2/block-grass-large-slope-narrow"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-large-slope-narrow2/block-grass-large-slope-narrow/StaticBody3D" unique_id=716277494]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-large-slope-narrow2/block-grass-large-slope-narrow/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.023079664, -0.023499489)
 shape = SubResource("ConvexPolygonShape3D_h5d14")
 
-[node name="block-grass-large-slope-steep-narrow2" type="Node3D" parent="." unique_id=1382457197]
+[node name="block-grass-large-slope-steep-narrow2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.312615, 0)
 
-[node name="block-grass-large-slope-steep-narrow" type="MeshInstance3D" parent="block-grass-large-slope-steep-narrow2" unique_id=1269467062]
+[node name="block-grass-large-slope-steep-narrow" type="MeshInstance3D" parent="block-grass-large-slope-steep-narrow2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.3043332, 10.611313)
 mesh = SubResource("ArrayMesh_13cal")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="block-grass-large-slope-steep-narrow2/block-grass-large-slope-steep-narrow" unique_id=558778976]
+[node name="StaticBody3D" type="StaticBody3D" parent="block-grass-large-slope-steep-narrow2/block-grass-large-slope-steep-narrow"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-large-slope-steep-narrow2/block-grass-large-slope-steep-narrow/StaticBody3D" unique_id=269490676]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-large-slope-steep-narrow2/block-grass-large-slope-steep-narrow/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.034405172, -0.01086998)
 shape = SubResource("ConvexPolygonShape3D_jhm6e")
 
-[node name="block-grass-large-slope-steep2" type="Node3D" parent="." unique_id=2084651003]
+[node name="block-grass-large-slope-steep2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.030879)
 
-[node name="block-grass-large-slope-steep" type="MeshInstance3D" parent="block-grass-large-slope-steep2" unique_id=105322962]
+[node name="block-grass-large-slope-steep" type="MeshInstance3D" parent="block-grass-large-slope-steep2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03259352, 0)
 mesh = SubResource("ArrayMesh_wmxgp")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="block-grass-large-slope-steep2/block-grass-large-slope-steep" unique_id=1164072355]
+[node name="StaticBody3D" type="StaticBody3D" parent="block-grass-large-slope-steep2/block-grass-large-slope-steep"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-large-slope-steep2/block-grass-large-slope-steep/StaticBody3D" unique_id=895486973]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-large-slope-steep2/block-grass-large-slope-steep/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1.0174727, 0, 0, 0, 1, 0, -0.04087165, -0.025007248)
 shape = SubResource("ConvexPolygonShape3D_yeqlj")
 
-[node name="block-grass-large-slope-steep3" type="Node3D" parent="." unique_id=1570188029]
+[node name="block-grass-large-slope-steep3" type="Node3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.85, 0, 0, 0, 0.5, 3.6017022, 0, 12.030879)
 
-[node name="block-grass-large-slope-steep" type="MeshInstance3D" parent="block-grass-large-slope-steep3" unique_id=1510501985]
+[node name="block-grass-large-slope-steep" type="MeshInstance3D" parent="block-grass-large-slope-steep3"]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, -0.01411043, 0)
 mesh = SubResource("ArrayMesh_wmxgp")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="block-grass-large-slope-steep3/block-grass-large-slope-steep" unique_id=655983540]
+[node name="StaticBody3D" type="StaticBody3D" parent="block-grass-large-slope-steep3/block-grass-large-slope-steep"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-large-slope-steep3/block-grass-large-slope-steep/StaticBody3D" unique_id=1895796900]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-large-slope-steep3/block-grass-large-slope-steep/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1.0187889, 0, 0, 0, 1, 0, -0.030018484, -0.025007248)
 shape = SubResource("ConvexPolygonShape3D_yeqlj")
 
-[node name="block-grass-large-slope2" type="Node3D" parent="." unique_id=232139401]
+[node name="block-grass-large-slope2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.8578486)
 
-[node name="block-grass-large-slope" type="MeshInstance3D" parent="block-grass-large-slope2" unique_id=449274808]
+[node name="block-grass-large-slope" type="MeshInstance3D" parent="block-grass-large-slope2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.018448561, 0)
 mesh = SubResource("ArrayMesh_dsel2")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="block-grass-large-slope2/block-grass-large-slope" unique_id=78021373]
+[node name="StaticBody3D" type="StaticBody3D" parent="block-grass-large-slope2/block-grass-large-slope"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-large-slope2/block-grass-large-slope/StaticBody3D" unique_id=272903799]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-large-slope2/block-grass-large-slope/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.026619345, -0.0053491592)
 shape = SubResource("ConvexPolygonShape3D_u2x1e")
 
-[node name="block-grass-large-tall2" type="Node3D" parent="." unique_id=682836173]
+[node name="block-grass-large-tall2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0899334, 0, 0)
 
-[node name="block-grass-large-tall" type="MeshInstance3D" parent="block-grass-large-tall2" unique_id=1858471688]
+[node name="block-grass-large-tall" type="MeshInstance3D" parent="block-grass-large-tall2"]
 mesh = SubResource("ArrayMesh_asla7")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="block-grass-large-tall2/block-grass-large-tall" unique_id=2064827397]
+[node name="StaticBody3D" type="StaticBody3D" parent="block-grass-large-tall2/block-grass-large-tall"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-large-tall2/block-grass-large-tall/StaticBody3D" unique_id=2014000232]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-large-tall2/block-grass-large-tall/StaticBody3D"]
 transform = Transform3D(2.025, 0, 0, 0, 2.025, 0, 0, 0, 2.025, 0, 1.0069813, 0)
 shape = SubResource("BoxShape3D_k644i")
 
-[node name="block-grass-large2" type="Node3D" parent="." unique_id=937382013]
+[node name="block-grass-large2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9213386, 0, 0)
 
-[node name="block-grass-large" type="MeshInstance3D" parent="block-grass-large2" unique_id=1191793817]
+[node name="block-grass-large" type="MeshInstance3D" parent="block-grass-large2"]
 mesh = SubResource("ArrayMesh_1tg7b")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="block-grass-large2/block-grass-large" unique_id=1072879791]
+[node name="StaticBody3D" type="StaticBody3D" parent="block-grass-large2/block-grass-large"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-large2/block-grass-large/StaticBody3D" unique_id=1890853029]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-large2/block-grass-large/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012145996, 0.5122645, -0.012207031)
 shape = SubResource("BoxShape3D_njaou")
 
-[node name="block-grass-long2" parent="." unique_id=325702691 instance=ExtResource("17_dkurs")]
+[node name="block-grass-long2" parent="." instance=ExtResource("17_dkurs")]
 
-[node name="block-grass-low-hexagon2" parent="." unique_id=1864278081 instance=ExtResource("18_enasl")]
+[node name="block-grass-low-hexagon2" parent="." instance=ExtResource("18_enasl")]
 
-[node name="block-grass-low-large2" parent="." unique_id=1062075786 instance=ExtResource("19_05bug")]
+[node name="block-grass-low-large2" parent="." instance=ExtResource("19_05bug")]
 
-[node name="block-grass-low-long2" parent="." unique_id=1347718137 instance=ExtResource("20_a723k")]
+[node name="block-grass-low-long2" parent="." instance=ExtResource("20_a723k")]
 
-[node name="block-grass-low-narrow2" parent="." unique_id=170499857 instance=ExtResource("21_3run7")]
+[node name="block-grass-low-narrow2" parent="." instance=ExtResource("21_3run7")]
 
-[node name="block-grass-low2" parent="." unique_id=1996340311 instance=ExtResource("22_f34x5")]
+[node name="block-grass-low2" parent="." instance=ExtResource("22_f34x5")]
 
-[node name="block-grass-narrow2" parent="." unique_id=1140265445 instance=ExtResource("23_1ivfc")]
+[node name="block-grass-narrow2" parent="." instance=ExtResource("23_1ivfc")]
 
-[node name="block-grass-overhang-corner2" parent="." unique_id=177625373 instance=ExtResource("24_j3kt1")]
+[node name="block-grass-overhang-corner2" parent="." instance=ExtResource("24_j3kt1")]
 
-[node name="block-grass-overhang-edge2" parent="." unique_id=2057188631 instance=ExtResource("25_a1u8e")]
+[node name="block-grass-overhang-edge2" parent="." instance=ExtResource("25_a1u8e")]
 
-[node name="block-grass-overhang-hexagon2" parent="." unique_id=430613738 instance=ExtResource("26_qxeb5")]
+[node name="block-grass-overhang-hexagon2" parent="." instance=ExtResource("26_qxeb5")]
 
-[node name="block-grass-overhang-large-slope-narrow2" parent="." unique_id=1655779767 instance=ExtResource("27_uj7hi")]
+[node name="block-grass-overhang-large-slope-narrow2" parent="." instance=ExtResource("27_uj7hi")]
 
-[node name="block-grass-overhang-large-slope-steep-narrow2" parent="." unique_id=1123848722 instance=ExtResource("28_bkhx1")]
+[node name="block-grass-overhang-large-slope-steep-narrow2" parent="." instance=ExtResource("28_bkhx1")]
 
-[node name="block-grass-overhang-large-slope-steep2" parent="." unique_id=563737776 instance=ExtResource("29_8eqer")]
+[node name="block-grass-overhang-large-slope-steep2" parent="." instance=ExtResource("29_8eqer")]
 
-[node name="block-grass-overhang-large-slope2" parent="." unique_id=503404472 instance=ExtResource("30_a7254")]
+[node name="block-grass-overhang-large-slope2" parent="." instance=ExtResource("30_a7254")]
 
-[node name="block-grass-overhang-large-tall2" type="Node3D" parent="." unique_id=1712642142]
+[node name="block-grass-overhang-large-tall2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2646904, 0, 0)
 
-[node name="block-grass-overhang-large-tall" type="MeshInstance3D" parent="block-grass-overhang-large-tall2" unique_id=697877786]
+[node name="block-grass-overhang-large-tall" type="MeshInstance3D" parent="block-grass-overhang-large-tall2"]
 mesh = SubResource("ArrayMesh_jd71e")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="block-grass-overhang-large-tall2/block-grass-overhang-large-tall" unique_id=570531361]
+[node name="StaticBody3D" type="StaticBody3D" parent="block-grass-overhang-large-tall2/block-grass-overhang-large-tall"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-overhang-large-tall2/block-grass-overhang-large-tall/StaticBody3D" unique_id=2021093500]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-overhang-large-tall2/block-grass-overhang-large-tall/StaticBody3D"]
 transform = Transform3D(2.025, 0, 0, 0, 2.025, 0, 0, 0, 2.025, 0, 0.9924612, 0)
 shape = SubResource("BoxShape3D_rq1fw")
 
-[node name="block-grass-overhang-large2" type="Node3D" parent="." unique_id=1463592596]
+[node name="block-grass-overhang-large2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.133349, 0, 2.9255528)
 
-[node name="block-grass-overhang-large" type="MeshInstance3D" parent="block-grass-overhang-large2" unique_id=126935437]
+[node name="block-grass-overhang-large" type="MeshInstance3D" parent="block-grass-overhang-large2"]
 mesh = SubResource("ArrayMesh_x41dj")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="block-grass-overhang-large2/block-grass-overhang-large" unique_id=1522986248]
+[node name="StaticBody3D" type="StaticBody3D" parent="block-grass-overhang-large2/block-grass-overhang-large"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-overhang-large2/block-grass-overhang-large/StaticBody3D" unique_id=156727061]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-overhang-large2/block-grass-overhang-large/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.016384125, 0.49304926, -0.008568287)
 shape = SubResource("BoxShape3D_fntso")
 
-[node name="block-grass-overhang-long2" type="Node3D" parent="." unique_id=1098926559]
+[node name="block-grass-overhang-long2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4593377, 0, 5.4684186)
 
-[node name="block-grass-overhang-long" type="MeshInstance3D" parent="block-grass-overhang-long2" unique_id=950878872]
+[node name="block-grass-overhang-long" type="MeshInstance3D" parent="block-grass-overhang-long2"]
 mesh = SubResource("ArrayMesh_lnr81")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="block-grass-overhang-long2/block-grass-overhang-long" unique_id=1452032975]
+[node name="StaticBody3D" type="StaticBody3D" parent="block-grass-overhang-long2/block-grass-overhang-long"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-overhang-long2/block-grass-overhang-long/StaticBody3D" unique_id=1488869854]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-overhang-long2/block-grass-overhang-long/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0013427734, 0.50049126, 0.0016775131)
 shape = SubResource("BoxShape3D_rc218")
 
-[node name="block-grass-overhang-low-hexagon2" parent="." unique_id=334024149 instance=ExtResource("31_pat6g")]
+[node name="block-grass-overhang-low-hexagon2" parent="." instance=ExtResource("31_pat6g")]
 
-[node name="block-grass-overhang-low-large2" parent="." unique_id=968794651 instance=ExtResource("32_h2slc")]
+[node name="block-grass-overhang-low-large2" parent="." instance=ExtResource("32_h2slc")]
 
-[node name="block-grass-overhang-low-long2" parent="." unique_id=442882660 instance=ExtResource("33_fedvy")]
+[node name="block-grass-overhang-low-long2" parent="." instance=ExtResource("33_fedvy")]
 
-[node name="block-grass-overhang-low-narrow2" parent="." unique_id=96492099 instance=ExtResource("34_wksml")]
+[node name="block-grass-overhang-low-narrow2" parent="." instance=ExtResource("34_wksml")]
 
-[node name="block-grass-overhang-low2" parent="." unique_id=1052275415 instance=ExtResource("35_2tiq3")]
+[node name="block-grass-overhang-low2" parent="." instance=ExtResource("35_2tiq3")]
 
-[node name="block-grass-overhang-narrow2" parent="." unique_id=831214054 instance=ExtResource("36_bxrjs")]
+[node name="block-grass-overhang-narrow2" parent="." instance=ExtResource("36_bxrjs")]
 
-[node name="block-grass2" type="Node3D" parent="." unique_id=975376975]
+[node name="block-grass2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.821389, 0, 0)
 
-[node name="block-grass" type="MeshInstance3D" parent="block-grass2" unique_id=1891884249]
+[node name="block-grass" type="MeshInstance3D" parent="block-grass2"]
 mesh = SubResource("ArrayMesh_1wo1n")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="block-grass2/block-grass" unique_id=1675015820]
+[node name="StaticBody3D" type="StaticBody3D" parent="block-grass2/block-grass"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass2/block-grass/StaticBody3D" unique_id=94152135]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass2/block-grass/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.004638672, 0.5003299, 0)
 shape = SubResource("BoxShape3D_jhm6e")
 
-[node name="block-moving-blue2" parent="." unique_id=582163964 instance=ExtResource("38_rcnf3")]
+[node name="block-moving-blue2" parent="." instance=ExtResource("38_rcnf3")]
 
-[node name="block-moving-large2" parent="." unique_id=974835126 instance=ExtResource("39_snbmk")]
+[node name="block-moving-large2" parent="." instance=ExtResource("39_snbmk")]
 
-[node name="block-moving2" parent="." unique_id=2010243030 instance=ExtResource("40_tjyo8")]
+[node name="block-moving2" parent="." instance=ExtResource("40_tjyo8")]
 
-[node name="block-snow-corner-low2" parent="." unique_id=582370218 instance=ExtResource("41_bjvm4")]
+[node name="block-snow-corner-low2" parent="." instance=ExtResource("41_bjvm4")]
 
-[node name="block-snow-corner-overhang-low2" parent="." unique_id=384585147 instance=ExtResource("42_gq8k6")]
+[node name="block-snow-corner-overhang-low2" parent="." instance=ExtResource("42_gq8k6")]
 
-[node name="block-snow-corner-overhang2" parent="." unique_id=276321796 instance=ExtResource("43_a5nla")]
+[node name="block-snow-corner-overhang2" parent="." instance=ExtResource("43_a5nla")]
 
-[node name="block-snow-corner2" parent="." unique_id=1629958517 instance=ExtResource("44_wduqk")]
+[node name="block-snow-corner2" parent="." instance=ExtResource("44_wduqk")]
 
-[node name="block-snow-curve-half2" parent="." unique_id=741384724 instance=ExtResource("45_a7vou")]
+[node name="block-snow-curve-half2" parent="." instance=ExtResource("45_a7vou")]
 
-[node name="block-snow-curve-low2" parent="." unique_id=871202053 instance=ExtResource("46_07evg")]
+[node name="block-snow-curve-low2" parent="." instance=ExtResource("46_07evg")]
 
-[node name="block-snow-curve2" parent="." unique_id=373766257 instance=ExtResource("47_5ciei")]
+[node name="block-snow-curve2" parent="." instance=ExtResource("47_5ciei")]
 
-[node name="block-snow-edge2" parent="." unique_id=1758420692 instance=ExtResource("48_4wxwb")]
+[node name="block-snow-edge2" parent="." instance=ExtResource("48_4wxwb")]
 
-[node name="block-snow-hexagon2" parent="." unique_id=1812952624 instance=ExtResource("49_kwiyi")]
+[node name="block-snow-hexagon2" parent="." instance=ExtResource("49_kwiyi")]
 
-[node name="block-snow-large-slope-narrow2" parent="." unique_id=39506970 instance=ExtResource("50_f05yh")]
+[node name="block-snow-large-slope-narrow2" parent="." instance=ExtResource("50_f05yh")]
 
-[node name="block-snow-large-slope-steep-narrow2" parent="." unique_id=657561377 instance=ExtResource("51_n5bwv")]
+[node name="block-snow-large-slope-steep-narrow2" parent="." instance=ExtResource("51_n5bwv")]
 
-[node name="block-snow-large-slope-steep2" parent="." unique_id=1665595286 instance=ExtResource("52_ous2l")]
+[node name="block-snow-large-slope-steep2" parent="." instance=ExtResource("52_ous2l")]
 
-[node name="block-snow-large-slope2" parent="." unique_id=2018411086 instance=ExtResource("53_2p6tk")]
+[node name="block-snow-large-slope2" parent="." instance=ExtResource("53_2p6tk")]
 
-[node name="block-snow-large-tall2" type="Node3D" parent="." unique_id=906196302]
+[node name="block-snow-large-tall2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.020895481, 5.834204)
 
-[node name="block-snow-large-tall" type="MeshInstance3D" parent="block-snow-large-tall2" unique_id=297290724]
+[node name="block-snow-large-tall" type="MeshInstance3D" parent="block-snow-large-tall2"]
 mesh = SubResource("ArrayMesh_ik32a")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="block-snow-large-tall2/block-snow-large-tall" unique_id=806651256]
+[node name="StaticBody3D" type="StaticBody3D" parent="block-snow-large-tall2/block-snow-large-tall"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="block-snow-large-tall2/block-snow-large-tall/StaticBody3D" unique_id=911534201]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="block-snow-large-tall2/block-snow-large-tall/StaticBody3D"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0024414063, 1.005615, 0)
 shape = SubResource("BoxShape3D_vcagp")
 
-[node name="block-snow-large2" type="Node3D" parent="." unique_id=1488321591]
+[node name="block-snow-large2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.123473, 0.013909578, 0)
 
-[node name="block-snow-large" type="MeshInstance3D" parent="block-snow-large2" unique_id=987512930]
+[node name="block-snow-large" type="MeshInstance3D" parent="block-snow-large2"]
 mesh = SubResource("ArrayMesh_mkfma")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="block-snow-large2/block-snow-large" unique_id=1505972087]
+[node name="StaticBody3D" type="StaticBody3D" parent="block-snow-large2/block-snow-large"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="block-snow-large2/block-snow-large/StaticBody3D" unique_id=1092848690]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="block-snow-large2/block-snow-large/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005203247, 0.5036442, 0.010681152)
 shape = SubResource("BoxShape3D_ptmhy")
 
-[node name="block-snow-long2" parent="." unique_id=505924248 instance=ExtResource("54_nlekw")]
+[node name="block-snow-long2" parent="." instance=ExtResource("54_nlekw")]
 
-[node name="block-snow-low-hexagon2" parent="." unique_id=550155876 instance=ExtResource("55_8uhkp")]
+[node name="block-snow-low-hexagon2" parent="." instance=ExtResource("55_8uhkp")]
 
-[node name="block-snow-low-large2" parent="." unique_id=2101498792 instance=ExtResource("56_ypudk")]
+[node name="block-snow-low-large2" parent="." instance=ExtResource("56_ypudk")]
 
-[node name="block-snow-low-long2" parent="." unique_id=62846714 instance=ExtResource("57_yeg2k")]
+[node name="block-snow-low-long2" parent="." instance=ExtResource("57_yeg2k")]
 
-[node name="block-snow-low-narrow2" parent="." unique_id=1687400597 instance=ExtResource("58_b117f")]
+[node name="block-snow-low-narrow2" parent="." instance=ExtResource("58_b117f")]
 
-[node name="block-snow-low2" parent="." unique_id=1212627244 instance=ExtResource("59_sdqx3")]
+[node name="block-snow-low2" parent="." instance=ExtResource("59_sdqx3")]
 
-[node name="block-snow-narrow2" parent="." unique_id=1248953350 instance=ExtResource("60_m6oi8")]
+[node name="block-snow-narrow2" parent="." instance=ExtResource("60_m6oi8")]
 
-[node name="block-snow-overhang-corner2" parent="." unique_id=415565297 instance=ExtResource("61_nnmuq")]
+[node name="block-snow-overhang-corner2" parent="." instance=ExtResource("61_nnmuq")]
 
-[node name="block-snow-overhang-edge2" parent="." unique_id=2011248691 instance=ExtResource("62_qxos2")]
+[node name="block-snow-overhang-edge2" parent="." instance=ExtResource("62_qxos2")]
 
-[node name="block-snow-overhang-hexagon2" parent="." unique_id=1682869966 instance=ExtResource("63_bg883")]
+[node name="block-snow-overhang-hexagon2" parent="." instance=ExtResource("63_bg883")]
 
-[node name="block-snow-overhang-large-slope-narrow2" parent="." unique_id=1914795322 instance=ExtResource("64_wt3wy")]
+[node name="block-snow-overhang-large-slope-narrow2" parent="." instance=ExtResource("64_wt3wy")]
 
-[node name="block-snow-overhang-large-slope-steep-narrow2" parent="." unique_id=1529908109 instance=ExtResource("65_bnll3")]
+[node name="block-snow-overhang-large-slope-steep-narrow2" parent="." instance=ExtResource("65_bnll3")]
 
-[node name="block-snow-overhang-large-slope-steep2" parent="." unique_id=471752192 instance=ExtResource("66_fiopc")]
+[node name="block-snow-overhang-large-slope-steep2" parent="." instance=ExtResource("66_fiopc")]
 
-[node name="block-snow-overhang-large-slope2" parent="." unique_id=2076361196 instance=ExtResource("67_mgd0k")]
+[node name="block-snow-overhang-large-slope2" parent="." instance=ExtResource("67_mgd0k")]
 
-[node name="block-snow-overhang-large-tall2" type="Node3D" parent="." unique_id=744565965]
+[node name="block-snow-overhang-large-tall2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.9656472)
 
-[node name="block-snow-overhang-large-tall" type="MeshInstance3D" parent="block-snow-overhang-large-tall2" unique_id=72137778]
+[node name="block-snow-overhang-large-tall" type="MeshInstance3D" parent="block-snow-overhang-large-tall2"]
 mesh = SubResource("ArrayMesh_s2015")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="block-snow-overhang-large-tall2/block-snow-overhang-large-tall" unique_id=90337228]
+[node name="StaticBody3D" type="StaticBody3D" parent="block-snow-overhang-large-tall2/block-snow-overhang-large-tall"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="block-snow-overhang-large-tall2/block-snow-overhang-large-tall/StaticBody3D" unique_id=1553984492]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="block-snow-overhang-large-tall2/block-snow-overhang-large-tall/StaticBody3D"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.0046054, 0)
 shape = SubResource("BoxShape3D_eaawd")
 
-[node name="block-snow-overhang-large2" type="Node3D" parent="." unique_id=1900903943]
+[node name="block-snow-overhang-large2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.937429, 0, 2.6718278)
 
-[node name="block-snow-overhang-large" type="MeshInstance3D" parent="block-snow-overhang-large2" unique_id=418733499]
+[node name="block-snow-overhang-large" type="MeshInstance3D" parent="block-snow-overhang-large2"]
 mesh = SubResource("ArrayMesh_vbxtu")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="block-snow-overhang-large2/block-snow-overhang-large" unique_id=227628219]
+[node name="StaticBody3D" type="StaticBody3D" parent="block-snow-overhang-large2/block-snow-overhang-large"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="block-snow-overhang-large2/block-snow-overhang-large/StaticBody3D" unique_id=612430069]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="block-snow-overhang-large2/block-snow-overhang-large/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015258789, 0.51520944, 0.0036468506)
 shape = SubResource("BoxShape3D_tftll")
 
-[node name="block-snow-overhang-long2" parent="." unique_id=1284396009 instance=ExtResource("68_78p00")]
+[node name="block-snow-overhang-long2" parent="." instance=ExtResource("68_78p00")]
 
-[node name="block-snow-overhang-low-hexagon2" parent="." unique_id=972095150 instance=ExtResource("69_e7dtc")]
+[node name="block-snow-overhang-low-hexagon2" parent="." instance=ExtResource("69_e7dtc")]
 
-[node name="block-snow-overhang-low-large2" parent="." unique_id=635169874 instance=ExtResource("70_rjlwx")]
+[node name="block-snow-overhang-low-large2" parent="." instance=ExtResource("70_rjlwx")]
 
-[node name="block-snow-overhang-low-long2" parent="." unique_id=102922303 instance=ExtResource("71_wftlw")]
+[node name="block-snow-overhang-low-long2" parent="." instance=ExtResource("71_wftlw")]
 
-[node name="block-snow-overhang-low-narrow2" parent="." unique_id=1154824558 instance=ExtResource("72_3ugyd")]
+[node name="block-snow-overhang-low-narrow2" parent="." instance=ExtResource("72_3ugyd")]
 
-[node name="block-snow-overhang-low2" parent="." unique_id=1296523815 instance=ExtResource("73_lacv5")]
+[node name="block-snow-overhang-low2" parent="." instance=ExtResource("73_lacv5")]
 
-[node name="block-snow-overhang-narrow2" parent="." unique_id=460333262 instance=ExtResource("74_f5gc1")]
+[node name="block-snow-overhang-narrow2" parent="." instance=ExtResource("74_f5gc1")]
 
-[node name="block-snow2" parent="." unique_id=116269863 instance=ExtResource("75_ybmhy")]
+[node name="block-snow2" parent="." instance=ExtResource("75_ybmhy")]
 
-[node name="bomb2" parent="." unique_id=661877439 instance=ExtResource("76_j5jft")]
+[node name="bomb2" parent="." instance=ExtResource("76_j5jft")]
 
-[node name="brick2" parent="." unique_id=1606457431 instance=ExtResource("77_dlufs")]
+[node name="brick2" parent="." instance=ExtResource("77_dlufs")]
 
-[node name="button-round2" parent="." unique_id=1991252222 instance=ExtResource("78_4v75d")]
+[node name="button-round2" parent="." instance=ExtResource("78_4v75d")]
 
-[node name="button-square2" parent="." unique_id=1222367844 instance=ExtResource("79_6kmmg")]
+[node name="button-square2" parent="." instance=ExtResource("79_6kmmg")]
 
-[node name="character-oobi2" parent="." unique_id=546410517 instance=ExtResource("80_473lh")]
+[node name="character-oobi2" parent="." instance=ExtResource("80_473lh")]
 
-[node name="character-oodi2" parent="." unique_id=1536779247 instance=ExtResource("81_ftabw")]
+[node name="character-oodi2" parent="." instance=ExtResource("81_ftabw")]
 
-[node name="character-ooli2" parent="." unique_id=1645394859 instance=ExtResource("82_y5qfn")]
+[node name="character-ooli2" parent="." instance=ExtResource("82_y5qfn")]
 
-[node name="character-oopi2" parent="." unique_id=791612893 instance=ExtResource("83_cv3qx")]
+[node name="character-oopi2" parent="." instance=ExtResource("83_cv3qx")]
 
-[node name="character-oozi2" parent="." unique_id=747907480 instance=ExtResource("84_8llrs")]
+[node name="character-oozi2" parent="." instance=ExtResource("84_8llrs")]
 
-[node name="chest2" parent="." unique_id=1438177620 instance=ExtResource("85_csixw")]
+[node name="chest2" parent="." instance=ExtResource("85_csixw")]
 
-[node name="coin-bronze2" parent="." unique_id=1961699196 instance=ExtResource("86_orvgj")]
+[node name="coin-bronze2" parent="." instance=ExtResource("86_orvgj")]
 
-[node name="coin-gold2" parent="." unique_id=885584707 instance=ExtResource("87_r781b")]
+[node name="coin-gold2" parent="." instance=ExtResource("87_r781b")]
 
-[node name="coin-silver2" parent="." unique_id=160800692 instance=ExtResource("88_vso4t")]
+[node name="coin-silver2" parent="." instance=ExtResource("88_vso4t")]
 
-[node name="conveyor-belt2" parent="." unique_id=555998002 instance=ExtResource("89_b3yel")]
+[node name="conveyor-belt2" parent="." instance=ExtResource("89_b3yel")]
 
-[node name="crate-item-strong2" parent="." unique_id=313553166 instance=ExtResource("90_c8na1")]
+[node name="crate-item-strong2" parent="." instance=ExtResource("90_c8na1")]
 
-[node name="crate-item2" parent="." unique_id=1804086995 instance=ExtResource("91_ludxg")]
+[node name="crate-item2" parent="." instance=ExtResource("91_ludxg")]
 
-[node name="crate-strong2" parent="." unique_id=1761693629 instance=ExtResource("92_qaim6")]
+[node name="crate-strong2" parent="." instance=ExtResource("92_qaim6")]
 
-[node name="crate2" parent="." unique_id=1488557647 instance=ExtResource("93_644dt")]
+[node name="crate2" parent="." instance=ExtResource("93_644dt")]
 
-[node name="door-large-open2" parent="." unique_id=770415214 instance=ExtResource("94_aqv4t")]
+[node name="door-large-open2" parent="." instance=ExtResource("94_aqv4t")]
 
-[node name="door-open2" parent="." unique_id=1725854310 instance=ExtResource("95_sfmhr")]
+[node name="door-open2" parent="." instance=ExtResource("95_sfmhr")]
 
-[node name="door-rotate-large2" parent="." unique_id=1202231147 instance=ExtResource("96_v7krr")]
+[node name="door-rotate-large2" parent="." instance=ExtResource("96_v7krr")]
 
-[node name="door-rotate2" parent="." unique_id=1663340724 instance=ExtResource("97_ddwg6")]
+[node name="door-rotate2" parent="." instance=ExtResource("97_ddwg6")]
 
-[node name="fence-broken2" parent="." unique_id=1169230834 instance=ExtResource("98_twkuh")]
+[node name="fence-broken2" parent="." instance=ExtResource("98_twkuh")]
 
-[node name="fence-corner-curved2" parent="." unique_id=994420755 instance=ExtResource("99_xay4o")]
+[node name="fence-corner-curved2" parent="." instance=ExtResource("99_xay4o")]
 
-[node name="fence-corner2" parent="." unique_id=83137616 instance=ExtResource("100_bdnap")]
+[node name="fence-corner2" parent="." instance=ExtResource("100_bdnap")]
 
-[node name="fence-low-broken2" parent="." unique_id=2093043778 instance=ExtResource("101_4ke2b")]
+[node name="fence-low-broken2" parent="." instance=ExtResource("101_4ke2b")]
 
-[node name="fence-low-corner-curved2" parent="." unique_id=1195180981 instance=ExtResource("102_3aech")]
+[node name="fence-low-corner-curved2" parent="." instance=ExtResource("102_3aech")]
 
-[node name="fence-low-corner2" parent="." unique_id=1625874504 instance=ExtResource("103_b8s4u")]
+[node name="fence-low-corner2" parent="." instance=ExtResource("103_b8s4u")]
 
-[node name="fence-low-straight2" parent="." unique_id=930902899 instance=ExtResource("104_amkr1")]
+[node name="fence-low-straight2" parent="." instance=ExtResource("104_amkr1")]
 
-[node name="fence-rope2" parent="." unique_id=1807559041 instance=ExtResource("105_lsk5b")]
+[node name="fence-rope2" parent="." instance=ExtResource("105_lsk5b")]
 
-[node name="fence-straight2" parent="." unique_id=1174343520 instance=ExtResource("106_0apga")]
+[node name="fence-straight2" parent="." instance=ExtResource("106_0apga")]
 
-[node name="flag2" parent="." unique_id=26649992 instance=ExtResource("107_fspvv")]
+[node name="flag2" parent="." instance=ExtResource("107_fspvv")]
 
-[node name="flowers-tall2" parent="." unique_id=1869949317 instance=ExtResource("108_dlyim")]
+[node name="flowers-tall2" parent="." instance=ExtResource("108_dlyim")]
 
-[node name="flowers2" parent="." unique_id=1398045671 instance=ExtResource("109_s8xry")]
+[node name="flowers2" parent="." instance=ExtResource("109_s8xry")]
 
-[node name="grass2" parent="." unique_id=451657529 instance=ExtResource("110_0piro")]
+[node name="grass2" parent="." instance=ExtResource("110_0piro")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.504779, 0)
 
-[node name="heart2" parent="." unique_id=1223527865 instance=ExtResource("111_b36ud")]
+[node name="heart2" parent="." instance=ExtResource("111_b36ud")]
 
-[node name="hedge-corner2" parent="." unique_id=1033045992 instance=ExtResource("112_yssqi")]
+[node name="hedge-corner2" parent="." instance=ExtResource("112_yssqi")]
 
-[node name="hedge2" parent="." unique_id=433375712 instance=ExtResource("113_7pyuh")]
+[node name="hedge2" parent="." instance=ExtResource("113_7pyuh")]
 
-[node name="jewel2" parent="." unique_id=435231802 instance=ExtResource("114_lylu6")]
+[node name="jewel2" parent="." instance=ExtResource("114_lylu6")]
 
-[node name="key2" parent="." unique_id=610427664 instance=ExtResource("115_nfl26")]
+[node name="key2" parent="." instance=ExtResource("115_nfl26")]
 
-[node name="ladder-broken2" parent="." unique_id=2004862325 instance=ExtResource("116_q2tu6")]
+[node name="ladder-broken2" parent="." instance=ExtResource("116_q2tu6")]
 
-[node name="ladder-long2" type="Node3D" parent="." unique_id=1289058381]
+[node name="ladder-long2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6505619, 0, -1.5817957)
 
-[node name="ladder-long" type="MeshInstance3D" parent="ladder-long2" unique_id=1786903701]
+[node name="ladder-long" type="MeshInstance3D" parent="ladder-long2"]
 mesh = SubResource("ArrayMesh_dd461")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="ladder-long2/ladder-long" unique_id=359152933]
+[node name="StaticBody3D" type="StaticBody3D" parent="ladder-long2/ladder-long"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ladder-long2/ladder-long/StaticBody3D" unique_id=1308763028]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ladder-long2/ladder-long/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5776367e-05, 1, -0.0005493164)
 shape = SubResource("BoxShape3D_f3kkm")
 
-[node name="ladder2" parent="." unique_id=1636231742 instance=ExtResource("117_2un1c")]
+[node name="ladder2" parent="." instance=ExtResource("117_2un1c")]
 
-[node name="lever2" parent="." unique_id=2084166760 instance=ExtResource("118_7veue")]
+[node name="lever2" parent="." instance=ExtResource("118_7veue")]
 
-[node name="lock2" parent="." unique_id=1947137833 instance=ExtResource("119_lwr4l")]
+[node name="lock2" parent="." instance=ExtResource("119_lwr4l")]
 
-[node name="mushrooms2" parent="." unique_id=657932636 instance=ExtResource("120_6c8j5")]
+[node name="mushrooms2" parent="." instance=ExtResource("120_6c8j5")]
 
-[node name="pipe2" parent="." unique_id=315651617 instance=ExtResource("121_r5x7j")]
+[node name="pipe2" parent="." instance=ExtResource("121_r5x7j")]
 
-[node name="plant2" parent="." unique_id=7751838 instance=ExtResource("122_q1owu")]
+[node name="plant2" parent="." instance=ExtResource("122_q1owu")]
 
-[node name="platform-fortified2" parent="." unique_id=1629445011 instance=ExtResource("123_t62y1")]
+[node name="platform-fortified2" parent="." instance=ExtResource("123_t62y1")]
 
-[node name="platform-overhang2" parent="." unique_id=442007523 instance=ExtResource("124_l7jnw")]
+[node name="platform-overhang2" parent="." instance=ExtResource("124_l7jnw")]
 
-[node name="platform-ramp2" parent="." unique_id=1750758955 instance=ExtResource("125_b61qu")]
+[node name="platform-ramp2" parent="." instance=ExtResource("125_b61qu")]
 
-[node name="platform2" parent="." unique_id=1719937947 instance=ExtResource("126_356c3")]
+[node name="platform2" parent="." instance=ExtResource("126_356c3")]
 
-[node name="poles2" parent="." unique_id=522495460 instance=ExtResource("127_rodgn")]
+[node name="poles2" parent="." instance=ExtResource("127_rodgn")]
 
-[node name="rocks2" parent="." unique_id=564542817 instance=ExtResource("128_pkvtp")]
+[node name="rocks2" parent="." instance=ExtResource("128_pkvtp")]
 
-[node name="saw2" parent="." unique_id=1771364501 instance=ExtResource("129_5fwgq")]
+[node name="saw2" parent="." instance=ExtResource("129_5fwgq")]
 
-[node name="sign2" parent="." unique_id=85215477 instance=ExtResource("130_75oue")]
+[node name="sign2" parent="." instance=ExtResource("130_75oue")]
 
-[node name="spike-block-wide2" parent="." unique_id=1681481112 instance=ExtResource("131_mm051")]
+[node name="spike-block-wide2" parent="." instance=ExtResource("131_mm051")]
 
-[node name="spike-block2" parent="." unique_id=1456472717 instance=ExtResource("132_8lu4l")]
+[node name="spike-block2" parent="." instance=ExtResource("132_8lu4l")]
 
-[node name="spring3" parent="." unique_id=1986507772 instance=ExtResource("133_d3vgs")]
+[node name="spring3" parent="." instance=ExtResource("133_d3vgs")]
 
-[node name="star2" parent="." unique_id=1419166644 instance=ExtResource("134_r8ihx")]
+[node name="star2" parent="." instance=ExtResource("134_r8ihx")]
 
-[node name="stones2" parent="." unique_id=784293218 instance=ExtResource("135_o7oif")]
+[node name="stones2" parent="." instance=ExtResource("135_o7oif")]
 
-[node name="trap-spikes-large2" parent="." unique_id=1590917911 instance=ExtResource("136_ex3h8")]
+[node name="trap-spikes-large2" parent="." instance=ExtResource("136_ex3h8")]
 
-[node name="trap-spikes2" parent="." unique_id=611257535 instance=ExtResource("137_oniuu")]
+[node name="trap-spikes2" parent="." instance=ExtResource("137_oniuu")]
 
-[node name="tree-pine-small2" parent="." unique_id=166670202 instance=ExtResource("138_qa4wl")]
+[node name="tree-pine-small2" parent="." instance=ExtResource("138_qa4wl")]
 
-[node name="tree-pine-snow-small2" parent="." unique_id=118693129 instance=ExtResource("139_x18st")]
+[node name="tree-pine-snow-small2" parent="." instance=ExtResource("139_x18st")]
 
-[node name="tree-pine-snow2" type="Node3D" parent="." unique_id=205818881]
+[node name="tree-pine-snow2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5315655)
 
-[node name="tree-pine-snow" type="MeshInstance3D" parent="tree-pine-snow2" unique_id=1928688897]
+[node name="tree-pine-snow" type="MeshInstance3D" parent="tree-pine-snow2"]
 mesh = SubResource("ArrayMesh_r8lvh")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="tree-pine-snow2/tree-pine-snow" unique_id=367674464]
+[node name="StaticBody3D" type="StaticBody3D" parent="tree-pine-snow2/tree-pine-snow"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="tree-pine-snow2/tree-pine-snow/StaticBody3D" unique_id=2056753903]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tree-pine-snow2/tree-pine-snow/StaticBody3D"]
 transform = Transform3D(0.38, 0, 0, 0, 0.38, 0, 0, 0, 0.38, 0, 0.82969755, 0)
 shape = SubResource("CylinderShape3D_rf2jt")
 
-[node name="tree-pine2" type="Node3D" parent="." unique_id=1101460966]
+[node name="tree-pine2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.1010036)
 
-[node name="tree-pine" type="MeshInstance3D" parent="tree-pine2" unique_id=254333474]
+[node name="tree-pine" type="MeshInstance3D" parent="tree-pine2"]
 mesh = SubResource("ArrayMesh_2r8ms")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="tree-pine2/tree-pine" unique_id=1486165082]
+[node name="StaticBody3D" type="StaticBody3D" parent="tree-pine2/tree-pine"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="tree-pine2/tree-pine/StaticBody3D" unique_id=1497735250]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tree-pine2/tree-pine/StaticBody3D"]
 transform = Transform3D(0.38, 0, 0, 0, 0.38, 0, 0, 0, 0.38, 0, 0.874319, 0)
 shape = SubResource("CylinderShape3D_rpo4n")
 
-[node name="tree-snow2" type="Node3D" parent="." unique_id=1618050761]
+[node name="tree-snow2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8442556, 0, 0)
 
-[node name="tree-snow" type="MeshInstance3D" parent="tree-snow2" unique_id=1769379828]
+[node name="tree-snow" type="MeshInstance3D" parent="tree-snow2"]
 mesh = SubResource("ArrayMesh_scwgo")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="tree-snow2/tree-snow" unique_id=1931019706]
+[node name="StaticBody3D" type="StaticBody3D" parent="tree-snow2/tree-snow"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="tree-snow2/tree-snow/StaticBody3D" unique_id=593411195]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tree-snow2/tree-snow/StaticBody3D"]
 transform = Transform3D(0.38, 0, 0, 0, 0.38, 0, 0, 0, 0.38, 0, 0.9554144, 0)
 shape = SubResource("CylinderShape3D_j8nk5")
 
-[node name="tree2" type="Node3D" parent="." unique_id=787050658]
+[node name="tree2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.9289103)
 
-[node name="tree" type="MeshInstance3D" parent="tree2" unique_id=796617796]
+[node name="tree" type="MeshInstance3D" parent="tree2"]
 mesh = SubResource("ArrayMesh_3fceh")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="tree2/tree" unique_id=960640193]
+[node name="StaticBody3D" type="StaticBody3D" parent="tree2/tree"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="tree2/tree/StaticBody3D" unique_id=1715842824]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tree2/tree/StaticBody3D"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.96321565, 0)
 shape = SubResource("CylinderShape3D_fxixf")

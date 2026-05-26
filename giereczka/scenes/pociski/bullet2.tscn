@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cf6svxw7e0blt"]
 
-[ext_resource type="Script" uid="uid://dbxelskh3bm3x" path="res://scripts/bullet2.gd" id="1_iupiw"]
+[ext_resource type="Script" path="res://scripts/bullet2.gd" id="1_iupiw"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_iupiw"]
 

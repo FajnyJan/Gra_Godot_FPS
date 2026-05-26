@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dq3embdxd5ncn"]
+[gd_scene load_steps=10 format=3 uid="uid://bkl40jurlohsv"]
 
 [ext_resource type="Texture2D" uid="uid://dgpkvgi0yn6if" path="res://assets/FS002_Day.png" id="1_hgcio"]
 [ext_resource type="PackedScene" uid="uid://dkcf1qpuebuhw" path="res://world.tscn" id="1_juli0"]
