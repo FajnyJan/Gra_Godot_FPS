@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=4 uid="uid://bkwwafkmn0gvh"]
 
 [ext_resource type="Script" uid="uid://u1bx8tgr5hkf" path="res://scripts/tower1.gd" id="1_yegnd"]
-[ext_resource type="PackedScene" uid="uid://bw26ckbf6l6mq" path="res://Turret.glb" id="2_doxrq"]
+[ext_resource type="PackedScene" uid="uid://bw26ckbf6l6mq" path="res://models/Turret.glb" id="2_doxrq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_74ksm"]
 friction = 0.0

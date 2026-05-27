@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3]
 
-[ext_resource type="Texture2D" path="res://assets/FS002_Day.png" id="1_g0j8c"]
-[ext_resource type="PackedScene" path="res://world.tscn" id="2_bxye4"]
-[ext_resource type="PackedScene" path="res://scenes/spawnarea_enemy.tscn" id="3_bnchv"]
-[ext_resource type="PackedScene" path="res://models/chest.glb" id="4_52jfb"]
+[ext_resource type="Texture2D" uid="uid://dgpkvgi0yn6if" path="res://assets/FS002_Day.png" id="1_g0j8c"]
+[ext_resource type="PackedScene" uid="uid://dkcf1qpuebuhw" path="res://scenes/world.tscn" id="2_bxye4"]
+[ext_resource type="PackedScene" uid="uid://cuorrnxbos8j4" path="res://scenes/spawnarea_enemy.tscn" id="3_bnchv"]
+[ext_resource type="PackedScene" uid="uid://w0tcapxfcqm0" path="res://models/chest.glb" id="4_52jfb"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_272bh"]
 panorama = ExtResource("1_g0j8c")

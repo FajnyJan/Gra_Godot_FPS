@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bb62gcwxelk3"]
 
 [ext_resource type="Texture2D" uid="uid://dgpkvgi0yn6if" path="res://assets/FS002_Day.png" id="1_0fd1v"]
-[ext_resource type="PackedScene" uid="uid://cphmj0hh2uj5k" path="res://world2.tscn" id="2_0fd1v"]
+[ext_resource type="PackedScene" uid="uid://cphmj0hh2uj5k" path="res://scenes/world2.tscn" id="2_0fd1v"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_272bh"]
 panorama = ExtResource("1_0fd1v")
@@ -31,7 +31,7 @@ light_indirect_energy = 2.0
 shadow_enabled = true
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, -36.67694)
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 0.2579689)
 navigation_mesh = SubResource("NavigationMesh_4gyqm")
 
 [node name="world" parent="NavigationRegion3D" instance=ExtResource("2_0fd1v")]
