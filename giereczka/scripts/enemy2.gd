@@ -2,7 +2,7 @@
 extends CharacterBody3D
 
 @onready var nav = $NavigationAgent3D
-@onready var animations = $AnimationPlayer2
+@onready var animations = $AnimationPlayer
 @onready var attack_range = $AttackRange
 @onready var muzzle = $Marker3D
 var DropScene = preload("res://scenes/drop.tscn")
@@ -25,7 +25,7 @@ var detection_range = 15.0
 
 func _ready():
 	add_to_group("enemy")
-	animations.play("Running_A")
+	#animations.play("Running_A")
 
 	attack_range.body_entered.connect(_on_attack_range_body_entered)
 	attack_range.body_exited.connect(_on_attack_range_body_exited)
