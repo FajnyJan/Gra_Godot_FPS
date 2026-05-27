@@ -1,19 +1,19 @@
 [gd_scene load_steps=5 format=3 uid="uid://dhdsdtte3r1qb"]
 
-[ext_resource type="Script" uid="uid://waemvxhc2pf6" path="res://scripts/main.gd" id="1_3ps45"]
-[ext_resource type="PackedScene" uid="uid://ctf6pvjr2spgl" path="res://scenes/player.tscn" id="3_h2yge"]
-[ext_resource type="AudioStream" uid="uid://lvqb0sfevem1" path="res://assets/THE ENTERTAINER - SCOTT JOPLIN - Joplin - Aubrey Fink_trimmed.mp3" id="4_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://dq3embdxd5ncn" path="res://scenes/świat.tscn" id="6_7mycd"]
+[ext_resource type="Script" uid="uid://waemvxhc2pf6" path="res://scripts/main.gd" id="1_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dq3embdxd5ncn" path="res://scenes/świat.tscn" id="2_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://ctf6pvjr2spgl" path="res://scenes/player.tscn" id="3_tefeu"]
+[ext_resource type="AudioStream" uid="uid://lvqb0sfevem1" path="res://assets/THE ENTERTAINER - SCOTT JOPLIN - Joplin - Aubrey Fink_trimmed.mp3" id="4_o6xl0"]
 
 [node name="Node3D" type="Node3D" groups=["Persist"]]
-script = ExtResource("1_3ps45")
+script = ExtResource("1_jyhfs")
 
-[node name="świat" parent="." instance=ExtResource("6_7mycd")]
+[node name="świat" parent="." instance=ExtResource("2_tbgi4")]
 
-[node name="player" parent="." instance=ExtResource("3_h2yge")]
+[node name="player" parent="." instance=ExtResource("3_tefeu")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.7347578, 4.6805854, -19.901594)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_1bvp3")
+stream = ExtResource("4_o6xl0")
 volume_db = 6.386
 autoplay = true

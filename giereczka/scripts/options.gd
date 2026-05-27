@@ -15,4 +15,4 @@ func _process(delta: float) -> void:
 
 func _on_pressed() -> void:
 	Global.load_game = false
-	get_tree().change_scene_to_file("res://menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/menu.tscn")

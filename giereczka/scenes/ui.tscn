@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cvt53dqpuadmr"]
 
-[ext_resource type="Script" path="res://scripts/equ.gd" id="1_fyqef"]
+[ext_resource type="Script" path="res://scripts/equ.gd" id="1_nt7q6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vw27"]
 bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0.7019608)
@@ -19,4 +19,4 @@ offset_top = 20.0
 offset_right = 20.0
 offset_bottom = 20.0
 columns = 7
-script = ExtResource("1_fyqef")
+script = ExtResource("1_nt7q6")

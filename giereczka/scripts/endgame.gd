@@ -18,11 +18,11 @@ func _ready() -> void:
 
 func _on_new_game_pressed() -> void:
 	Global.load_game = false
-	get_tree().change_scene_to_file("res://main.tscn")
+	get_tree().change_scene_to_file("res://scenes/main.tscn")
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
 
 
 func _on_main_menu_pressed() -> void:
-	get_tree().change_scene_to_file("res://menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/menu.tscn")

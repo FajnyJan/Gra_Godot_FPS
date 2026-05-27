@@ -14,14 +14,14 @@ func _process(delta: float) -> void:
 func _on_map_1_pressed() -> void:
 	print("kliknieto mapa 1")
 	Global.selected_map = "res://scenes/świat.tscn"
-	get_tree().change_scene_to_file("res://main.tscn")
+	get_tree().change_scene_to_file("res://scenes/main.tscn")
 
 
 func _on_map_2_pressed() -> void:
-	Global.selected_map = "res://swiat2.tscn"
-	get_tree().change_scene_to_file("res://main.tscn")
+	Global.selected_map = "res://scenes/swiat2.tscn"
+	get_tree().change_scene_to_file("res://scenes/main.tscn")
 	
 
 
 func _on_exit_pressed() -> void:
-	get_tree().change_scene_to_file("res://menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/menu.tscn")
