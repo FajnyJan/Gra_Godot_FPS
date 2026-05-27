@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://hy1t54o7pxkf"]
+[gd_scene load_steps=2 format=3 uid="uid://hy1t54o7pxkf"]
 
 [ext_resource type="Script" uid="uid://bkepxtl37s0i4" path="res://scripts/map_select.gd" id="1_gq5wf"]
-[ext_resource type="Texture2D" uid="uid://c2n76s7iykhi8" path="res://assets/1.png" id="2_nqqve"]
 
 [node name="MapSelect" type="Control"]
 layout_mode = 3
@@ -11,11 +10,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gq5wf")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(574.00006, 325)
-scale = Vector2(1.0342222, 1.1666666)
-texture = ExtResource("2_nqqve")
 
 [node name="Exit" type="Button" parent="."]
 layout_mode = 0
