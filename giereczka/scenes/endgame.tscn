@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://bwpekinupugu7"]
+[gd_scene load_steps=0 format=3 uid="uid://bwpekinupugu7"]
 
-[ext_resource type="Script" uid="uid://cenogjp1urro" path="res://scenes/endgame.gd" id="1_dugu8"]
+[ext_resource type="Script" uid="uid://cenogjp1urro" path="res://scripts/endgame.gd" id="1_dugu8"]
 [ext_resource type="AudioStream" uid="uid://bwr32epa8f31v" path="res://assets/yaaay.mp3" id="2_577wx"]
 [ext_resource type="Texture2D" uid="uid://2psyqmv0cnxi" path="res://assets/winscreen.png" id="2_m5up5"]
 [ext_resource type="Texture2D" uid="uid://cbkjywx8s0mf6" path="res://assets/Luzscreen.png" id="3_odl71"]

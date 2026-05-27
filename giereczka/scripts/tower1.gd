@@ -50,5 +50,7 @@ func shoot(enemy):
 	var bullet = Bullet1Scene.instantiate()
 	get_tree().current_scene.add_child(bullet)
 	bullet.global_position = muzzle.global_position
-	var dir = gun.global_transform.basis.y
-	bullet.direction = dir.normalized()
+	
+	var direction = muzzle.global_transform.basis.y
+	bullet.direction = direction.normalized()
+	bullet.global_transform.basis = Basis.looking_at(-direction, Vector3.UP)

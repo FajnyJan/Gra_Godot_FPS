@@ -589,4 +589,4 @@ mesh = SubResource("ArrayMesh_xoygu")
 skeleton = NodePath("")
 
 [node name="Marker3D" type="Marker3D" parent="turret1/stojak"]
-transform = Transform3D(1, 0, -5.2041704e-18, 0, 1, 1.4583908e-15, -6.938894e-18, -1.27524656e-14, 1, 0.0021804224, 3.5700562, -2.229056)
+transform = Transform3D(1, 0, -6.938894e-18, 0, 1, 1.4583925e-15, -8.673617e-18, -1.630518e-14, 1, 0.0023290978, 3.8134859, -2.229056)

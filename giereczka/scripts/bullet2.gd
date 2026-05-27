@@ -19,4 +19,4 @@ func _physics_process(delta):
 		if body.is_in_group("enemy"):
 			if body.has_method("apply_damage"):
 				body.apply_damage(damage)
-		queue_free()
+			queue_free()

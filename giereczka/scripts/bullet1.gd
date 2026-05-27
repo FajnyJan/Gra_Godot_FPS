@@ -19,4 +19,4 @@ func _physics_process(delta):
 			if hit_body.has_method("apply_damage"):
 				hit_body.apply_damage(damage)
 
-		queue_free()
+			queue_free()

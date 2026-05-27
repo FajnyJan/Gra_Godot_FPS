@@ -158,7 +158,8 @@ func _on_save_pressed():
 	var data = {
 		"player": save_player(),
 		"enemies": save_group("enemy"),
-		"buildables": save_buildables()
+		"buildables": save_buildables(),
+		"current_wave": current_wave
 	}
 
 	var json_string = JSON.stringify(data, "\t")
@@ -188,6 +189,8 @@ func load_game():
 			print("json error")
 			return
 		var data = json.data
+		#print(int(data.get("current_wave", 1)))
+		current_wave = int(data.get("current_wave", 1))
 		var o = data["player"]["origin"]
 		var b = data["player"]["basis"]
 		var basis = Basis(

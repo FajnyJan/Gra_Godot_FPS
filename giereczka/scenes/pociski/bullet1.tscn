@@ -1,16 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://c3pi0ijxk0823"]
 
 [ext_resource type="Script" uid="uid://dfb7v7ynpf2kb" path="res://scripts/bullet1.gd" id="1"]
-[ext_resource type="ArrayMesh" uid="uid://spywgn37hqef" path="res://assets/yooogigashoot.obj" id="1_mkf8s"]
+[ext_resource type="PackedScene" uid="uid://ckicxr3jdmrqs" path="res://models/pocisk.glb" id="2_15ssr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y25gk"]
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = ExtResource("1_mkf8s")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(0.55, 0, 0, 0, 0.55, 0, 0, 0, 1.1, 0, 0, 0)
 shape = SubResource("BoxShape3D_y25gk")
+
+[node name="pocisk" parent="." instance=ExtResource("2_15ssr")]
+transform = Transform3D(-1.0927847e-08, 0, -0.2, 0, 0.2, 0, 0.25, 0, -8.742278e-09, 0, 0, 0.1)

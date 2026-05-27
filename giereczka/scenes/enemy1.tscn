@@ -9,6 +9,8 @@
 size = Vector3(1, 1.0131836, 1)
 
 [node name="enemy" type="CharacterBody3D" groups=["enemy"]]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_lowyn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
