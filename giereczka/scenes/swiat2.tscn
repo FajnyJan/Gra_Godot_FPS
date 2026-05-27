@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bb62gcwxelk3"]
+[gd_scene load_steps=8 format=3 uid="uid://bb62gcwxelk3"]
 
 [ext_resource type="Texture2D" uid="uid://dgpkvgi0yn6if" path="res://assets/FS002_Day.png" id="1_0fd1v"]
 [ext_resource type="PackedScene" uid="uid://cphmj0hh2uj5k" path="res://scenes/world2.tscn" id="2_0fd1v"]
+[ext_resource type="PackedScene" uid="uid://cuorrnxbos8j4" path="res://scenes/spawnarea_enemy.tscn" id="3_vnetk"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_272bh"]
 panorama = ExtResource("1_0fd1v")
@@ -42,3 +43,14 @@ start_position = Vector3(0.014306068, 3.4048934, -3.1764984)
 end_position = Vector3(-0.80767846, 0.28272104, -6.4052258)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="spawnareas" type="Node3D" parent="."]
+
+[node name="spawnarea-enemy" parent="spawnareas" instance=ExtResource("3_vnetk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.7233, 0.59374666, 73.89198)
+
+[node name="spawnarea-enemy2" parent="spawnareas" instance=ExtResource("3_vnetk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.020977, 0.594, -36.84217)
+
+[node name="spawnarea-enemy3" parent="spawnareas" instance=ExtResource("3_vnetk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.88727, 0.594, 114.01943)
