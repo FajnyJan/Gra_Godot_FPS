@@ -3,7 +3,7 @@ extends CharacterBody3D
 var speed = 20.0
 var direction = Vector3.ZERO
 var damage = 3
-var lifetime = 10.0
+var lifetime = 3.0
 
 func _ready():
 	await get_tree().create_timer(lifetime).timeout

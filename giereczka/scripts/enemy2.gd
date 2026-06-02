@@ -11,7 +11,7 @@ var Bullet1Scene = preload("res://scenes/pociski/bullet3.tscn")
 
 var health: int
 
-var speed = 3.5
+var speed = 4.5
 var gravity = 9.8
 var jump_velocity = 3.0
 var target = null
