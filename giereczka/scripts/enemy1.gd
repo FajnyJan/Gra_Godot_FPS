@@ -48,8 +48,8 @@ func _physics_process(delta):
 			velocity.y -= gravity * delta
 		elif is_on_wall(): 
 			velocity.y = jump_velocity
-		if not $RayCast3D.is_colliding():
-			velocity.y = jump_velocity
+		#if not $RayCast3D.is_colliding():
+			#velocity.y = jump_velocity
 		if destroy_in_range:
 			velocity.x = 0
 			velocity.z = 0
